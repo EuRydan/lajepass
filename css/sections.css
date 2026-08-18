@@ -121,7 +121,7 @@
   border-radius: 0;
   background: transparent;
   color: var(--color-text-primary);
-  border: none;
+  border: 2px solid #ff0149;
 }
 
 .btn--hero-left:hover {
