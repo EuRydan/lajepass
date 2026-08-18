@@ -205,7 +205,7 @@ body {
     padding-inline: var(--space-4);
   }
   .section {
-    padding-block: var(--space-16);
+    padding-block: var(--space-12);
   }
   .grid--2,
   .grid--3,

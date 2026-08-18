@@ -145,6 +145,17 @@
   background: #ff2664;
 }
 
+@media (max-width: 640px) {
+  .hero__ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn--hero-left,
+  .btn--hero-right {
+    width: 100%;
+  }
+}
+
 .hero__scroll-hint {
   position: absolute;
   bottom: var(--space-8);
@@ -472,6 +483,10 @@
   
   .picks-card__info {
     padding: var(--space-12) var(--space-8);
+  }
+
+  .picks-card__visual {
+    min-height: 250px;
   }
 }
 
