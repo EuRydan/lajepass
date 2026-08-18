@@ -498,6 +498,12 @@
   margin-bottom: var(--space-2);
 }
 
+.stat__value.gradient-text {
+  background: none;
+  -webkit-text-fill-color: var(--color-text, #ffffff);
+  color: #ffffff;
+}
+
 .stat__label {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
