@@ -244,18 +244,26 @@
   function initMobileMenu() {
     if (!burger || !mobileNav) return;
 
+    const closeBtn = document.getElementById('mobile-nav-close');
+
+    function closeMenu() {
+      burger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
     burger.addEventListener('click', () => {
       burger.classList.toggle('open');
       mobileNav.classList.toggle('open');
       document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
     });
 
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeMenu);
+    }
+
     mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        burger.classList.remove('open');
-        mobileNav.classList.remove('open');
-        document.body.style.overflow = '';
-      });
+      link.addEventListener('click', closeMenu);
     });
   }
 

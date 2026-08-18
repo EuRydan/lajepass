@@ -899,3 +899,59 @@
   color: var(--color-text-primary);
   font-style: normal;
 }
+
+/* ---- MOBILE OVERFLOW FIXES (≤ 480px) ---- */
+
+@media (max-width: 480px) {
+  /* Radar headline overflows on small phones */
+  .radar__headline {
+    font-size: var(--text-2xl);
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .radar__text {
+    font-size: var(--text-base);
+    text-align: center;
+  }
+
+  /* Community stats: keep 2 cols but ensure they fit */
+  .community__stats {
+    grid-template-columns: repeat(2, 1fr);
+    padding: var(--space-6);
+    gap: var(--space-6);
+  }
+
+  /* Producers headline too large */
+  .producers__headline {
+    font-size: var(--text-2xl);
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .producers__text {
+    font-size: var(--text-base);
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Section headings */
+  .section-title {
+    font-size: var(--text-2xl);
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Pass headline */
+  .pass__headline {
+    font-size: var(--text-2xl);
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* General: no element should overflow horizontally */
+  .container {
+    padding-inline: var(--space-4);
+    overflow: hidden;
+  }
+}
