@@ -221,6 +221,13 @@
   top: 100px;
 }
 
+@media (max-width: 1024px) {
+  .experiences-sidebar {
+    position: static;
+    margin-bottom: var(--space-8);
+  }
+}
+
 .sidebar-time-filters {
   margin-bottom: var(--space-6);
 }
