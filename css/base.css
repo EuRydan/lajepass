@@ -10,6 +10,10 @@ body {
   line-height: var(--leading-relaxed);
   color: var(--color-text-primary);
   background-color: var(--color-bg-primary);
+  background-image: url('../public/background hero.svg');
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  background-attachment: fixed;
   overflow-x: hidden;
 }
 
