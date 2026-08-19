@@ -417,10 +417,12 @@
       pin.style.setProperty('--cat-color', cat.colorRaw);
 
       pin.innerHTML = `
-        <div class="map-pin__dot">
-          <span class="map-pin__icon">${count > 1 ? count : cat.emoji}</span>
+        <div class="map-pin__body">
+          <div class="map-pin__dot">
+            <span class="map-pin__icon">${count > 1 ? count : cat.emoji}</span>
+          </div>
+          <div class="map-pin__label">${bairro.label}</div>
         </div>
-        <div class="map-pin__label">${bairro.label}</div>
         <div class="map-tooltip" role="tooltip">
           <div class="map-tooltip__header">
             <i class="ph ph-map-pin"></i>

@@ -1053,6 +1053,12 @@
   pointer-events: all;
   cursor: pointer;
   z-index: 10;
+  /* display: block — tooltip is a sibling of body, not inside flex */
+  display: block;
+}
+
+/* Inner flex wrapper for dot + label only */
+.map-pin__body {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1135,12 +1141,13 @@
 
 .map-tooltip {
   position: absolute;
-  /* Position to the right of the pin by default */
-  bottom: auto;
-  top: 50%;
-  left: calc(100% + 16px);
-  transform: translateY(-50%) translateX(-4px);
+  /* Posiciona à direita do pin, alinhado verticalmente ao centro do dot */
+  top: 0;
+  left: calc(100% + 14px);
+  transform: translateY(-30%) translateX(-4px);
   width: 260px;
+  min-width: 260px;
+  max-width: 260px;
   background: #ffffff;
   border-radius: 12px;
   box-shadow:
@@ -1150,31 +1157,29 @@
   padding: 14px 16px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 200ms ease, transform 200ms ease;
+  transition: opacity 180ms ease, transform 180ms ease;
   z-index: 9999;
-  white-space: normal;
-  word-wrap: break-word;
+  overflow: visible;
 }
 
-/* Left-pointing arrow */
+/* Seta apontando para a esquerda (em direção ao pin) */
 .map-tooltip::before {
   content: '';
   position: absolute;
-  top: 50%;
+  top: calc(30% + 18px);  /* alinha com o centro do dot */
   right: 100%;
   transform: translateY(-50%);
   border: 8px solid transparent;
   border-right-color: #ffffff;
-  filter: drop-shadow(-2px 0 2px rgba(0,0,0,0.06));
+  filter: drop-shadow(-2px 0 1px rgba(0,0,0,0.06));
 }
 
 .map-pin:hover .map-tooltip {
   opacity: 1;
   pointer-events: all;
-  transform: translateY(-50%) translateX(0);
+  transform: translateY(-30%) translateX(0);
 }
 
-/* Keep tooltip visible when hovering it */
 .map-tooltip:hover {
   opacity: 1;
   pointer-events: all;
