@@ -152,16 +152,47 @@
 
       <!-- Right Main Content -->
       <div class="experiences-main">
-        <div class="section-header animate-on-scroll" style="text-align: left; align-items: flex-start; margin-bottom: var(--space-8);">
+        <div class="section-header animate-on-scroll" style="text-align: left; align-items: flex-start; margin-bottom: var(--space-6);">
           <h2 class="section-title">O que está acontecendo</h2>
           <p class="section-subtitle">Eventos, festas, gastronomia, cultura e tudo que movimenta o Rio.</p>
         </div>
 
-      <!-- Experience Cards Grid (rendered by JS) -->
-      <div class="experiences__grid" id="experiences-grid">
-        <!-- Cards injected by app.js -->
-      </div>
-      
+        <!-- View Toggle -->
+        <div class="view-toggle" id="view-toggle">
+          <button class="view-toggle__btn active" id="btn-view-cards" aria-label="Ver como cards">
+            <i class="ph ph-squares-four"></i> Cards
+          </button>
+          <button class="view-toggle__btn" id="btn-view-map" aria-label="Ver no mapa">
+            <i class="ph ph-map-trifold"></i> Mapa
+          </button>
+        </div>
+
+        <!-- Experience Cards Grid (rendered by JS) -->
+        <div class="experiences__grid" id="experiences-grid">
+          <!-- Cards injected by app.js -->
+        </div>
+
+        <!-- Map View -->
+        <div class="map-view" id="map-view" hidden>
+          <div class="map-container" id="map-container">
+            <!-- SVG do Rio de Janeiro -->
+            <img 
+              src="public/mapa rio de janeiro.svg" 
+              alt="Mapa do Rio de Janeiro" 
+              class="map-svg-img" 
+              id="map-svg-img"
+              draggable="false"
+            />
+            <!-- Pins injetados por app.js -->
+            <div class="map-pins" id="map-pins"></div>
+          </div>
+          <!-- Legenda -->
+          <div class="map-legend" id="map-legend">
+            <span class="map-legend__title"><i class="ph ph-map-pin"></i> Legenda</span>
+            <div class="map-legend__items" id="map-legend-items"></div>
+          </div>
+        </div>
+
       </div> <!-- /experiences-main -->
     </div> <!-- /container -->
   </section>

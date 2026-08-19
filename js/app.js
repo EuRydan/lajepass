@@ -9,6 +9,7 @@
   // ---- State ----
   let activeTimeFilter = 'todos';
   let activeCategoryFilter = 'todos';
+  let activeView = 'cards'; // 'cards' | 'map'
 
   // ---- DOM References ----
   const experiencesGrid = document.getElementById('experiences-grid');
@@ -115,6 +116,12 @@
 
   function renderExperiences() {
     const filtered = filterExperiences();
+
+    // If map view is active, update pins instead of cards
+    if (activeView === 'map') {
+      renderMapPins(filtered);
+      return;
+    }
 
     if (filtered.length === 0) {
       experiencesGrid.innerHTML = `
@@ -356,6 +363,101 @@
     sections.forEach(section => observer.observe(section));
   }
 
+  // ---- Map View ----
+
+  const btnViewCards   = document.getElementById('btn-view-cards');
+  const btnViewMap     = document.getElementById('btn-view-map');
+  const mapView        = document.getElementById('map-view');
+  const mapPins        = document.getElementById('map-pins');
+  const mapLegendItems = document.getElementById('map-legend-items');
+
+  function buildMapLegend(experiences) {
+    if (!mapLegendItems) return;
+    const categoriesUsed = [...new Set(experiences.map(e => e.category))];
+    mapLegendItems.innerHTML = categoriesUsed.map(cat => {
+      const c = CATEGORIES[cat];
+      return `<span class="map-legend__item" style="--cat-color:${c.colorRaw}">${c.emoji} ${c.label}</span>`;
+    }).join('');
+  }
+
+  function renderMapPins(experiences) {
+    if (!mapPins) return;
+    mapPins.innerHTML = '';
+
+    const byBairro = {};
+    experiences.forEach(exp => {
+      if (!exp.bairro || !BAIRROS[exp.bairro]) return;
+      if (!byBairro[exp.bairro]) byBairro[exp.bairro] = [];
+      byBairro[exp.bairro].push(exp);
+    });
+
+    Object.entries(byBairro).forEach(([bairroKey, exps]) => {
+      const bairro = BAIRROS[bairroKey];
+      const cat    = CATEGORIES[exps[0].category];
+      const count  = exps.length;
+
+      const tooltipItems = exps.map(exp => `
+        <div class="map-tooltip__event" style="--cat-color:${CATEGORIES[exp.category].colorRaw}">
+          <span class="map-tooltip__cat-dot"></span>
+          <div>
+            <div class="map-tooltip__event-name">${exp.name}</div>
+            <div class="map-tooltip__event-meta">
+              <i class="ph ph-calendar"></i> ${formatDate(exp.date)} · ${formatTime(exp.date)}
+            </div>
+            ${exp.lajeBenefit ? `<div class="map-tooltip__benefit">🔥 ${exp.lajeBenefit}</div>` : ''}
+          </div>
+        </div>`).join('');
+
+      const pin = document.createElement('div');
+      pin.className = 'map-pin';
+      pin.setAttribute('data-bairro', bairroKey);
+      pin.setAttribute('data-category', exps[0].category);
+      pin.style.left = bairro.x + '%';
+      pin.style.top  = bairro.y + '%';
+      pin.style.setProperty('--cat-color', cat.colorRaw);
+
+      pin.innerHTML = `
+        <div class="map-pin__dot">
+          <span class="map-pin__icon">${count > 1 ? count : cat.emoji}</span>
+        </div>
+        <div class="map-pin__label">${bairro.label}</div>
+        <div class="map-tooltip" role="tooltip">
+          <div class="map-tooltip__header">
+            <i class="ph ph-map-pin"></i>
+            <strong>${bairro.label}</strong>
+            <span class="map-tooltip__count">${count} evento${count > 1 ? 's' : ''}</span>
+          </div>
+          <div class="map-tooltip__events">${tooltipItems}</div>
+        </div>`;
+
+      mapPins.appendChild(pin);
+    });
+
+    buildMapLegend(experiences);
+  }
+
+  function switchView(view) {
+    activeView = view;
+    const grid = document.getElementById('experiences-grid');
+    if (view === 'map') {
+      grid.style.display = 'none';
+      if (mapView) mapView.hidden = false;
+      if (btnViewCards) btnViewCards.classList.remove('active');
+      if (btnViewMap)   btnViewMap.classList.add('active');
+      renderMapPins(filterExperiences());
+    } else {
+      grid.style.display = '';
+      if (mapView) mapView.hidden = true;
+      if (btnViewCards) btnViewCards.classList.add('active');
+      if (btnViewMap)   btnViewMap.classList.remove('active');
+    }
+  }
+
+  function initMapView() {
+    if (btnViewCards) btnViewCards.addEventListener('click', () => switchView('cards'));
+    if (btnViewMap)   btnViewMap.addEventListener('click',   () => switchView('map'));
+  }
+
   // ---- Init ----
 
   function init() {
@@ -367,6 +469,7 @@
     initSmoothScroll();
     initCounters();
     initActiveNav();
+    initMapView();
   }
 
   // Run when DOM is ready
