@@ -75,7 +75,7 @@ const EXPERIENCES = [
     description: 'Uma noite inesquecível de jazz ao vivo no coração da boêmia carioca. Músicos locais e convidados especiais.',
     image: 'public/pexels-maumascaro-15987495.jpg',
     lajeBenefit: 'Lista gratuita para membros',
-    price: 'Grátis com Laje Pass',
+    price: 'Grátis com Comu Pass',
   },
   {
     id: 'exp-002',
@@ -108,7 +108,7 @@ const EXPERIENCES = [
     date: getRelativeDate(3, 10, 0),
     location: 'Centro',
     bairro: 'centro',
-    description: 'Mostra de arte contemporânea com artistas cariocas emergentes. Visita guiada exclusiva para membros Laje.',
+    description: 'Mostra de arte contemporânea com artistas cariocas emergentes. Visita guiada exclusiva para membros Comu.',
     image: 'public/tai-s-captures-OQDDvB5r0bM-unsplash.jpg',
     lajeBenefit: 'Visita guiada exclusiva',
     price: 'R$20',
@@ -212,9 +212,9 @@ const EXPERIENCES = [
 ];
 
 const LAJE_PICKS = [
-  { experienceId: 'exp-001', reason: 'Jazz ao vivo com músicos incríveis. Uma noite que o Rio merece mais vezes.', curator: 'Equipe Laje' },
-  { experienceId: 'exp-005', reason: 'A festa mais completa do mês. Open bar, vista boa e lista exclusiva pra quem é Laje.', curator: 'Lucas, Laje Picks' },
-  { experienceId: 'exp-007', reason: 'Pôr do sol de barco é sempre uma das experiências mais bonitas do Rio. Não dá pra perder.', curator: 'Equipe Laje' },
+  { experienceId: 'exp-001', reason: 'Jazz ao vivo com músicos incríveis. Uma noite que o Rio merece mais vezes.', curator: 'Equipe Comu' },
+  { experienceId: 'exp-005', reason: 'A festa mais completa do mês. Open bar, vista boa e lista exclusiva pra quem é Comu.', curator: 'Lucas, Comu Picks' },
+  { experienceId: 'exp-007', reason: 'Pôr do sol de barco é sempre uma das experiências mais bonitas do Rio. Não dá pra perder.', curator: 'Equipe Comu' },
 ];
 
 const PASS_BENEFITS = [
@@ -265,21 +265,21 @@ const COMMUNITY_STATS = [
 
 const TESTIMONIALS = [
   {
-    text: 'A Laje mudou minha relação com o Rio. Descobri lugares que nem sabia que existiam, e o melhor: sempre com gente boa.',
+    text: 'A Comu mudou minha relação com o Rio. Descobri lugares que nem sabia que existiam, e o melhor: sempre com gente boa.',
     name: 'Marina Costa',
-    role: 'Membro Laje',
+    role: 'Membro Comu',
     avatar: '👩🏽',
   },
   {
-    text: 'Como produtor, a Laje trouxe um público que realmente valoriza o que a gente faz. É parceria de verdade.',
+    text: 'Como produtor, a Comu trouxe um público que realmente valoriza o que a gente faz. É parceria de verdade.',
     name: 'Lucas Tavares',
     role: 'Produtor, Sacadura 154',
     avatar: '👨🏾',
   },
   {
-    text: 'Eu usava o Instagram pra descobrir rolê. Agora uso a Laje. A curadoria é absurda.',
+    text: 'Eu usava o Instagram pra descobrir rolê. Agora uso a Comu. A curadoria é absurda.',
     name: 'Beatriz Oliveira',
-    role: 'Membro Laje',
+    role: 'Membro Comu',
     avatar: '👩🏻',
   },
 ];
@@ -303,7 +303,7 @@ const PRODUCER_BENEFITS = [
   {
     icon: '🎁',
     title: 'Benefícios',
-    description: 'Crie ofertas exclusivas para membros Laje e fidelize público.',
+    description: 'Crie ofertas exclusivas para membros Comu e fidelize público.',
   },
   {
     icon: '📊',

@@ -34,7 +34,7 @@
       showFormSuccess(form, {
         icon: '📡',
         title: 'Indicação enviada!',
-        text: 'Vamos analisar sua indicação e, se for aprovada, ela entra no radar da Laje.',
+        text: 'Vamos analisar sua indicação e, se for aprovada, ela entra no radar da Comu.',
       });
     });
   }
@@ -99,7 +99,7 @@
       showFormSuccess(form, {
         icon: '<i class="ph-fill ph-confetti" style="font-size: 24px; color: var(--brand-primary)"></i>',
         title: 'Você está na lista!',
-        text: 'Em breve você vai receber seu convite para fazer parte da Laje.',
+        text: 'Em breve você vai receber seu convite para fazer parte da Comu.',
       });
     });
   }
