@@ -7,14 +7,13 @@
   'use strict';
 
   // ---- State ----
-  let activeTimeFilter = 'todos';
+  let selectedDateRange = null; // null or [startDate, endDate]
   let activeCategoryFilter = 'todos';
   let activeView = 'cards'; // 'cards' | 'map'
 
   // ---- DOM References ----
   const experiencesGrid = document.getElementById('experiences-grid');
   const picksGrid = document.getElementById('picks-grid');
-  const timeFilters = document.querySelectorAll('[data-time-filter]');
   const categoryFilters = document.querySelectorAll('[data-category-filter]');
   const heroCategories = document.querySelectorAll('[data-hero-category]');
   const header = document.querySelector('.header');
@@ -45,18 +44,28 @@
     return date.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
   }
 
-  // ---- Filtering ----
-
   function filterExperiences() {
     let filtered = [...EXPERIENCES];
 
-    // Time filter
-    if (activeTimeFilter === 'hoje') {
-      filtered = filtered.filter(exp => isToday(exp.date));
-    } else if (activeTimeFilter === 'mes') {
-      filtered = filtered.filter(exp => isThisMonth(exp.date));
-    } else if (activeTimeFilter === 'fds') {
-      filtered = filtered.filter(exp => isWeekend(exp.date));
+    // Date range filter
+    if (selectedDateRange && selectedDateRange.length > 0) {
+      const start = new Date(selectedDateRange[0]);
+      start.setHours(0, 0, 0, 0);
+
+      let end = null;
+      if (selectedDateRange.length > 1) {
+        end = new Date(selectedDateRange[1]);
+        end.setHours(23, 59, 59, 999);
+      } else {
+        // Single date selected
+        end = new Date(selectedDateRange[0]);
+        end.setHours(23, 59, 59, 999);
+      }
+
+      filtered = filtered.filter(exp => {
+        const expDate = new Date(exp.date);
+        return expDate >= start && expDate <= end;
+      });
     }
 
     // Category filter
@@ -194,14 +203,6 @@
   // ---- Filter Event Handlers ----
 
   function initFilters() {
-    timeFilters.forEach(btn => {
-      btn.addEventListener('click', () => {
-        activeTimeFilter = btn.dataset.timeFilter;
-        timeFilters.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        renderExperiences();
-      });
-    });
 
     categoryFilters.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -496,16 +497,56 @@
     }
   }
 
+  let datepickerInstance = null;
+
+  function initDatepicker() {
+    const input = document.getElementById('datepicker-input');
+    const wrapper = document.querySelector('.datepicker-wrapper');
+    const clearBtn = document.getElementById('datepicker-clear');
+    if (!input) return;
+
+    datepickerInstance = flatpickr(input, {
+      mode: "range",
+      dateFormat: "d/m/Y",
+      locale: "pt",
+      disableMobile: "true",
+      onChange: function(selectedDates, dateStr, instance) {
+        if (selectedDates.length > 0) {
+          wrapper.classList.add('has-date');
+          selectedDateRange = selectedDates;
+        } else {
+          wrapper.classList.remove('has-date');
+          selectedDateRange = null;
+        }
+        renderExperiences();
+      }
+    });
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (datepickerInstance) {
+          datepickerInstance.clear();
+        }
+        wrapper.classList.remove('has-date');
+        selectedDateRange = null;
+        renderExperiences();
+      });
+    }
+  }
+
   function initMapView() {
     if (btnViewCards) btnViewCards.addEventListener('click', () => switchView('cards'));
     if (btnViewMap)   btnViewMap.addEventListener('click',   () => switchView('map'));
   }
+
   // ---- Init ----
 
   function init() {
     renderExperiences();
     renderPicks();
     initFilters();
+    initDatepicker();
     initHeader();
     initMobileMenu();
     initSmoothScroll();

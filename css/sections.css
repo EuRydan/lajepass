@@ -268,16 +268,132 @@
   text-align: left;
 }
 
-.filter-group-vertical {
+.datepicker-wrapper {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
+  align-items: center;
+  width: 100%;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0 var(--space-3);
+  height: 48px;
+  transition: border-color var(--duration-fast), box-shadow var(--duration-fast);
 }
 
-.filter-group-vertical .filter-pill {
-  width: 100%;
-  justify-content: flex-start;
-  border-radius: 0;
+.datepicker-wrapper:focus-within,
+.datepicker-wrapper:hover {
+  border-color: var(--color-border-hover);
+}
+
+.datepicker-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  font-size: 20px;
+  margin-right: var(--space-2);
+}
+
+.datepicker-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  padding: 0;
+  cursor: pointer;
+}
+
+.datepicker-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.datepicker-clear-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  cursor: pointer;
+  padding: var(--space-1);
+  margin-left: var(--space-1);
+  transition: color var(--duration-fast);
+}
+
+.datepicker-clear-btn:hover {
+  color: var(--brand-primary);
+}
+
+.datepicker-wrapper.has-date .datepicker-clear-btn {
+  display: flex;
+}
+
+/* Custom Flatpickr Dark Theme Overrides matching Comu aesthetics */
+.flatpickr-calendar {
+  background: var(--color-bg-elevated) !important;
+  border: 1px solid var(--color-border) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4) !important;
+  font-family: inherit !important;
+  color: var(--color-text-primary) !important;
+}
+
+.flatpickr-day {
+  color: var(--color-text-primary) !important;
+  border-radius: 4px !important;
+}
+
+.flatpickr-day.nextMonthDay,
+.flatpickr-day.prevMonthDay {
+  color: var(--color-text-muted) !important;
+}
+
+.flatpickr-day:hover,
+.flatpickr-day:focus {
+  background: var(--color-bg-hover) !important;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+  background: var(--brand-primary) !important;
+  border-color: var(--brand-primary) !important;
+  color: #ffffff !important;
+}
+
+.flatpickr-day.inRange {
+  background: rgba(255, 1, 73, 0.15) !important;
+  border-color: transparent !important;
+  color: var(--color-text-primary) !important;
+  box-shadow: none !important;
+}
+
+.flatpickr-months .flatpickr-month {
+  color: var(--color-text-primary) !important;
+  fill: var(--color-text-primary) !important;
+}
+
+.flatpickr-current-month .numInputWrapper span.arrowUp:after {
+  border-bottom-color: var(--color-text-primary) !important;
+}
+
+.flatpickr-current-month .numInputWrapper span.arrowDown:after {
+  border-top-color: var(--color-text-primary) !important;
+}
+
+.flatpickr-months .flatpickr-prev-month,
+.flatpickr-months .flatpickr-next-month {
+  color: var(--color-text-primary) !important;
+  fill: var(--color-text-primary) !important;
+}
+
+.flatpickr-weekday {
+  color: var(--color-text-secondary) !important;
 }
 
 .hero-categories__label {
