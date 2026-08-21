@@ -213,7 +213,7 @@ const EXPERIENCES = [
 
 const LAJE_PICKS = [
   { experienceId: 'exp-001', reason: 'Jazz ao vivo com músicos incríveis. Uma noite que o Rio merece mais vezes.', curator: 'Equipe Comu' },
-  { experienceId: 'exp-005', reason: 'A festa mais completa do mês. Open bar, vista boa e lista exclusiva pra quem é Comu.', curator: 'Lucas, Comu Picks' },
+  { experienceId: 'exp-005', reason: 'A festa mais completa do mês. Open bar, vista boa e lista exclusiva pra quem é Comu.', curator: 'Lucas, Comu Radar' },
   { experienceId: 'exp-007', reason: 'Pôr do sol de barco é sempre uma das experiências mais bonitas do Rio. Não dá pra perder.', curator: 'Equipe Comu' },
 ];
 
