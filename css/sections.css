@@ -83,6 +83,15 @@
   color: var(--color-accent);
 }
 
+.hero__title-logo {
+  display: inline-block;
+  height: 0.9em;
+  width: auto;
+  vertical-align: middle;
+  margin-top: -0.1em;
+  margin-inline: 0.1em;
+}
+
 .hero__subtitle-new {
   font-family: var(--font-body);
   font-weight: var(--font-weight-regular);
