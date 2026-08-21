@@ -119,6 +119,7 @@
 
     // If map view is active, update pins instead of cards
     if (activeView === 'map') {
+      initLeafletMap();
       renderMapPins(filtered);
       return;
     }
@@ -361,15 +362,15 @@
     });
 
     sections.forEach(section => observer.observe(section));
-  }
-
-  // ---- Map View ----
+  }  // ---- Map View ----
 
   const btnViewCards   = document.getElementById('btn-view-cards');
   const btnViewMap     = document.getElementById('btn-view-map');
   const mapView        = document.getElementById('map-view');
-  const mapPins        = document.getElementById('map-pins');
   const mapLegendItems = document.getElementById('map-legend-items');
+
+  let mapInstance = null;
+  let mapMarkers = [];
 
   function buildMapLegend(experiences) {
     if (!mapLegendItems) return;
@@ -380,9 +381,43 @@
     }).join('');
   }
 
+  function initLeafletMap() {
+    if (mapInstance) {
+      setTimeout(() => {
+        mapInstance.invalidateSize();
+      }, 50);
+      return;
+    }
+
+    const mapContainer = document.getElementById('map-container');
+    if (!mapContainer) return;
+
+    // Center on Rio's cultural core (around Botafogo / Copacabana)
+    mapInstance = L.map('map-container', {
+      center: [-22.958, -43.190],
+      zoom: 13,
+      minZoom: 11,
+      maxZoom: 16,
+      zoomControl: true,
+      attributionControl: false
+    });
+
+    // Add CartoDB Dark Matter tile layer
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      maxZoom: 19
+    }).addTo(mapInstance);
+
+    setTimeout(() => {
+      mapInstance.invalidateSize();
+    }, 50);
+  }
+
   function renderMapPins(experiences) {
-    if (!mapPins) return;
-    mapPins.innerHTML = '';
+    if (!mapInstance) return;
+
+    // Clear existing markers from the map
+    mapMarkers.forEach(marker => mapInstance.removeLayer(marker));
+    mapMarkers = [];
 
     const byBairro = {};
     experiences.forEach(exp => {
@@ -393,6 +428,8 @@
 
     Object.entries(byBairro).forEach(([bairroKey, exps]) => {
       const bairro = BAIRROS[bairroKey];
+      if (!bairro.lat || !bairro.lng) return;
+
       const cat    = CATEGORIES[exps[0].category];
       const count  = exps.length;
 
@@ -408,31 +445,33 @@
           </div>
         </div>`).join('');
 
-      const pin = document.createElement('div');
-      pin.className = 'map-pin';
-      pin.setAttribute('data-bairro', bairroKey);
-      pin.setAttribute('data-category', exps[0].category);
-      pin.style.left = bairro.x + '%';
-      pin.style.top  = bairro.y + '%';
-      pin.style.setProperty('--cat-color', cat.colorRaw);
-
-      pin.innerHTML = `
-        <div class="map-pin__body">
-          <div class="map-pin__dot">
-            <span class="map-pin__icon">${count > 1 ? count : cat.emoji}</span>
+      const pinHtml = `
+        <div class="map-pin">
+          <div class="map-pin__body">
+            <div class="map-pin__dot" style="--cat-color: ${cat.colorRaw}">
+              <span class="map-pin__icon">${count > 1 ? count : cat.emoji}</span>
+            </div>
+            <div class="map-pin__label">${bairro.label}</div>
           </div>
-          <div class="map-pin__label">${bairro.label}</div>
-        </div>
-        <div class="map-tooltip" role="tooltip">
-          <div class="map-tooltip__header">
-            <i class="ph ph-map-pin"></i>
-            <strong>${bairro.label}</strong>
-            <span class="map-tooltip__count">${count} evento${count > 1 ? 's' : ''}</span>
+          <div class="map-tooltip" role="tooltip">
+            <div class="map-tooltip__header">
+              <i class="ph ph-map-pin"></i>
+              <strong>${bairro.label}</strong>
+              <span class="map-tooltip__count">${count} evento${count > 1 ? 's' : ''}</span>
+            </div>
+            <div class="map-tooltip__events">${tooltipItems}</div>
           </div>
-          <div class="map-tooltip__events">${tooltipItems}</div>
         </div>`;
 
-      mapPins.appendChild(pin);
+      const customIcon = L.divIcon({
+        className: 'leaflet-custom-marker',
+        html: pinHtml,
+        iconSize: [36, 36],
+        iconAnchor: [18, 18]
+      });
+
+      const marker = L.marker([bairro.lat, bairro.lng], { icon: customIcon }).addTo(mapInstance);
+      mapMarkers.push(marker);
     });
 
     buildMapLegend(experiences);
@@ -446,6 +485,8 @@
       if (mapView) mapView.hidden = false;
       if (btnViewCards) btnViewCards.classList.remove('active');
       if (btnViewMap)   btnViewMap.classList.add('active');
+      
+      initLeafletMap();
       renderMapPins(filterExperiences());
     } else {
       grid.style.display = '';
@@ -459,7 +500,6 @@
     if (btnViewCards) btnViewCards.addEventListener('click', () => switchView('cards'));
     if (btnViewMap)   btnViewMap.addEventListener('click',   () => switchView('map'));
   }
-
   // ---- Init ----
 
   function init() {

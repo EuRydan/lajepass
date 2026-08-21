@@ -12,22 +12,22 @@ const CATEGORIES = {
   experiencias: { emoji: '<i class="ph ph-sparkle"></i>', label: 'Experiências', color: 'var(--color-gold)', colorRaw: '#FFB84D' },
 };
 
-// Coordenadas dos bairros no mapa SVG (em % — left, top)
+// Coordenadas dos bairros no mapa (geográficas lat, lng e SVG em % — left, top)
 const BAIRROS = {
-  lapa:        { x: 42.5, y: 46.5, label: 'Lapa' },
-  santa_teresa:{ x: 46.0, y: 44.0, label: 'Santa Teresa' },
-  centro:      { x: 43.5, y: 42.5, label: 'Centro' },
-  ipanema:     { x: 34.0, y: 65.5, label: 'Ipanema' },
-  copacabana:  { x: 37.5, y: 68.0, label: 'Copacabana' },
-  leblon:      { x: 30.5, y: 65.0, label: 'Leblon' },
-  barra:       { x: 17.0, y: 66.5, label: 'Barra da Tijuca' },
-  botafogo:    { x: 39.0, y: 61.0, label: 'Botafogo' },
-  gavea:       { x: 28.0, y: 60.5, label: 'Gávea' },
-  tijuca:      { x: 42.0, y: 35.0, label: 'Tijuca' },
-  flamengo:    { x: 41.5, y: 56.0, label: 'Flamengo' },
-  glória:      { x: 42.0, y: 52.0, label: 'Glória' },
-  urca:        { x: 40.5, y: 66.5, label: 'Urca' },
-  catete:      { x: 41.8, y: 53.5, label: 'Catete' },
+  lapa:        { x: 42.5, y: 46.5, lat: -22.9134, lng: -43.1819, label: 'Lapa' },
+  santa_teresa:{ x: 46.0, y: 44.0, lat: -22.9254, lng: -43.1932, label: 'Santa Teresa' },
+  centro:      { x: 43.5, y: 42.5, lat: -22.9064, lng: -43.1798, label: 'Centro' },
+  ipanema:     { x: 34.0, y: 65.5, lat: -22.9836, lng: -43.2045, label: 'Ipanema' },
+  copacabana:  { x: 37.5, y: 68.0, lat: -22.9698, lng: -43.1847, label: 'Copacabana' },
+  leblon:      { x: 30.5, y: 65.0, lat: -22.9847, lng: -43.2231, label: 'Leblon' },
+  barra:       { x: 17.0, y: 66.5, lat: -23.0016, lng: -43.3444, label: 'Barra da Tijuca' },
+  botafogo:    { x: 39.0, y: 61.0, lat: -22.9519, lng: -43.1856, label: 'Botafogo' },
+  gavea:       { x: 28.0, y: 60.5, lat: -22.9789, lng: -43.2329, label: 'Gávea' },
+  tijuca:      { x: 42.0, y: 35.0, lat: -22.9351, lng: -43.2431, label: 'Tijuca' },
+  flamengo:    { x: 41.5, y: 56.0, lat: -22.9372, lng: -43.1789, label: 'Flamengo' },
+  glória:      { x: 42.0, y: 52.0, lat: -22.9214, lng: -43.1764, label: 'Glória' },
+  urca:        { x: 40.5, y: 66.5, lat: -22.9554, lng: -43.1647, label: 'Urca' },
+  catete:      { x: 41.8, y: 53.5, lat: -22.9272, lng: -43.1797, label: 'Catete' },
 };
 
 // Helper: generate dates relative to "today"

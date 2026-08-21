@@ -1033,18 +1033,61 @@
 .map-container {
   position: relative;
   width: 100%;
-  overflow: visible;
-  background: transparent;
-  border: none;
-  box-shadow: none;
+  height: 550px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-secondary) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
   user-select: none;
 }
 
-.map-svg-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  pointer-events: none;
+/* Custom Leaflet Dark/Purple Aesthetics */
+.leaflet-container {
+  background: var(--color-bg-secondary) !important;
+  font-family: inherit !important;
+}
+
+.leaflet-tile-container {
+  /* Gives CartoDB Dark Matter tiles a purple tint matching Comu theme */
+  filter: hue-rotate(48deg) saturate(1.1) brightness(0.65) contrast(1.05);
+}
+
+.leaflet-custom-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.leaflet-custom-marker .map-pin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: none;
+}
+
+/* Custom Leaflet Controls */
+.leaflet-bar {
+  border: 1px solid var(--color-border) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.leaflet-bar a {
+  background-color: var(--color-bg-elevated) !important;
+  color: var(--color-text-primary) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  transition: background-color var(--duration-fast);
+}
+
+.leaflet-bar a:hover {
+  background-color: var(--color-bg-hover) !important;
+  color: var(--color-accent) !important;
+}
+
+.leaflet-bar a.leaflet-disabled {
+  background-color: var(--color-bg-secondary) !important;
+  color: var(--color-text-muted) !important;
 }
 
 /* ---- MAP PINS ---- */
