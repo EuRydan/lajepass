@@ -378,14 +378,43 @@
     const categoriesUsed = [...new Set(experiences.map(e => e.category))];
     mapLegendItems.innerHTML = categoriesUsed.map(cat => {
       const c = CATEGORIES[cat];
-      return `<span class="map-legend__item" style="--cat-color:${c.colorRaw}">${c.emoji} ${c.label}</span>`;
+      return `
+        <button class="map-legend__item" data-category="${cat}" style="--cat-color:${c.colorRaw}">
+          <span class="map-legend__pin"><span class="map-legend__pin-icon">${c.emoji}</span></span>
+          <span class="map-legend__label">${c.label}</span>
+        </button>`;
     }).join('');
+
+    // Add click listeners to make the legend items interactive toggles
+    mapLegendItems.querySelectorAll('.map-legend__item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cat = btn.dataset.category;
+        
+        // If clicking the currently active category, toggle to "todos" (show all), otherwise select it
+        const newCat = (activeCategoryFilter === cat) ? 'todos' : cat;
+        activeCategoryFilter = newCat;
+        
+        // Update sidebar categories UI (both grid and hero shortcuts)
+        const sidebarBtns = document.querySelectorAll('[data-hero-category]');
+        sidebarBtns.forEach(b => {
+          b.classList.toggle('active', b.dataset.heroCategory === newCat);
+        });
+
+        const categoryFilterBtns = document.querySelectorAll('[data-category-filter]');
+        categoryFilterBtns.forEach(b => {
+          b.classList.toggle('active', b.dataset.categoryFilter === newCat);
+        });
+
+        renderExperiences();
+      });
+    });
   }
 
   function initLeafletMap() {
     if (mapInstance) {
       setTimeout(() => {
         mapInstance.invalidateSize();
+        mapInstance.setView([-22.958, -43.190], 13);
       }, 50);
       return;
     }
@@ -410,7 +439,8 @@
 
     setTimeout(() => {
       mapInstance.invalidateSize();
-    }, 50);
+      mapInstance.setView([-22.958, -43.190], 13);
+    }, 100);
   }
 
   function renderMapPins(experiences) {

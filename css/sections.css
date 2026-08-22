@@ -1472,15 +1472,57 @@
 .map-legend__item {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
   font-family: var(--font-display);
   font-size: var(--text-xs);
   font-weight: var(--font-weight-semibold);
-  color: var(--brand-support);
-  padding: 3px 10px;
-  border-radius: 20px;
-  border: 1.5px solid var(--cat-color, #ccc);
-  background: color-mix(in srgb, var(--cat-color, #ccc) 8%, white);
+  color: var(--color-text-primary) !important;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.map-legend__item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--cat-color);
+  transform: translateY(-1px);
+}
+
+/* Mini pin icon matching the map pin shape */
+.map-legend__pin {
+  width: 20px;
+  height: 20px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: var(--cat-color, var(--brand-primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.20), 0 0 0 1.5px rgba(255,255,255,0.6);
+  flex-shrink: 0;
+  transition: transform var(--duration-fast);
+}
+
+.map-legend__item:hover .map-legend__pin {
+  transform: rotate(-45deg) scale(1.1);
+}
+
+.map-legend__pin-icon {
+  transform: rotate(45deg);
+  font-size: 9px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+}
+
+.map-legend__label {
+  line-height: 1;
 }
 
 /* Responsive pin tooltip */
