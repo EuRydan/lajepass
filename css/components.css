@@ -113,7 +113,7 @@
 
 .card {
   position: relative;
-  border-radius: var(--radius-xl);
+  border-radius: 0;
   overflow: hidden;
   background: var(--color-bg-elevated);
   border: none;
@@ -448,7 +448,7 @@
 .benefit-card {
   text-align: center;
   padding: var(--space-8) var(--space-6);
-  border-radius: var(--radius-xl);
+  border-radius: 0;
   background: var(--color-bg-secondary);
   border: none;
   transition: all var(--duration-base) var(--ease-out);
@@ -512,7 +512,7 @@
 
 .testimonial {
   padding: var(--space-8);
-  border-radius: var(--radius-xl);
+  border-radius: 0;
   background: var(--color-bg-secondary);
   border: none;
   position: relative;
