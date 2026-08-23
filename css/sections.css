@@ -689,29 +689,11 @@
   overflow: visible;
 }
 
-@media (min-width: 1025px) {
-  .pass::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    right: 0;
-    background: #ffffff;
-    z-index: 0;
-  }
-  
-  .pass > .container {
-    position: relative;
-    z-index: 1;
-  }
-}
-
 .pass__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-16);
-  align-items: stretch;
+  align-items: center;
 }
 
 .pass__info {
@@ -720,27 +702,6 @@
 
 .pass__visual {
   order: 2;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-8);
-  overflow: visible;
-  z-index: 1;
-}
-
-.pass__visual .pass-card {
-  position: relative;
-  z-index: 1;
-}
-
-@media (max-width: 1024px) {
-  .pass__visual {
-    background: #ffffff;
-    margin-inline: calc((100vw - 100%) / -2);
-    padding-inline: calc((100vw - 100%) / 2);
-    padding-block: var(--space-8);
-  }
 }
 
 .pass__title {
