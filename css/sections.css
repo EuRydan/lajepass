@@ -704,18 +704,20 @@
   order: 2;
 }
 
-.pass__title-svg {
-  display: block;
+.pass__title {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-weight-black);
+  line-height: 1.1;
+  letter-spacing: var(--tracking-tight);
+  text-align: center;
   margin-inline: auto;
-  width: 100%;
-  max-width: 500px;
-  height: auto;
   margin-bottom: var(--space-8);
+  max-width: 650px;
 }
 
 @media (min-width: 768px) {
-  .pass__title-svg {
-    max-width: 603.78px;
+  .pass__title {
+    font-size: 54px;
   }
 }
 

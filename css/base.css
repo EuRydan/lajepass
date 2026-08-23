@@ -121,6 +121,10 @@ body {
   background-clip: text;
 }
 
+.text-accent {
+  color: var(--color-accent);
+}
+
 /* Divider */
 .divider {
   width: 60px;
