@@ -71,14 +71,6 @@
 .hero__title-line {
   display: block;
 }
-
-.hero__title-new .font-gunter {
-  font-family: var(--font-accent);
-  text-transform: none;
-  font-weight: normal;
-  font-style: italic;
-}
-
 .hero__title-new .text-accent {
   color: var(--color-accent);
 }
