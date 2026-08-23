@@ -913,6 +913,16 @@
   margin-inline: auto;
 }
 
+img.pass-card {
+  background: none;
+  border: none;
+  padding: 0;
+  aspect-ratio: auto;
+  overflow: visible;
+  display: block;
+  filter: drop-shadow(0 10px 30px rgba(255, 1, 73, 0.15));
+}
+
 .pass-card::before {
   content: '';
   position: absolute;
