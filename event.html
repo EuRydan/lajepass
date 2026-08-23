@@ -37,11 +37,7 @@
        HEADER (Event Specific)
        ================================================ -->
   <header class="header scrolled">
-    <div class="container header__container">
-      <a href="index.html" class="header__logo">
-        <img class="logo-image" src="public/copiar.png" alt="Comu logo" style="height: 38px; width: auto;" />
-      </a>
-      
+    <div class="header__inner">
       <nav class="header__nav">
         <a href="index.html" class="header__link"><i class="ph ph-arrow-left"></i> Voltar para Início</a>
       </nav>
@@ -57,19 +53,18 @@
     <section id="event-hero" class="event-hero">
       <div class="event-hero__bg">
         <img id="event-bg-image" class="event-hero__bg-img" src="" alt="" />
-        <div class="event-hero__overlay"></div>
       </div>
-      
-      <div class="container event-hero__container">
-        <div class="event-hero__content">
-          <span id="event-badge" class="badge"></span>
-          <h1 id="event-title" class="event-hero__title"></h1>
-          <div class="event-hero__meta">
-            <span class="event-hero__meta-item"><i class="ph ph-map-pin"></i> <span id="event-meta-location"></span></span>
-          </div>
-        </div>
-      </div>
+      <div class="ticket-divider"></div>
     </section>
+
+    <!-- Event Header (Title, Badge, Location) below the hero banner -->
+    <header class="event-header container">
+      <span id="event-badge" class="badge"></span>
+      <h1 id="event-title" class="event-header__title"></h1>
+      <div class="event-header__meta">
+        <span class="event-header__meta-item"><i class="ph ph-map-pin"></i> <span id="event-meta-location"></span></span>
+      </div>
+    </header>
 
     <!-- Details Grid Section -->
     <section class="event-details">
