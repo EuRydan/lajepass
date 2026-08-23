@@ -567,11 +567,27 @@
 .picks .picks__intro {
   color: #ffffff;
 }
-
 .picks .gradient-text {
   background: none;
   -webkit-text-fill-color: var(--color-bg-primary);
   color: var(--color-bg-primary);
+}
+
+.picks .btn--picks {
+  background: #ffffff;
+  color: var(--color-bg-primary);
+  border-radius: var(--radius-sm);
+  margin-top: var(--space-6);
+  font-weight: var(--font-weight-bold);
+  box-shadow: var(--shadow-sm);
+  display: inline-flex;
+  align-self: flex-start;
+}
+
+.picks .btn--picks:hover {
+  transform: translateY(-2px);
+  background: var(--brand-white);
+  box-shadow: var(--shadow-md);
 }
 
 .picks-card__content {
