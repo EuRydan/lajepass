@@ -118,6 +118,10 @@
   background: var(--color-bg-elevated);
   border: none;
   transition: all var(--duration-base) var(--ease-out);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
 }
 
 .card:hover {
@@ -239,11 +243,15 @@
 
 .pick-card {
   position: relative;
-  border-radius: var(--radius-2xl);
+  border-radius: 0;
   overflow: hidden;
   background: var(--color-bg-elevated);
   border: none;
   transition: all var(--duration-base) var(--ease-out);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
 }
 
 .pick-card:hover {

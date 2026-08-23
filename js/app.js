@@ -91,7 +91,7 @@
       : '';
 
     return `
-      <article class="card animate-on-scroll" data-category="${exp.category}">
+      <a href="event.html?id=${exp.id}" class="card animate-on-scroll" data-category="${exp.category}">
         <div class="card__image-wrapper">
           <img 
             class="card__image" 
@@ -119,7 +119,7 @@
           <p class="card__description">${exp.description}</p>
           ${benefitTagHTML}
         </div>
-      </article>
+      </a>
     `;
   }
 
@@ -165,7 +165,7 @@
     const cat = CATEGORIES[exp.category];
 
     return `
-      <article class="pick-card animate-on-scroll">
+      <a href="event.html?id=${exp.id}" class="pick-card animate-on-scroll">
         <div class="pick-card__image-wrapper">
           <img 
             class="pick-card__image" 
@@ -191,7 +191,7 @@
           <blockquote class="pick-card__reason">${pick.reason}</blockquote>
           <p class="pick-card__curator">— ${pick.curator}</p>
         </div>
-      </article>
+      </a>
     `;
   }
 
@@ -465,7 +465,7 @@
       const count  = exps.length;
 
       const tooltipItems = exps.map(exp => `
-        <div class="map-tooltip__event" style="--cat-color:${CATEGORIES[exp.category].colorRaw}">
+        <a href="event.html?id=${exp.id}" class="map-tooltip__event" style="--cat-color:${CATEGORIES[exp.category].colorRaw}; text-decoration: none; color: inherit; display: flex;">
           <span class="map-tooltip__cat-dot"></span>
           <div>
             <div class="map-tooltip__event-name">${exp.name}</div>
@@ -474,7 +474,7 @@
             </div>
             ${exp.lajeBenefit ? `<div class="map-tooltip__benefit">🔥 ${exp.lajeBenefit}</div>` : ''}
           </div>
-        </div>`).join('');
+        </a>`).join('');
 
       const pinHtml = `
         <div class="map-pin">
