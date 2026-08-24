@@ -3,8 +3,33 @@
    ========================================================================== */
 
 .event-page-body {
-  background: var(--color-bg-primary);
-  color: var(--color-text-primary);
+  background: #ffffff;
+  color: var(--brand-support);
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f6f4fa;
+  --color-bg-tertiary: #ffffff;
+  --color-bg-elevated: #ffffff;
+  --color-text-primary: var(--brand-support);
+  --color-text-secondary: #585878;
+  --color-text-muted: #75759a;
+  --color-border: rgba(29, 7, 70, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(29, 7, 70, 0.08);
+  --color-gold: #d97706; /* darker gold for readability on white bg */
+}
+
+.event-page-body .header__link:hover,
+.event-page-body .header__link.active {
+  color: var(--brand-primary);
+  background: rgba(29, 7, 70, 0.05);
+}
+
+.event-page-body .event-sidebar-card__icon-wrapper {
+  background: rgba(29, 7, 70, 0.03);
+}
+
+.event-page-body .recommended-section {
+  background: #faf8fd;
 }
 
 .event-main {
