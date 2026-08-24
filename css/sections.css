@@ -1570,3 +1570,106 @@
     font-size: 12px;
   }
 }
+
+/* ---- COMO FUNCIONA ---- */
+.como-funciona {
+  background: var(--brand-white);
+  padding-block: var(--space-20);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.como-funciona .section-title {
+  color: var(--brand-support) !important;
+}
+
+.como-funciona .section-label {
+  color: var(--brand-primary) !important;
+}
+
+.como-funciona__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-12);
+}
+
+.como-funciona__step {
+  padding: var(--space-6);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 0; /* straight borders */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: all var(--duration-base) var(--ease-out);
+}
+
+.como-funciona__step:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-primary);
+  box-shadow: 0 10px 25px rgba(255, 1, 73, 0.08);
+}
+
+.como-funciona__step-num {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-black);
+  color: var(--brand-primary);
+  margin-bottom: var(--space-4);
+  display: block;
+}
+
+.como-funciona__step-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--brand-support);
+  margin-bottom: var(--space-2);
+}
+
+.como-funciona__step-text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+.como-funciona__cta-wrapper {
+  text-align: center;
+  margin-top: var(--space-10);
+}
+
+.como-funciona__cta {
+  padding: var(--space-6);
+  background: #ffffff;
+  border: 1px dashed rgba(255, 1, 73, 0.2);
+  border-radius: 0;
+  display: inline-block;
+  width: 100%;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.como-funciona__cta p {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--brand-support);
+  margin: 0;
+}
+
+.como-funciona__cta-link {
+  color: var(--brand-primary);
+  text-decoration: underline;
+  margin-left: var(--space-1);
+  transition: color var(--duration-fast);
+}
+
+.como-funciona__cta-link:hover {
+  color: var(--color-accent-hover);
+}
+
+@media (max-width: 768px) {
+  .como-funciona__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
