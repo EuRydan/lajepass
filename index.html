@@ -125,10 +125,39 @@
     <div class="hero-divider">
       <img src="public/divisória hero.svg" alt="" />
     </div>
-  </section>
 
   <!-- ================================================
-       02. CATEGORIAS E EXPERIÊNCIAS
+       02. COMU RADAR
+       ================================================ -->
+  <section class="section picks" id="picks">
+    <div class="container">
+      <div class="picks-card">
+        <div class="picks-card__content">
+          <div class="picks-card__info">
+            <div class="section-header animate-on-scroll">
+              <span class="section-label" style="color: #ffffff;"><i class="ph-fill ph-broadcast"></i> Comu Radar</span>
+              <h2 class="section-title">O QUE ESTÁ NO SEU RADAR?</h2>
+              <p class="section-subtitle">Os melhores rolês do Rio, filtrados por quem vive a cidade.</p>
+              <div class="picks-categories" style="color: rgba(255, 255, 255, 0.85); font-family: var(--font-display); font-size: var(--text-sm); font-weight: var(--font-weight-semibold); margin-top: var(--space-4); letter-spacing: var(--tracking-wide);">
+                Festas &middot; Shows &middot; Gastronomia &middot; Cultura &middot; Experiências
+              </div>
+            </div>
+
+            <a href="https://chat.whatsapp.com/CaifVi3wOTmDLgZnw5arJS" target="_blank" class="btn btn--picks animate-on-scroll">
+              <i class="fa-brands fa-whatsapp" style="font-size: 1.25em;"></i> ENTRAR NO RADAR GRATUITO
+            </a>
+          </div>
+          <div class="picks-card__visual animate-on-scroll">
+            <img src="public/tai-s-captures-OQDDvB5r0bM-unsplash.jpg" alt="Laje Radar Curadoria" class="picks-card__image" loading="lazy" />
+          </div>
+        </div>
+      </div> <!-- /picks-card -->
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       03. CATEGORIAS E EXPERIÊNCIAS
        ================================================ -->
   <section class="section experiences" id="experiencias">
     <div class="container experiences-layout-grid">
@@ -160,14 +189,6 @@
           <button class="hero__category" data-hero-category="cultura"><i class="ph ph-mask-happy"></i> Cultura</button>
           <button class="hero__category" data-hero-category="experiencias"><i class="ph ph-sparkle"></i> Experiências</button>
         </div>
-      </aside>
-
-      <!-- Right Main Content -->
-      <div class="experiences-main">
-        <div class="section-header animate-on-scroll" style="text-align: left; align-items: flex-start; margin-bottom: var(--space-6);">
-          <h2 class="section-title">O que está acontecendo</h2>
-          <p class="section-subtitle" style="margin-inline: 0; text-align: left;">Eventos, festas, gastronomia, cultura e tudo que movimenta o Rio.</p>
-        </div>
 
         <!-- View Toggle -->
         <div class="view-toggle" id="view-toggle">
@@ -177,6 +198,14 @@
           <button class="view-toggle__btn" id="btn-view-map" aria-label="Ver no mapa">
             <i class="ph ph-map-trifold"></i> Mapa
           </button>
+        </div>
+      </aside>
+
+      <!-- Experiences Main Content Area -->
+      <div class="experiences-main">
+        <div class="experiences__header">
+          <h2 class="section-title">O que está acontecendo</h2>
+          <p class="section-subtitle">Eventos e rolês em destaque pela cidade selecionados a dedo.</p>
         </div>
 
         <!-- Experience Cards Grid (rendered by JS) -->
@@ -200,34 +229,7 @@
 
 
   <!-- ================================================
-       03. LAJE RADAR
-       ================================================ -->
-  <section class="section picks" id="picks">
-    <div class="container">
-      <div class="picks-card">
-        <div class="picks-card__content">
-          <div class="picks-card__info">
-            <div class="section-header animate-on-scroll">
-              <span class="section-label" style="color: #ffffff;"><i class="ph-fill ph-broadcast"></i> Comu Radar</span>
-              <h2 class="section-title">O que vale a pena, <span class="gradient-text">chega primeiro.</span></h2>
-              <p class="section-subtitle">Entre no Comu Radar e receba nossa curadoria de eventos direto no WhatsApp.</p>
-            </div>
-
-            <a href="https://chat.whatsapp.com/CaifVi3wOTmDLgZnw5arJS" target="_blank" class="btn btn--picks animate-on-scroll">
-              <i class="fa-brands fa-whatsapp" style="font-size: 1.25em;"></i> Entrar no Radar
-            </a>
-          </div>
-          <div class="picks-card__visual animate-on-scroll">
-            <img src="public/tai-s-captures-OQDDvB5r0bM-unsplash.jpg" alt="Laje Radar Curadoria" class="picks-card__image" loading="lazy" />
-          </div>
-        </div>
-      </div> <!-- /picks-card -->
-    </div>
-  </section>
-
-
-  <!-- ================================================
-       04. LAJE PASS
+       04. COMU PASS
        ================================================ -->
   <section class="section pass" id="pass" style="padding-top: 0; position: relative;">
     <!-- Divider separating white picks area from dark pass area -->
@@ -241,45 +243,37 @@
       <!-- Centered Header -->
       <div class="section-header animate-on-scroll">
         <span class="section-label"><i class="ph-fill ph-credit-card"></i> Comu Pass</span>
-        <h2 class="section-title pass__title">Mais do que acesso.<br><span class="text-accent">Você faz parte.</span></h2>
+        <h2 class="section-title pass__title">VIVER MAIS.<br><span class="text-accent">PAGAR MENOS.</span></h2>
       </div>
 
       <div class="pass__content">
         <div class="pass__info animate-left">
           <p class="pass__text">
-            O Comu Pass não é um ingresso. É uma chave para experiências, descontos, comunidade e tudo que o Rio tem de melhor — curado para você.
+            Com o Comu Pass, você desbloqueia benefícios exclusivos em eventos, bares, restaurantes e experiências parceiros.
           </p>
 
           <div class="pass__benefits">
             <div class="pass__benefit-item">
-              <span class="pass__benefit-icon"><i class="ph ph-ticket"></i></span>
+              <span class="pass__benefit-icon"><i class="ph ph-gift"></i></span>
+              <span class="pass__benefit-label">Compre 1 &rarr; Ganhe 1</span>
+            </div>
+            <div class="pass__benefit-item">
+              <span class="pass__benefit-icon"><i class="ph ph-percent"></i></span>
               <span class="pass__benefit-label">Descontos</span>
             </div>
             <div class="pass__benefit-item">
-              <span class="pass__benefit-icon"><i class="ph ph-list-dashes"></i></span>
-              <span class="pass__benefit-label">Listas</span>
-            </div>
-            <div class="pass__benefit-item">
-              <span class="pass__benefit-icon"><i class="ph ph-door-open"></i></span>
+              <span class="pass__benefit-icon"><i class="ph ph-ticket"></i></span>
               <span class="pass__benefit-label">Acessos</span>
             </div>
             <div class="pass__benefit-item">
               <span class="pass__benefit-icon"><i class="ph ph-star"></i></span>
               <span class="pass__benefit-label">Experiências</span>
             </div>
-            <div class="pass__benefit-item">
-              <span class="pass__benefit-icon"><i class="ph ph-envelope-simple"></i></span>
-              <span class="pass__benefit-label">Convites</span>
-            </div>
-            <div class="pass__benefit-item">
-              <span class="pass__benefit-icon"><i class="ph ph-book-open"></i></span>
-              <span class="pass__benefit-label">Conteúdos</span>
-            </div>
-            <div class="pass__benefit-item">
-              <span class="pass__benefit-icon"><i class="ph ph-users"></i></span>
-              <span class="pass__benefit-label">Comunidade</span>
-            </div>
           </div>
+
+          <p class="pass__savings-note" style="color: var(--brand-primary); font-family: var(--font-display); font-size: var(--text-sm); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-6);">
+            Use alguns benefícios e o Pass pode se pagar sozinho.
+          </p>
 
           <!-- Inline signup form -->
           <form id="pass-form" class="pass__signup" style="display: flex; flex-direction: column; gap: var(--space-3); max-width: 400px;">
