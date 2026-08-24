@@ -904,6 +904,75 @@
   width: 100%;
 }
 
+/* ---- FAQ Accordion ---- */
+
+.faq__accordion {
+  max-width: 800px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.faq__item {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  transition: all var(--duration-base) var(--ease-out);
+}
+
+.faq__item:hover {
+  border-color: rgba(255, 1, 73, 0.2);
+  box-shadow: var(--shadow-glow-purple);
+}
+
+.faq__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-6);
+  background: transparent;
+  border: none;
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-semibold);
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq__icon {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.faq__question[aria-expanded="true"] .faq__icon {
+  transform: rotate(180deg);
+  color: var(--brand-primary);
+}
+
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--duration-base) var(--ease-out);
+}
+
+.faq__answer-content {
+  padding: 0 var(--space-6) var(--space-5) var(--space-6);
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+.faq__answer-content p {
+  margin-bottom: var(--space-3);
+}
+
+.faq__answer-content p:last-child {
+  margin-bottom: 0;
+}
+
 /* ---- Laje Pass Card Visual ---- */
 
 .pass-card {

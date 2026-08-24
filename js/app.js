@@ -570,6 +570,34 @@
     if (btnViewMap)   btnViewMap.addEventListener('click',   () => switchView('map'));
   }
 
+  function initFaqAccordion() {
+    const faqQuestions = document.querySelectorAll('.faq__question');
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        const answer = question.nextElementSibling;
+        const isExpanded = question.getAttribute('aria-expanded') === 'true';
+        
+        // Close other open FAQ items
+        document.querySelectorAll('.faq__item').forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
+            otherItem.querySelector('.faq__answer').style.maxHeight = null;
+          }
+        });
+
+        // Toggle current item
+        if (isExpanded) {
+          question.setAttribute('aria-expanded', 'false');
+          answer.style.maxHeight = null;
+        } else {
+          question.setAttribute('aria-expanded', 'true');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+  }
+
   // ---- Init ----
 
   function init() {
@@ -583,6 +611,7 @@
     initCounters();
     initActiveNav();
     initMapView();
+    initFaqAccordion();
   }
 
   // Run when DOM is ready
