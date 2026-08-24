@@ -817,9 +817,10 @@
 /* ---- Footer ---- */
 
 .footer {
-  background: var(--color-bg-secondary);
-  border-top: none;
-  padding-block: var(--space-16) var(--space-8);
+  background: #160538; /* Matches brand-dark color consistently on all pages */
+  color: var(--brand-white);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-block: var(--space-20) var(--space-12);
 }
 
 .footer__grid {
@@ -831,20 +832,20 @@
 
 .footer__brand-text {
   font-size: var(--text-sm);
-  color: var(--color-text-muted);
+  color: #a8a8bf;
   margin-top: var(--space-4);
-  max-width: 300px;
-  line-height: var(--leading-relaxed);
+  max-width: 320px;
+  line-height: 1.6;
 }
 
 .footer__heading {
   font-family: var(--font-display);
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
   font-weight: var(--font-weight-bold);
-  color: var(--color-text-primary);
+  color: #ffffff;
   text-transform: uppercase;
-  letter-spacing: var(--tracking-wider);
-  margin-bottom: var(--space-4);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-6);
 }
 
 .footer__links {
@@ -855,18 +856,21 @@
 
 .footer__link {
   font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  transition: color var(--duration-fast);
+  color: #a8a8bf;
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
+  display: inline-block;
 }
 
 .footer__link:hover {
-  color: var(--color-accent);
+  color: var(--brand-primary);
+  transform: translateX(4px);
 }
 
 .footer__socials {
   display: flex;
   gap: var(--space-3);
-  margin-top: var(--space-4);
+  margin-top: var(--space-6);
 }
 
 .footer__social-link {
@@ -876,31 +880,28 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-md);
-  background: var(--color-bg-hover);
-  color: var(--color-text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+  color: #a8a8bf;
   font-size: var(--text-lg);
-  transition: all var(--duration-fast);
+  transition: all var(--duration-fast) var(--ease-out);
 }
 
 .footer__social-link:hover {
   background: var(--color-accent);
   color: white;
+  transform: translateY(-2px);
 }
 
 .footer__bottom {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding-top: var(--space-8);
-  border-top: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
   font-size: var(--text-sm);
-  color: var(--color-text-muted);
-}
-
-.footer__made-in {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
+  color: #6b6b82;
+  text-align: center;
+  width: 100%;
 }
 
 /* ---- Laje Pass Card Visual ---- */
