@@ -1,5 +1,5 @@
 // ==========================================
-// LAJE — Mock Data
+// COMU — Mock Data
 // Experiências, Picks, Comunidade, Produtores
 // ==========================================
 
@@ -74,7 +74,7 @@ const EXPERIENCES = [
     bairro: 'lapa',
     description: 'Uma noite inesquecível de jazz ao vivo no coração da boêmia carioca. Músicos locais e convidados especiais.',
     image: 'public/pexels-maumascaro-15987495.jpg',
-    lajeBenefit: 'Lista gratuita para membros',
+    comuBenefit: 'Lista gratuita para membros',
     price: 'Grátis com Comu Pass',
   },
   {
@@ -86,7 +86,7 @@ const EXPERIENCES = [
     bairro: 'ipanema',
     description: 'Menu especial de frutos do mar com vista para o pôr do sol de Ipanema. Reserva obrigatória.',
     image: 'public/tai-s-captures-OQDDvB5r0bM-unsplash.jpg',
-    lajeBenefit: '20% de desconto',
+    comuBenefit: '20% de desconto',
     price: 'A partir de R$80',
   },
   {
@@ -98,7 +98,7 @@ const EXPERIENCES = [
     bairro: 'botafogo',
     description: 'Samba raiz no quintal do Botafogo com petiscos e chopp gelado. O Rio que a gente ama.',
     image: 'public/pexels-maumascaro-15987495.jpg',
-    lajeBenefit: 'Mesa reservada',
+    comuBenefit: 'Mesa reservada',
     price: 'R$30 por pessoa',
   },
   {
@@ -108,9 +108,9 @@ const EXPERIENCES = [
     date: getRelativeDate(3, 10, 0),
     location: 'Centro',
     bairro: 'centro',
-    description: 'Mostra de arte contemporânea com artistas cariocas emergentes. Visita guiada exclusiva para membros Comu.',
+    description: 'Mostra de arte contemporânea com artists cariocas emergentes. Visita guiada exclusiva para membros Comu.',
     image: 'public/tai-s-captures-OQDDvB5r0bM-unsplash.jpg',
-    lajeBenefit: 'Visita guiada exclusiva',
+    comuBenefit: 'Visita guiada exclusiva',
     price: 'R$20',
   },
   {
@@ -122,7 +122,7 @@ const EXPERIENCES = [
     bairro: 'leblon',
     description: 'A festa mais aguardada do mês no Leblon. Open bar premium, DJ residente e convidados internacionais.',
     image: 'public/pexels-maumascaro-15987495.jpg',
-    lajeBenefit: 'Lista VIP + open bar',
+    comuBenefit: 'Lista VIP + open bar',
     price: 'R$120',
   },
   {
@@ -134,7 +134,7 @@ const EXPERIENCES = [
     bairro: 'santa_teresa',
     description: 'O melhor boteco de Santa Teresa com vista panorâmica do Rio. Caldo de feijão e MPB ao vivo.',
     image: 'public/tai-s-captures-OQDDvB5r0bM-unsplash.jpg',
-    lajeBenefit: 'Petisco grátis',
+    comuBenefit: 'Petisco grátis',
     price: 'R$15 consumação mínima',
   },
   {
@@ -146,7 +146,7 @@ const EXPERIENCES = [
     bairro: 'barra',
     description: 'Passeio de barco com pôr do sol na Barra da Tijuca. Drinks, música e o melhor horizonte do Rio.',
     image: 'public/pexels-maumascaro-15987495.jpg',
-    lajeBenefit: 'Drink de boas-vindas',
+    comuBenefit: 'Drink de boas-vindas',
     price: 'R$150',
   },
   {
@@ -158,7 +158,7 @@ const EXPERIENCES = [
     bairro: 'gavea',
     description: 'Brunch especial ao ar livre na Gávea com música acústica, mimosas e mesa farta.',
     image: 'public/tai-s-captures-OQDDvB5r0bM-unsplash.jpg',
-    lajeBenefit: 'Mimosa gratuita',
+    comuBenefit: 'Mimosa gratuita',
     price: 'R$95 por pessoa',
   },
   {
@@ -170,7 +170,7 @@ const EXPERIENCES = [
     bairro: 'flamengo',
     description: 'As melhores bandas de rock independente do Rio em uma única noite no Flamengo.',
     image: 'public/pexels-maumascaro-15987495.jpg',
-    lajeBenefit: 'Ingresso com 30% off',
+    comuBenefit: 'Ingresso com 30% off',
     price: 'R$60',
   },
   {
@@ -182,7 +182,7 @@ const EXPERIENCES = [
     bairro: 'tijuca',
     description: 'Espetáculo de stand-up comedy com os maiores nomes da comédia carioca. Noite de muitas risadas.',
     image: 'public/tai-s-captures-OQDDvB5r0bM-unsplash.jpg',
-    lajeBenefit: '2 ingressos pelo preço de 1',
+    comuBenefit: '2 ingressos pelo preço de 1',
     price: 'R$80',
   },
   {
@@ -194,7 +194,7 @@ const EXPERIENCES = [
     bairro: 'copacabana',
     description: 'Festa no rooftop mais concorrido de Copa. Vista da orla, DJs e coquetéis autorais.',
     image: 'public/pexels-maumascaro-15987495.jpg',
-    lajeBenefit: 'Acesso prioritário',
+    comuBenefit: 'Acesso prioritário',
     price: 'R$100',
   },
   {
@@ -206,12 +206,12 @@ const EXPERIENCES = [
     bairro: 'urca',
     description: 'Tradição carioca: cerveja gelada e pastéis na mureta da Urca com vista para o Pão de Açúcar.',
     image: 'public/tai-s-captures-OQDDvB5r0bM-unsplash.jpg',
-    lajeBenefit: 'Cerveja inclusa',
+    comuBenefit: 'Cerveja inclusa',
     price: 'R$25',
   },
 ];
 
-const LAJE_PICKS = [
+const COMU_PICKS = [
   { experienceId: 'exp-001', reason: 'Jazz ao vivo com músicos incríveis. Uma noite que o Rio merece mais vezes.', curator: 'Equipe Comu' },
   { experienceId: 'exp-005', reason: 'A festa mais completa do mês. Open bar, vista boa e lista exclusiva pra quem é Comu.', curator: 'Lucas, Comu Radar' },
   { experienceId: 'exp-007', reason: 'Pôr do sol de barco é sempre uma das experiências mais bonitas do Rio. Não dá pra perder.', curator: 'Equipe Comu' },
@@ -317,7 +317,7 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     CATEGORIES,
     EXPERIENCES,
-    LAJE_PICKS,
+    COMU_PICKS,
     PASS_BENEFITS,
     COMMUNITY_STATS,
     TESTIMONIALS,

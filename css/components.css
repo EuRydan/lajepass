@@ -1,5 +1,5 @@
 /* ==========================================
-   LAJE — Components
+   COMU — Components
    Reusable UI components
    ========================================== */
 
@@ -160,7 +160,7 @@
   -webkit-backdrop-filter: blur(8px);
 }
 
-.card__laje-benefit {
+.card__comu-benefit {
   position: absolute;
   top: var(--space-3);
   right: var(--space-3);
@@ -973,7 +973,7 @@
   margin-bottom: 0;
 }
 
-/* ---- Laje Pass Card Visual ---- */
+/* ---- Comu Pass Card Visual ---- */
 
 .pass-card {
   width: 100%;

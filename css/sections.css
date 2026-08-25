@@ -1,5 +1,5 @@
 /* ==========================================
-   LAJE — Section Styles
+   COMU — Section Styles
    Layout and styles specific to each section
    ========================================== */
 
@@ -484,12 +484,20 @@
   background: var(--brand-white);
 }
 
+.experiences__header {
+  margin-bottom: var(--space-6);
+  text-align: left;
+}
+
 .experiences .section-title {
   color: var(--brand-support);
+  text-align: left;
 }
 
 .experiences .section-subtitle {
   color: #5d5d75;
+  margin-inline: 0;
+  text-align: left;
 }
 
 /* Light Mode Filters */
@@ -564,7 +572,7 @@
   }
 }
 
-/* ---- LAJE PICKS ---- */
+/* ---- COMU PICKS ---- */
 
 .picks {
   background: var(--brand-white);
@@ -683,7 +691,7 @@
   }
 }
 
-/* ---- LAJE PASS ---- */
+/* ---- COMU PASS ---- */
 
 .pass {
   background: var(--color-bg-primary);
@@ -804,7 +812,7 @@
   }
 }
 
-/* ---- LAJE RADAR ---- */
+/* ---- COMU RADAR ---- */
 
 .radar {
   position: relative;

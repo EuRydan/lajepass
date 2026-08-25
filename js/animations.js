@@ -1,5 +1,5 @@
 // ==========================================
-// LAJE — Scroll Animations
+// COMU — Scroll Animations
 // IntersectionObserver-based reveal system
 // ==========================================
 

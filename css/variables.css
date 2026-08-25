@@ -49,7 +49,7 @@
 }
 
 :root {
-  /* ---- Laje Brand Design System Tokens ---- */
+  /* ---- Comu Brand Design System Tokens ---- */
   --brand-primary: #ff0149;
   --brand-secondary: #5700ff;
   --brand-support: #1d0746;
@@ -69,7 +69,7 @@
   --color-text-muted: #6b6b82;
   --color-text-inverse: var(--brand-support);
 
-  /* Accent: Primary (Laje Brand) */
+  /* Accent: Primary (Comu Brand) */
   --color-accent: var(--brand-primary);
   --color-accent-hover: #ff3370;
   --color-accent-glow: rgba(255, 1, 73, 0.3);
@@ -81,7 +81,7 @@
   --color-gold-glow: rgba(255, 184, 77, 0.25);
   --color-gold-subtle: rgba(255, 184, 77, 0.08);
 
-  /* Accent: Secondary / Purple (Laje Brand) */
+  /* Accent: Secondary / Purple (Comu Brand) */
   --color-purple: var(--brand-secondary);
   --color-purple-hover: #7733FF;
   --color-purple-glow: rgba(87, 0, 255, 0.3);

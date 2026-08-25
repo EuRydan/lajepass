@@ -1,5 +1,5 @@
 // ==========================================
-// LAJE — Main App Logic
+// COMU — Main App Logic
 // Filtering, rendering, navigation
 // ==========================================
 
@@ -83,11 +83,11 @@
 
   function renderExperienceCard(exp) {
     const cat = CATEGORIES[exp.category];
-    const benefitHTML = exp.lajeBenefit
-      ? `<span class="card__laje-benefit">🔥 LAJE</span>`
+    const benefitHTML = exp.comuBenefit
+      ? `<span class="card__comu-benefit">🔥 COMU</span>`
       : '';
-    const benefitTagHTML = exp.lajeBenefit
-      ? `<div class="card__benefit-tag">🔥 ${exp.lajeBenefit}</div>`
+    const benefitTagHTML = exp.comuBenefit
+      ? `<div class="card__benefit-tag">🔥 ${exp.comuBenefit}</div>`
       : '';
 
     return `
@@ -174,7 +174,7 @@
             loading="lazy"
           />
           <div class="pick-card__overlay"></div>
-          <span class="pick-card__badge"><i class="ph-fill ph-star"></i> LAJE PICK</span>
+          <span class="pick-card__badge"><i class="ph-fill ph-star"></i> COMU PICK</span>
         <div class="pick-card__body">
           <h3 class="pick-card__name">${exp.name}</h3>
           <div class="pick-card__meta">
@@ -197,7 +197,7 @@
 
   function renderPicks() {
     if (!picksGrid) return;
-    picksGrid.innerHTML = LAJE_PICKS.map(renderPickCard).join('');
+    picksGrid.innerHTML = COMU_PICKS.map(renderPickCard).join('');
   }
 
   // ---- Filter Event Handlers ----
@@ -472,7 +472,7 @@
             <div class="map-tooltip__event-meta">
               <i class="ph ph-calendar"></i> ${formatDate(exp.date)} · ${formatTime(exp.date)}
             </div>
-            ${exp.lajeBenefit ? `<div class="map-tooltip__benefit">🔥 ${exp.lajeBenefit}</div>` : ''}
+            ${exp.comuBenefit ? `<div class="map-tooltip__benefit">🔥 ${exp.comuBenefit}</div>` : ''}
           </div>
         </a>`).join('');
 

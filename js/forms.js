@@ -1,5 +1,5 @@
 // ==========================================
-// LAJE — Form Handling
+// COMU — Form Handling
 // Validation and feedback for Radar & Producers
 // ==========================================
 
@@ -28,7 +28,7 @@
         return;
       }
 
-      console.log('📡 Laje Radar — Indicação recebida:', data);
+      console.log('📡 Comu Radar — Indicação recebida:', data);
 
       // Show success
       showFormSuccess(form, {
@@ -63,7 +63,7 @@
         return;
       }
 
-      console.log('🤝 Laje — Solicitação de parceria:', data);
+      console.log('🤝 Comu — Solicitação de parceria:', data);
 
       // Show success
       showFormSuccess(form, {
@@ -74,7 +74,7 @@
     });
   }
 
-  // ---- Laje Pass Form ----
+  // ---- Comu Pass Form ----
 
   function initPassForm() {
     const form = document.getElementById('pass-form');
@@ -94,7 +94,7 @@
         return;
       }
 
-      console.log('💳 Laje Pass — Cadastro:', data);
+      console.log('💳 Comu Pass — Cadastro:', data);
 
       showFormSuccess(form, {
         icon: '<i class="ph-fill ph-confetti" style="font-size: 24px; color: var(--brand-primary)"></i>',

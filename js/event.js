@@ -1,5 +1,5 @@
 // ==========================================
-// LAJE — Event Details Logic
+// COMU — Event Details Logic
 // Parse URL, load event details, render recommendations
 // ==========================================
 
@@ -70,7 +70,7 @@
     document.title = `Comu — ${event.name}`;
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute('content', `${event.description} Aproveite a vantagem Comu Pass: ${event.lajeBenefit || 'Acesso exclusivo'}.`);
+      metaDesc.setAttribute('content', `${event.description} Aproveite a vantagem Comu Pass: ${event.comuBenefit || 'Acesso exclusivo'}.`);
     }
 
     // BG Image and Info
@@ -108,9 +108,9 @@
     // Comu Pass Benefit
     const benefitText = document.getElementById('event-benefit-text');
     const benefitCard = document.getElementById('event-benefit-card');
-    if (event.lajeBenefit) {
+    if (event.comuBenefit) {
       if (benefitText) {
-        benefitText.textContent = event.lajeBenefit;
+        benefitText.textContent = event.comuBenefit;
       }
       if (benefitCard) {
         benefitCard.style.display = 'flex';
@@ -160,8 +160,8 @@
 
     recommendedGrid.innerHTML = related.map(exp => {
       const cat = CATEGORIES[exp.category];
-      const benefitHTML = exp.lajeBenefit
-        ? `<span class="card__laje-benefit">🔥 LAJE</span>`
+      const benefitHTML = exp.comuBenefit
+        ? `<span class="card__comu-benefit">🔥 COMU</span>`
         : '';
 
       return `
