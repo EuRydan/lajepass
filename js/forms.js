@@ -54,6 +54,7 @@
         instagram: form.querySelector('[name="producer-instagram"]').value.trim(),
         whatsapp: form.querySelector('[name="producer-whatsapp"]').value.trim(),
         eventType: form.querySelector('[name="producer-event-type"]').value,
+        website: form.querySelector('[name="producer-website"]').value.trim(),
         message: form.querySelector('[name="producer-message"]').value.trim(),
       };
 
