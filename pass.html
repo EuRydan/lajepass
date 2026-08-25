@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comu Pass — Viver Mais, Pagar Menos</title>
+  <meta name="description" content="Conheça o Comu Pass, a chave para viver o melhor do Rio com benefícios exclusivos, descontos e experiências." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="public/copiar.png" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/pass.css" />
+</head>
+<body class="pass-page-body">
+
+  <!-- ================================================
+       HEADER
+       ================================================ -->
+  <header class="header scrolled">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="public/Ativo 21.svg" alt="Comu Pass" class="header__logo-img" style="height: 44px; width: auto;" />
+      </a>
+      <nav class="header__nav">
+        <a href="index.html" class="header__link"><i class="ph ph-arrow-left"></i> Voltar para Início</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================================================
+       HERO SECTION
+       ================================================ -->
+  <section class="pass-hero">
+    <div class="container">
+      <div class="pass-hero__content animate-left">
+        <span class="section-label" style="margin-bottom: var(--space-4);"><i class="ph ph-sparkle"></i> Exclusivo</span>
+        <h1 class="pass-hero__title">Comu Pass</h1>
+        <p class="pass-hero__subtitle">
+          A sua chave para viver as melhores experiências do Rio de Janeiro pagando muito menos.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       BENEFITS GRID SECTION
+       ================================================ -->
+  <section class="pass-benefits-grid">
+    <div class="container">
+      <h2 class="pass-benefits-grid__title animate-on-scroll">Como funciona o Comu Pass?</h2>
+      
+      <div class="pass-benefits-grid__container">
+        <!-- Benefit 1 -->
+        <div class="pass-benefit-card animate-on-scroll">
+          <span class="pass-benefit-card__icon"><i class="ph ph-gift"></i></span>
+          <h3 class="pass-benefit-card__title">Compre 1 &rarr; Ganhe 1</h3>
+          <p class="pass-benefit-card__text">
+            Leve companhia. Em eventos, bares e restaurantes parceiros da Comu, ao comprar um ingresso, prato ou drink, você ganha o segundo inteiramente de graça.
+          </p>
+        </div>
+        
+        <!-- Benefit 2 -->
+        <div class="pass-benefit-card animate-on-scroll">
+          <span class="pass-benefit-card__icon"><i class="ph ph-percent"></i></span>
+          <h3 class="pass-benefit-card__title">Descontos Reais</h3>
+          <p class="pass-benefit-card__text">
+            Economia garantida. Obtenha descontos exclusivos na compra de ingressos para festas e shows, ou reduções no valor final do consumo em estabelecimentos selecionados.
+          </p>
+        </div>
+        
+        <!-- Benefit 3 -->
+        <div class="pass-benefit-card animate-on-scroll">
+          <span class="pass-benefit-card__icon"><i class="ph ph-ticket"></i></span>
+          <h3 class="pass-benefit-card__title">Fila Preferencial & VIP</h3>
+          <p class="pass-benefit-card__text">
+            Chegue com facilidade. Evite esperas e entre mais rápido através de filas exclusivas ou ganhe acesso a áreas VIP em festas e festivais parceiros.
+          </p>
+        </div>
+        
+        <!-- Benefit 4 -->
+        <div class="pass-benefit-card animate-on-scroll">
+          <span class="pass-benefit-card__icon"><i class="ph ph-star"></i></span>
+          <h3 class="pass-benefit-card__title">Experiências Secretas</h3>
+          <p class="pass-benefit-card__text">
+            Vá além da rotina. Tenha acesso a eventos fechados, jantares secretos com chefs locais e ativações de marcas que são planejadas exclusivamente para membros.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       SIGNUP FORM SECTION
+       ================================================ -->
+  <section class="pass-signup-section">
+    <div class="container">
+      <div class="pass-signup-section__content animate-on-scroll">
+        <h2 class="pass-signup-section__title">Garanta o seu Pass</h2>
+        <p class="pass-signup-section__text">
+          O Pass se paga sozinho. Use em apenas um evento e você já recupera o valor. Entre na lista de espera preenchendo os dados abaixo.
+        </p>
+
+        <!-- Signup form -->
+        <form id="pass-form" class="pass__signup" style="display: flex; flex-direction: column; gap: var(--space-3); max-width: 420px;">
+          <input type="text" name="pass-name" class="form-input" placeholder="Seu nome" required />
+          <input type="email" name="pass-email" class="form-input" placeholder="Seu melhor email" required />
+          <input type="tel" name="pass-whatsapp" class="form-input" placeholder="WhatsApp (opcional)" />
+          <button type="submit" class="btn btn--primary btn--lg btn--full">QUERO ENTRAR NA COMU</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       FOOTER
+       ================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="public/Ativo 21.svg" alt="Comu" class="footer__logo-img" style="height: 48px; margin-bottom: var(--space-4);" />
+          <p class="footer__tagline">Descubra o Rio. Viva a comunidade.</p>
+        </div>
+        <div class="footer__nav-group">
+          <h4 class="footer__nav-title">Contato</h4>
+          <nav class="footer__links">
+            <a href="mailto:relacionamento@comupass.com.br" class="footer__link">relacionamento@comupass.com.br</a>
+            <a href="faq.html" class="footer__link">FAQ</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Comu. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/forms.js"></script>
+
+</body>
+</html>
