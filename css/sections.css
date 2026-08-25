@@ -1033,6 +1033,15 @@
   text-align: center;
 }
 
+.producers__form-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-bottom: var(--space-6);
+  margin-top: calc(-1 * var(--space-3));
+  line-height: 1.5;
+}
+
 .producers__form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
