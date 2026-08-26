@@ -1607,9 +1607,9 @@
 
 /* ---- COMO FUNCIONA ---- */
 .como-funciona {
-  background: var(--brand-white);
+  background: var(--brand-primary);
   padding-block: var(--space-20);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: none;
 }
 
 .como-funciona .section-title {
@@ -1617,7 +1617,7 @@
 }
 
 .como-funciona .section-label {
-  color: var(--brand-primary) !important;
+  color: #ffffff !important;
 }
 
 .como-funciona__grid {
@@ -1629,18 +1629,23 @@
 }
 
 .como-funciona__step {
-  padding: var(--space-6);
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 0; /* straight borders */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-  transition: all var(--duration-base) var(--ease-out);
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  transition: transform var(--duration-base) var(--ease-out), box-shadow var(--duration-base) var(--ease-out);
 }
 
 .como-funciona__step:hover {
   transform: translateY(-4px);
-  border-color: var(--brand-primary);
-  box-shadow: 0 10px 25px rgba(255, 1, 73, 0.08);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.como-funciona__img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .como-funciona__step-num {
