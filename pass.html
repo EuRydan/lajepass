@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/sections.css" />
-  <link rel="stylesheet" href="css/pass.css?v=2" />
+  <link rel="stylesheet" href="css/pass.css?v=6" />
 </head>
 <body class="pass-page-body">
 
@@ -97,123 +97,72 @@
   <section class="pass-benefits-grid">
     <div class="container">
       <h2 class="pass-benefits-grid__title animate-on-scroll">Como funciona o Comu Pass?</h2>
+      <p class="pass-benefits-grid__subtitle animate-on-scroll">
+        Você paga para fazer parte.<br class="hide-mobile"> A Comu te conecta a uma rede de benefícios para viver mais do Rio por menos.
+      </p>
       
       <div class="pass-benefits-grid__container">
-        <!-- Benefit 1 -->
+        <!-- Step 1 -->
         <div class="pass-benefit-card animate-on-scroll">
-          <span class="pass-benefit-card__icon"><i class="ph ph-gift"></i></span>
-          <h3 class="pass-benefit-card__title">Compre 1 &rarr; Leve 2</h3>
+          <div class="pass-benefit-card__header">
+            <span class="pass-benefit-card__step">01</span>
+            <span class="pass-benefit-card__icon"><i class="ph ph-user-plus"></i></span>
+          </div>
+          <h3 class="pass-benefit-card__title">FAÇA PARTE DA COMU</h3>
           <p class="pass-benefit-card__text">
-            Leve companhia. Em eventos, bares e restaurantes parceiros da Comu, ao comprar um ingresso, prato ou drink, você leva o segundo inteiramente de graça.
+            Adquira seu Comu Pass e tenha acesso aos benefícios disponíveis na nossa rede de parceiros.
           </p>
         </div>
         
-        <!-- Benefit 2 -->
+        <!-- Step 2 -->
         <div class="pass-benefit-card animate-on-scroll">
-          <span class="pass-benefit-card__icon"><i class="ph ph-percent"></i></span>
-          <h3 class="pass-benefit-card__title">Descontos Reais</h3>
+          <div class="pass-benefit-card__header">
+            <span class="pass-benefit-card__step">02</span>
+            <span class="pass-benefit-card__icon"><i class="ph ph-compass"></i></span>
+          </div>
+          <h3 class="pass-benefit-card__title">DESCUBRA</h3>
           <p class="pass-benefit-card__text">
-            Economia garantida. Obtenha descontos exclusivos na compra de ingressos para festas e shows, ou reduções no valor final do consumo em estabelecimentos selecionados.
+            Use o Comu Radar para descobrir lugares, eventos e experiências selecionados pela comunidade.
           </p>
         </div>
         
-        <!-- Benefit 3 -->
+        <!-- Step 3 -->
         <div class="pass-benefit-card animate-on-scroll">
-          <span class="pass-benefit-card__icon"><i class="ph ph-ticket"></i></span>
-          <h3 class="pass-benefit-card__title">Fila Preferencial & VIP</h3>
-          <p class="pass-benefit-card__text">
-            Chegue com facilidade. Evite esperas e entre mais rápido através de filas exclusivas ou ganhe acesso a áreas VIP em festas e festivais parceiros.
+          <div class="pass-benefit-card__header">
+            <span class="pass-benefit-card__step">03</span>
+            <span class="pass-benefit-card__icon"><i class="ph ph-gift"></i></span>
+          </div>
+          <h3 class="pass-benefit-card__title">USE SEUS BENEFÍCIOS</h3>
+          <p class="pass-benefit-card__text" style="margin-bottom: var(--space-4);">
+            Nos parceiros participantes, você encontra condições exclusivas — como:
           </p>
+          <ul class="pass-benefit-card__sublist">
+            <li>
+              <strong>Compre 1, ganhe outro</strong>
+              <span>Você paga um produto e recebe outro igual ou de menor valor.</span>
+            </li>
+            <li>
+              <strong>Descontos exclusivos</strong>
+              <span>Condições especiais oferecidas pelos parceiros da Comu.</span>
+            </li>
+            <li>
+              <strong>Benefícios para viver mais</strong>
+              <span>Experiências e vantagens construídas dentro da rede.</span>
+            </li>
+          </ul>
         </div>
         
-        <!-- Benefit 4 -->
+        <!-- Step 4 -->
         <div class="pass-benefit-card animate-on-scroll">
-          <span class="pass-benefit-card__icon"><i class="ph ph-star"></i></span>
-          <h3 class="pass-benefit-card__title">Experiências Secretas</h3>
+          <div class="pass-benefit-card__header">
+            <span class="pass-benefit-card__step">04</span>
+            <span class="pass-benefit-card__icon"><i class="ph ph-trend-up"></i></span>
+          </div>
+          <h3 class="pass-benefit-card__title">ECONOMIZE</h3>
           <p class="pass-benefit-card__text">
-            Vá além da rotina. Tenha acesso a eventos fechados, jantares secretos com chefs locais e ativações de marcas que são planejadas exclusivamente para membros.
+            A ideia é simples: o valor dos benefícios pode superar o valor que você pagou pelo Pass.
           </p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================
-       JOURNEY / WHY COMU SECTION
-       ================================================ -->
-  <section class="pass-journey">
-    <div class="container">
-      <div class="pass-journey__header animate-on-scroll">
-        <h2 class="pass-journey__title">Por que fazer parte da Comu?</h2>
-        <p class="pass-journey__subtitle">Uma comunidade para descobrir e viver o Rio.</p>
-      </div>
-
-      <div class="pass-journey__grid">
-        <!-- Card 1: Radar -->
-        <div class="journey-card animate-on-scroll">
-          <div class="journey-card__header">
-            <span class="journey-card__step">01</span>
-            <span class="journey-card__icon" style="--card-hover-color: var(--color-accent);"><i class="ph ph-radar"></i></span>
-          </div>
-          <div class="journey-card__badge">
-            RADAR <i class="ph ph-arrow-right"></i> <span class="text-accent" style="color: var(--color-accent);">descobrir</span>
-          </div>
-          <h3 class="journey-card__title">Descubra o que viver</h3>
-          <p class="journey-card__text">
-            Curadoria de lugares, eventos e experiências para quem quer descobrir o que o Rio tem para oferecer.
-          </p>
-        </div>
-
-        <!-- Card 2: Access -->
-        <div class="journey-card animate-on-scroll">
-          <div class="journey-card__header">
-            <span class="journey-card__step">02</span>
-            <span class="journey-card__icon" style="--card-hover-color: var(--color-purple);"><i class="ph ph-key"></i></span>
-          </div>
-          <div class="journey-card__badge">
-            ACCESS <i class="ph ph-arrow-right"></i> <span class="text-accent" style="color: var(--color-purple-hover);">acessar</span>
-          </div>
-          <h3 class="journey-card__title">Tenha acesso a benefícios</h3>
-          <p class="journey-card__text">
-            Condições e benefícios exclusivos construídos junto aos nossos parceiros.
-          </p>
-        </div>
-
-        <!-- Card 3: Exp -->
-        <div class="journey-card animate-on-scroll">
-          <div class="journey-card__header">
-            <span class="journey-card__step">03</span>
-            <span class="journey-card__icon" style="--card-hover-color: var(--color-gold);"><i class="ph ph-sparkles"></i></span>
-          </div>
-          <div class="journey-card__badge">
-            EXP <i class="ph ph-arrow-right"></i> <span class="text-accent" style="color: var(--color-gold);">viver</span>
-          </div>
-          <h3 class="journey-card__title">Viva experiências</h3>
-          <p class="journey-card__text">
-            Experiências que aproximam pessoas, artistas, eventos e lugares de uma forma diferente.
-          </p>
-        </div>
-
-        <!-- Card 4: Brand -->
-        <div class="journey-card animate-on-scroll">
-          <div class="journey-card__header">
-            <span class="journey-card__step">04</span>
-            <span class="journey-card__icon" style="--card-hover-color: var(--color-teal);"><i class="ph ph-share-network"></i></span>
-          </div>
-          <div class="journey-card__badge">
-            BRAND <i class="ph ph-arrow-right"></i> <span class="text-accent" style="color: var(--color-teal);">conectar</span>
-          </div>
-          <h3 class="journey-card__title">Faça parte do que está acontecendo</h3>
-          <p class="journey-card__text">
-            Conectamos marcas, lugares, eventos e pessoas através de experiências e da comunidade.
-          </p>
-        </div>
-      </div>
-
-      <div class="pass-journey__footer animate-on-scroll">
-        <p class="pass-journey__footer-quote">
-          Porque o Rio fica melhor quando você sabe onde ir, com quem ir e o que viver.
-        </p>
       </div>
     </div>
   </section>
