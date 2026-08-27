@@ -9,6 +9,8 @@
   // ---- Configuration ----
   // Cole a URL do seu Web App do Google Apps Script aqui para enviar os dados para a Planilha
   const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzExZHaa4iIr4LsUpE5v0wUG57bpTFMJz8jmT1UhFpDaS60yMqbk6cAU12VOKs9ppD8rA/exec';
+  const SURVEY_COMPLETED_KEY = 'comu_survey_completed';
+  const SURVEY_URL = 'https://lajepass.vercel.app/pesquisa-comu';
 
   // ---- State ----
   let currentStep = 0;
@@ -53,6 +55,13 @@
       return;
     }
 
+    // Check if user already completed the survey
+    const completedData = getCompletedData();
+    if (completedData) {
+      showAlreadyRespondedScreen(completedData);
+      return;
+    }
+
     // Load steps
     const slideElements = document.querySelectorAll('.pesquisa-slide');
     slideElements.forEach(el => steps.push(el));
@@ -62,6 +71,7 @@
     setupNavigation();
     setupInputs();
     setupCopyCoupon();
+    setupShareButtons();
 
     // Show initial slide
     goToStep(0);
@@ -460,6 +470,118 @@
     });
   }
 
+  // ---- Share Buttons ----
+  function setupShareButtons() {
+    const shareCopyBtn = document.getElementById('btn-share-copy');
+    const shareWhatsAppBtn = document.getElementById('btn-share-whatsapp');
+
+    if (shareCopyBtn) {
+      shareCopyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(SURVEY_URL).then(() => {
+          shareCopyBtn.innerHTML = '<i class="ph ph-check" style="color: var(--color-teal)"></i> Copiado!';
+          setTimeout(() => {
+            shareCopyBtn.innerHTML = '<i class="ph ph-copy"></i> Copiar Link';
+          }, 2000);
+        }).catch(err => {
+          console.error('Failed to copy:', err);
+        });
+      });
+    }
+
+    if (shareWhatsAppBtn) {
+      shareWhatsAppBtn.href = `https://api.whatsapp.com/send?text=${encodeURIComponent('Participe da pesquisa da Comu e ganhe um cupom exclusivo! 🎟️\n' + SURVEY_URL)}`;
+    }
+  }
+
+  // ---- Already Responded Check ----
+  function getCompletedData() {
+    try {
+      const data = localStorage.getItem(SURVEY_COMPLETED_KEY);
+      return data ? JSON.parse(data) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function markSurveyCompleted(name, coupon) {
+    try {
+      localStorage.setItem(SURVEY_COMPLETED_KEY, JSON.stringify({
+        nome: name,
+        coupon: coupon,
+        completedAt: new Date().toISOString()
+      }));
+    } catch (e) {
+      console.warn('Could not save completion flag:', e);
+    }
+  }
+
+  function showAlreadyRespondedScreen(data) {
+    // Hide progress, nav buttons, and all slides
+    if (progressContainer) progressContainer.style.display = 'none';
+    if (stepCounter) stepCounter.style.display = 'none';
+    if (btnPrev) btnPrev.style.display = 'none';
+    if (btnNext) btnNext.style.display = 'none';
+    if (actionsContainer) actionsContainer.style.display = 'none';
+
+    const slidesContainer = document.querySelector('.pesquisa-slides');
+    slidesContainer.innerHTML = '';
+
+    const firstName = data.nome ? data.nome.split(' ')[0] : '';
+
+    const alreadySlide = document.createElement('section');
+    alreadySlide.className = 'pesquisa-slide active';
+    alreadySlide.innerHTML = `
+      <div style="text-align: center; display: flex; flex-direction: column; justify-content: center; flex-grow: 1;">
+        <div class="thank-you-emoji">✅</div>
+        <h2 class="pesquisa-title" style="margin-bottom: var(--space-3);">Você já respondeu${firstName ? ', ' + escapeHtml(firstName) : ''}!</h2>
+        <p class="pesquisa-description" style="margin-bottom: var(--space-3);">
+          Obrigado por ter participado da nossa pesquisa. Cada resposta nos ajuda a construir a melhor comunidade de experiências do Rio.
+        </p>
+        ${data.coupon ? `
+          <div class="coupon-box">
+            <span style="font-size: var(--text-xs); color: var(--color-text-secondary); display: block; margin-bottom: var(--space-2);">Seu cupom de membro pioneiro:</span>
+            <span class="coupon-code">${escapeHtml(data.coupon)}</span>
+          </div>
+        ` : ''}
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+        <div class="share-section" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center;">
+          <p style="font-size: var(--text-sm); color: var(--color-text-secondary); margin-bottom: var(--space-3);">📢 Convide amigos para participar também!</p>
+          <div style="display: flex; gap: var(--space-2); justify-content: center; flex-wrap: wrap;">
+            <button class="btn-share-copy btn btn--secondary btn--sm" style="font-size: var(--text-xs);">
+              <i class="ph ph-copy"></i> Copiar Link
+            </button>
+            <a href="https://api.whatsapp.com/send?text=${encodeURIComponent('Participe da pesquisa da Comu e ganhe um cupom exclusivo! 🎟️\n' + SURVEY_URL)}" target="_blank" class="btn btn--primary btn--sm" style="font-size: var(--text-xs); background: #25D366; border-color: #25D366;">
+              <i class="fa-brands fa-whatsapp"></i> Compartilhar
+            </a>
+          </div>
+        </div>
+        <a href="https://www.instagram.com/comupass/" target="_blank" class="btn btn--secondary btn--full" style="border: 1px solid rgba(255, 255, 255, 0.15);">
+          <i class="fa-brands fa-instagram" style="font-size: 1.25em;"></i> Seguir no Instagram
+        </a>
+        <a href="index.html" class="btn btn--secondary btn--full">
+          Voltar para o Início
+        </a>
+      </div>
+    `;
+
+    slidesContainer.appendChild(alreadySlide);
+
+    // Setup copy button in the already responded screen
+    const copyBtn = alreadySlide.querySelector('.btn-share-copy');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(SURVEY_URL).then(() => {
+          copyBtn.innerHTML = '<i class="ph ph-check" style="color: var(--color-teal)"></i> Copiado!';
+          setTimeout(() => {
+            copyBtn.innerHTML = '<i class="ph ph-copy"></i> Copiar Link';
+          }, 2000);
+        });
+      });
+    }
+  }
+
   // ---- Form Submission ----
   function submitSurvey() {
     // Generate coupon
@@ -485,6 +607,9 @@
     } catch (e) {
       console.warn('LocalStorage save failed:', e);
     }
+
+    // Mark survey as completed
+    markSurveyCompleted(userData.nome, generatedCoupon);
 
     // Advance to Thank You slide immediately
     goToStep(steps.length - 1);
