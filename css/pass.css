@@ -211,65 +211,42 @@ body.pass-page-body {
   }
 }
 
-/* ---- BENEFITS GRID ---- */
-.pass-benefits-grid {
+/* ---- BENEFITS GRID SVG ---- */
+.pass-benefits-grid-svg {
   padding-block: var(--space-20);
   background: #fbf9ff;
 }
 
-.pass-benefits-grid__title {
-  font-size: var(--text-3xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--brand-support);
-  margin-bottom: var(--space-12);
-  text-align: center;
-}
-
-.pass-benefits-grid__container {
+.pass-benefits-grid-svg__container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-8);
+  gap: 0;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(29, 7, 70, 0.08);
+}
+
+.pass-benefit-svg-card {
+  display: flex;
+}
+
+.pass-benefit-svg-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.pass-benefit-svg-card img:hover {
+  transform: scale(1.02);
+  z-index: 2;
 }
 
 @media (max-width: 768px) {
-  .pass-benefits-grid__container {
+  .pass-benefits-grid-svg__container {
     grid-template-columns: 1fr;
-    gap: var(--space-6);
   }
-}
-
-.pass-benefit-card {
-  background: #ffffff;
-  padding: var(--space-8);
-  border: 1px solid rgba(29, 7, 70, 0.06);
-  border-radius: var(--radius-xl);
-  box-shadow: 0 4px 20px rgba(29, 7, 70, 0.02);
-  transition: transform var(--duration-base) var(--ease-out), box-shadow var(--duration-base) var(--ease-out);
-}
-
-.pass-benefit-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(29, 7, 70, 0.06);
-}
-
-.pass-benefit-card__icon {
-  font-size: var(--text-4xl);
-  color: var(--brand-primary);
-  margin-bottom: var(--space-4);
-  display: inline-block;
-}
-
-.pass-benefit-card__title {
-  font-size: var(--text-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--brand-support);
-  margin-bottom: var(--space-2);
-}
-
-.pass-benefit-card__text {
-  font-size: var(--text-base);
-  color: #5d5d75;
-  line-height: 1.6;
 }
 
 /* ---- SIGNUP SECTION ---- */
@@ -323,60 +300,4 @@ body.pass-page-body {
   color: #a0a0ba;
 }
 
-/* ---- BENEFITS GRID UPGRADES ---- */
-.pass-benefits-grid__subtitle {
-  font-size: var(--text-lg);
-  color: #5d5d75;
-  max-width: 600px;
-  margin-inline: auto;
-  margin-top: calc(-1 * var(--space-8));
-  margin-bottom: var(--space-12);
-  text-align: center;
-  line-height: var(--leading-relaxed);
-}
 
-.pass-benefit-card__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--space-4);
-}
-
-.pass-benefit-card__step {
-  font-family: var(--font-display);
-  font-size: var(--text-2xl);
-  font-weight: var(--font-weight-black);
-  color: var(--brand-primary);
-  opacity: 0.15;
-}
-
-.pass-benefit-card__sublist {
-  list-style: none;
-  padding: 0;
-  margin: var(--space-4) 0 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  border-top: 1px solid rgba(29, 7, 70, 0.06);
-  padding-top: var(--space-4);
-}
-
-.pass-benefit-card__sublist li {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-}
-
-.pass-benefit-card__sublist li strong {
-  font-family: var(--font-display);
-  font-size: var(--text-base);
-  font-weight: var(--font-weight-bold);
-  color: var(--brand-support);
-  line-height: var(--leading-tight);
-}
-
-.pass-benefit-card__sublist li span {
-  font-size: var(--text-sm);
-  color: #5d5d75;
-  line-height: var(--leading-normal);
-}
