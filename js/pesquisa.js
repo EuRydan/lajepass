@@ -8,7 +8,7 @@
 
   // ---- Configuration ----
   // Cole a URL do seu Web App do Google Apps Script aqui para enviar os dados para a Planilha
-  const GOOGLE_SHEETS_URL = '';
+  const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzExZHaa4iIr4LsUpE5v0wUG57bpTFMJz8jmT1UhFpDaS60yMqbk6cAU12VOKs9ppD8rA/exec';
 
   // ---- State ----
   let currentStep = 0;
