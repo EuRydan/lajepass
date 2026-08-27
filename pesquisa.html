@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO -->
+  <title>Pesquisa Comu — Coleta Estratégica</title>
+  <meta name="description" content="Participe da pesquisa da Comu, ajude a moldar a melhor comunidade de experiências do Rio de Janeiro e garanta benefícios exclusivos." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pesquisa.css" />
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="pesquisa-body">
+
+  <div class="pesquisa-wrapper">
+    
+    <!-- Header with logo and progress tracking -->
+    <header class="pesquisa-header">
+      <a href="index.html" class="pesquisa-logo-link">
+        <img src="public/Comu logo.svg" alt="Comu logo" class="pesquisa-logo-img" />
+      </a>
+      
+      <div class="pesquisa-progress-container" style="display: none;">
+        <div class="pesquisa-progress-bar"></div>
+      </div>
+      
+      <div class="pesquisa-step-counter" style="display: none;">Cadastro</div>
+    </header>
+
+    <!-- Survey Slides -->
+    <div class="pesquisa-slides">
+      
+      <!-- Slide 0: Welcome / Intro (Dark mode default) -->
+      <section class="pesquisa-slide active">
+        <div style="text-align: center; margin-bottom: var(--space-6);">
+          <div style="font-size: 3rem; margin-bottom: var(--space-4);">📡</div>
+          <h1 class="pesquisa-title gradient-text">Pesquisa Comu</h1>
+          <p class="pesquisa-description">
+            A Comu está construindo um jeito novo de viver o Rio de Janeiro. Queremos te conectar às melhores experiências, lugares e eventos curados, além de oferecer benefícios que fazem a diferença no bolso. 
+            <br/><br/>
+            Sua opinião vai guiar nossa curadoria estratégica.
+          </p>
+        </div>
+        <button class="btn btn--primary btn-start-survey btn--full">
+          Começar Pesquisa <i class="ph ph-arrow-right"></i>
+        </button>
+      </section>
+
+      <!-- Slide 1: Incentive text (WHITE BACKGROUND OVERRIDE, centered text) -->
+      <section class="pesquisa-slide">
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; flex-grow: 1; margin-bottom: var(--space-6);">
+          <h2 class="pesquisa-title" style="max-width: 440px; margin-inline: auto;">
+            Queremos entender como você descobre e escolhe o que fazer. Leva menos de 2 minutos.
+          </h2>
+          <p class="pesquisa-description" style="margin-top: var(--space-4);">
+            Ao responder, você receberá um <strong>cupom de benefício exclusivo</strong> para usar no que estamos construindo na comunidade.
+          </p>
+        </div>
+        <button class="btn btn--primary btn-start-survey btn--full">
+          Avançar <i class="ph ph-arrow-right"></i>
+        </button>
+      </section>
+
+      <!-- Slide 2: Registration Fields (Back to Dark mode) -->
+      <section class="pesquisa-slide">
+        <div>
+          <h2 class="pesquisa-title">Quem é você?</h2>
+          <p class="pesquisa-description">Esses dados são importantes para que possamos te dar seu cupom exclusivo no final.</p>
+          
+          <div class="pesquisa-form-grid">
+            <div class="pesquisa-input-group grid-full-width">
+              <label for="cadastro-nome">Nome Completo</label>
+              <input type="text" id="cadastro-nome" class="pesquisa-input" placeholder="Seu nome" required />
+            </div>
+
+            <div class="pesquisa-input-group">
+              <label for="cadastro-idade">Idade</label>
+              <input type="number" id="cadastro-idade" class="pesquisa-input" min="10" max="110" placeholder="Sua idade" required />
+            </div>
+
+            <div class="pesquisa-input-group">
+              <label for="cadastro-whatsapp">WhatsApp</label>
+              <input type="tel" id="cadastro-whatsapp" class="pesquisa-input" placeholder="(21) 99999-9999" required />
+            </div>
+
+            <div class="pesquisa-input-group">
+              <label for="cadastro-ondeMora">Onde Mora (Bairro)</label>
+              <input type="text" id="cadastro-ondeMora" class="pesquisa-input" placeholder="Ex: Copacabana, Botafogo" required />
+            </div>
+
+            <div class="pesquisa-input-group">
+              <label for="cadastro-instagram">@ Instagram</label>
+              <input type="text" id="cadastro-instagram" class="pesquisa-input" placeholder="@perfil" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 3: Question 1 (Single select) -->
+      <section class="pesquisa-slide" data-q="q1" data-multi="false">
+        <div>
+          <h2 class="pesquisa-title">1. Com que frequência você costuma sair para eventos, festas, restaurantes ou outras experiências?</h2>
+          <div class="pesquisa-options">
+            <div class="pesquisa-option-card" data-value="Toda semana">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Toda semana</span>
+            </div>
+            <div class="pesquisa-option-card" data-value="2–3 vezes por mês">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">2–3 vezes por mês</span>
+            </div>
+            <div class="pesquisa-option-card" data-value="1 vez por mês">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">1 vez por mês</span>
+            </div>
+            <div class="pesquisa-option-card" data-value="Algumas vezes por semestre">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Algumas vezes por semestre</span>
+            </div>
+            <div class="pesquisa-option-card" data-value="Quase nunca">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Quase nunca</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 4: Question 2 (Multi select) -->
+      <section class="pesquisa-slide" data-q="q2" data-multi="true">
+        <div>
+          <h2 class="pesquisa-title">2. Quando você quer descobrir algo legal para fazer, onde costuma procurar?</h2>
+          <p class="pesquisa-description" style="margin-top: calc(-1 * var(--space-3)); margin-bottom: var(--space-4);">Selecione todas as opções que se aplicam.</p>
+          <div class="pesquisa-options">
+            <div class="pesquisa-option-card" data-value="Instagram / TikTok">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Instagram / TikTok</span>
+            </div>
+            <div class="pesquisa-option-card" data-value="WhatsApp / grupos">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">WhatsApp / grupos</span>
+            </div>
+            <div class="pesquisa-option-card" data-value="Indicação de amigos">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Indicação de amigos</span>
+            </div>
+            <div class="pesquisa-option-card" data-value="Sites ou plataformas de eventos">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Sites ou plataformas de eventos</span>
+            </div>
+            <div class="pesquisa-option-card" data-value="Já tenho lugares/eventos que acompanho">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Já tenho lugares/eventos que acompanho</span>
+            </div>
+            <div class="pesquisa-option-card" data-value="Outro">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Outro</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 5: Question 3 (Multi select) -->
+      <section class="pesquisa-slide" data-q="q3" data-multi="true">
+        <div>
+          <h2 class="pesquisa-title">3. O que mais dificulta encontrar algo que realmente vale a pena?</h2>
+          <p class="pesquisa-description" style="margin-top: calc(-1 * var(--space-3)); margin-bottom: var(--space-4);">Selecione todas as opções que se aplicam.</p>
+          <div class="pesquisa-options">
+            <div class="pesquisa-option-card" data-value="Tem muita coisa e não sei o que escolher">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Tem muita coisa e não sei o que escolher</span>
+            </div>
+            <div class="pesquisa-option-card" data-value="Fico sabendo dos eventos tarde demais">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Fico sabendo dos eventos tarde demais</span>
+            </div>
+            <div class="pesquisa-option-card" data-value="Não conheço lugares/eventos novos">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Não conheço lugares/eventos novos</span>
+            </div>
+            <div class="pesquisa-option-card" data-value="Os preços são altos">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Os preços são altos</span>
+            </div>
+            <div class="pesquisa-option-card" data-value="Falta alguém para indicar o que realmente vale a pena">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Falta alguém para indicar o que realmente vale a pena</span>
+            </div>
+            <div class="pesquisa-option-card" data-value="Não tenho dificuldade para encontrar">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Não tenho dificuldade para encontrar</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 6: Question 4 (Multi select) -->
+      <section class="pesquisa-slide" data-q="q4" data-multi="true">
+        <div>
+          <h2 class="pesquisa-title">4. Se existisse uma comunidade que reunisse curadoria de eventos, lugares e experiências + benefícios exclusivos, o que mais te interessaria?</h2>
+          <p class="pesquisa-description" style="margin-top: calc(-1 * var(--space-3)); margin-bottom: var(--space-4);">Selecione todas as opções que se aplicam.</p>
+          <div class="pesquisa-options">
+            <div class="pesquisa-option-card" data-value="Descobrir o que fazer">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Descobrir o que fazer</span>
+            </div>
+            <div class="pesquisa-option-card" data-value="Economizar com benefícios">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Economizar com benefícios</span>
+            </div>
+            <div class="pesquisa-option-card" data-value="Ter acesso a experiências exclusivas">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Ter acesso a experiências exclusivas</span>
+            </div>
+            <div class="pesquisa-option-card" data-value="Conhecer pessoas e fazer parte de uma comunidade">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Conhecer pessoas e fazer parte de uma comunidade</span>
+            </div>
+            <div class="pesquisa-option-card" data-value="Tudo isso">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Tudo isso</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 7: Question 5 (Single select) -->
+      <section class="pesquisa-slide" data-q="q5" data-multi="false">
+        <div>
+          <h2 class="pesquisa-title">5. Você entraria gratuitamente em uma comunidade como essa para começar a receber essas descobertas e benefícios?</h2>
+          <div class="pesquisa-options">
+            <div class="pesquisa-option-card" data-value="Sim, quero entrar">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Sim, quero entrar</span>
+            </div>
+            <div class="pesquisa-option-card" data-value="Sim, provavelmente">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Sim, provavelmente</span>
+            </div>
+            <div class="pesquisa-option-card" data-value="Talvez, quero entender melhor">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Talvez, quero entender melhor</span>
+            </div>
+            <div class="pesquisa-option-card" data-value="Não tenho interesse">
+              <div class="pesquisa-option-check"></div>
+              <span class="pesquisa-option-text">Não tenho interesse</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 8: Thank You / Coupon (Celebration) -->
+      <section class="pesquisa-slide">
+        <div style="text-align: center; display: flex; flex-direction: column; justify-content: center; flex-grow: 1;">
+          <div class="thank-you-emoji">🎉</div>
+          <h2 class="pesquisa-title" style="margin-bottom: var(--space-3);">Obrigado, <span id="display-user-name"></span>!</h2>
+          <p class="pesquisa-description" style="margin-bottom: var(--space-4);">
+            Suas respostas foram recebidas. Conforme prometido, aqui está o seu cupom exclusivo de membro pioneiro:
+          </p>
+          
+          <div class="coupon-box">
+            <span class="coupon-code">CARREGANDO...</span>
+            <button id="btn-copy-coupon" class="coupon-copy-btn">
+              <i class="ph ph-copy"></i> Copiar Código
+            </button>
+          </div>
+          
+          <p class="pesquisa-description" style="font-size: var(--text-sm); margin-bottom: var(--space-6);">
+            Guarde esse cupom! Ele dará acesso a um benefício muito especial quando nossa comunidade for oficialmente lançada.
+          </p>
+        </div>
+        
+        <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+          <a href="https://chat.whatsapp.com/CaifVi3wOTmDLgZnw5arJS" target="_blank" class="btn btn--primary btn--full">
+            <i class="fa-brands fa-whatsapp" style="font-size: 1.25em;"></i> Entrar no Canal Gratuitamente
+          </a>
+          <a href="index.html" class="btn btn--secondary btn--full">
+            Voltar para o Início
+          </a>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Slide Navigation buttons (for form screens) -->
+    <div class="pesquisa-actions" style="display: none;">
+      <button id="btn-prev" class="btn btn--secondary btn--sm">
+        <i class="ph ph-arrow-left"></i> Voltar
+      </button>
+      <button id="btn-next" class="btn btn--primary btn--sm btn--disabled" disabled>
+        Avançar <i class="ph ph-arrow-right"></i>
+      </button>
+    </div>
+
+  </div>
+
+  <script src="js/pesquisa.js"></script>
+</body>
+</html>

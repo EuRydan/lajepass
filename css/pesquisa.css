@@ -1,0 +1,445 @@
+/* ==========================================================================
+   COMU — Survey stylesheet (Pesquisa Comu)
+   ========================================================================== */
+
+.pesquisa-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-4);
+  background-color: var(--color-bg-primary);
+  background-image: url('../public/background hero.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  transition: background-color var(--duration-slow) var(--ease-in-out);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Base wrapper for the survey slides */
+.pesquisa-wrapper {
+  width: 100%;
+  max-width: 580px;
+  min-height: 520px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8) var(--space-6);
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--duration-slow) var(--ease-in-out);
+  z-index: 10;
+}
+
+/* Header element inside the survey box */
+.pesquisa-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: var(--space-4);
+  transition: border-color var(--duration-base) var(--ease-out);
+}
+
+.pesquisa-logo-img {
+  height: 28px;
+  width: auto;
+  transition: filter var(--duration-base) var(--ease-out);
+}
+
+/* Progress indicator styles */
+.pesquisa-progress-container {
+  flex-grow: 1;
+  max-width: 200px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+  margin-left: var(--space-4);
+  transition: background var(--duration-base) var(--ease-out);
+}
+
+.pesquisa-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-purple));
+  border-radius: var(--radius-full);
+  transition: width var(--duration-base) var(--ease-out);
+}
+
+.pesquisa-step-counter {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-medium);
+  margin-left: var(--space-3);
+  white-space: nowrap;
+}
+
+/* Slide Container and Slides */
+.pesquisa-slides {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pesquisa-slide {
+  display: none;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity var(--duration-base) var(--ease-out), transform var(--duration-base) var(--ease-out);
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.pesquisa-slide.active {
+  display: flex;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Typography elements */
+.pesquisa-title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+  line-height: var(--leading-tight);
+}
+
+.pesquisa-description {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+  margin-bottom: var(--space-6);
+}
+
+/* Slide 1 - Special White Background override */
+.pesquisa-body.slide-white-bg {
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+.pesquisa-body.slide-white-bg .pesquisa-wrapper {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
+  color: var(--brand-support) !important;
+}
+
+.pesquisa-body.slide-white-bg .pesquisa-header {
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.pesquisa-body.slide-white-bg .pesquisa-logo-img {
+  filter: invert(1) brightness(0.2); /* Invert white logo for white bg */
+}
+
+.pesquisa-body.slide-white-bg .pesquisa-progress-container {
+  background: rgba(0, 0, 0, 0.08) !important;
+}
+
+.pesquisa-body.slide-white-bg .pesquisa-step-counter {
+  color: #6b6b82 !important;
+}
+
+.pesquisa-body.slide-white-bg .pesquisa-title {
+  color: var(--brand-support) !important;
+  text-align: center;
+}
+
+.pesquisa-body.slide-white-bg .pesquisa-description {
+  color: #4a4a5e !important;
+  text-align: center;
+}
+
+/* Card option selectors */
+.pesquisa-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.pesquisa-option-card {
+  display: flex;
+  align-items: center;
+  padding: var(--space-4);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+  position: relative;
+  user-select: none;
+}
+
+.pesquisa-option-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.pesquisa-option-card.selected {
+  background: rgba(255, 1, 73, 0.08);
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 12px rgba(255, 1, 73, 0.15);
+}
+
+/* White bg option styles */
+.slide-white-bg .pesquisa-option-card {
+  background: #f9f9fb;
+  border-color: rgba(0, 0, 0, 0.08);
+  color: var(--brand-support);
+}
+
+.slide-white-bg .pesquisa-option-card:hover {
+  background: #f1f1f5;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.slide-white-bg .pesquisa-option-card.selected {
+  background: rgba(255, 1, 73, 0.05);
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+}
+
+.pesquisa-option-check {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  margin-right: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.slide-white-bg .pesquisa-option-check {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.pesquisa-option-card.selected .pesquisa-option-check {
+  border-color: var(--brand-primary);
+  background-color: var(--brand-primary);
+}
+
+.pesquisa-option-check::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: #ffffff;
+  opacity: 0;
+  transform: scale(0);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.pesquisa-option-card.selected .pesquisa-option-check::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.pesquisa-option-text {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Inputs for text inputs screen */
+.pesquisa-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+@media (min-width: 480px) {
+  .pesquisa-form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-full-width {
+    grid-column: span 2;
+  }
+}
+
+.pesquisa-input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.pesquisa-input-group label {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.pesquisa-input {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-text-primary);
+  font-size: var(--text-base);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.pesquisa-input:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 10px rgba(255, 1, 73, 0.2);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Nav actions */
+.pesquisa-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-top: auto;
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.slide-white-bg .pesquisa-actions {
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Coupon design */
+.coupon-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 2px dashed rgba(255, 1, 73, 0.4);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-4);
+  text-align: center;
+  margin-block: var(--space-6);
+  position: relative;
+  overflow: hidden;
+}
+
+.coupon-code {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--brand-primary);
+  letter-spacing: 0.1em;
+  user-select: all;
+  margin-bottom: var(--space-3);
+  display: block;
+}
+
+.coupon-copy-btn {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.coupon-copy-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-primary);
+}
+
+/* Confetti layout */
+.thank-you-emoji {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: var(--space-4);
+  animation: bounce 2s infinite var(--ease-spring);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Admin Styles */
+.admin-container {
+  width: 100%;
+  max-width: 1000px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8);
+  margin: var(--space-8) auto;
+  box-shadow: var(--shadow-xl);
+  z-index: 10;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6);
+  border-bottom: 1.5px solid var(--brand-primary);
+  padding-bottom: var(--space-4);
+}
+
+.admin-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: var(--space-6);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--text-sm);
+}
+
+.admin-table th,
+.admin-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.admin-table th {
+  background: var(--color-bg-tertiary);
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-semibold);
+  color: var(--brand-white);
+}
+
+.admin-table tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Responsiveness overrides */
+@media (max-width: 600px) {
+  .pesquisa-wrapper {
+    min-height: auto;
+    border-radius: var(--radius-xl);
+    padding: var(--space-6) var(--space-4);
+  }
+  .pesquisa-title {
+    font-size: var(--text-xl);
+  }
+}
