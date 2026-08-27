@@ -129,7 +129,7 @@
         </table>
       </div>
       <div style="text-align: right;">
-        <a href="pesquisa.html" class="btn btn--ghost btn--sm"><i class="ph ph-arrow-left"></i> Voltar para Pesquisa</a>
+        <a href="pesquisa-comu.html" class="btn btn--ghost btn--sm"><i class="ph ph-arrow-left"></i> Voltar para Pesquisa</a>
       </div>
     `;
 
