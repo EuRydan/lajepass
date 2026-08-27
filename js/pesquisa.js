@@ -6,6 +6,10 @@
 (function () {
   'use strict';
 
+  // ---- Configuration ----
+  // Cole a URL do seu Web App do Google Apps Script aqui para enviar os dados para a Planilha
+  const GOOGLE_SHEETS_URL = '';
+
   // ---- State ----
   let currentStep = 0;
   const totalQuestionSteps = 5; // Q1 to Q5
@@ -520,6 +524,37 @@
     .catch(error => {
       console.error('📡 FormSubmit error (will try local backup only):', error);
     });
+
+    // Submit to Google Sheets (Apps Script Web App)
+    if (GOOGLE_SHEETS_URL) {
+      fetch(GOOGLE_SHEETS_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Opaque request to avoid CORS redirect blocks from Google Apps Script
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          timestamp: payload.timestamp,
+          nome: payload.nome,
+          idade: payload.idade,
+          whatsapp: payload.whatsapp,
+          ondeMora: payload.ondeMora,
+          instagram: payload.instagram || 'Não informado',
+          coupon: payload.coupon,
+          q1: payload.answers.q1,
+          q2: Array.isArray(payload.answers.q2) ? payload.answers.q2.join(', ') : payload.answers.q2,
+          q3: Array.isArray(payload.answers.q3) ? payload.answers.q3.join(', ') : payload.answers.q3,
+          q4: Array.isArray(payload.answers.q4) ? payload.answers.q4.join(', ') : payload.answers.q4,
+          q5: payload.answers.q5
+        })
+      })
+      .then(() => {
+        console.log('📊 Survey sent to Google Sheets!');
+      })
+      .catch(error => {
+        console.error('📊 Google Sheets error:', error);
+      });
+    }
   }
 
   // Setup Styles dynamically for shaking container
