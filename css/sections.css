@@ -942,8 +942,9 @@
 /* ---- PARA PRODUTORES ---- */
 
 .producers {
-  background: #5700ff;
+  background: #f5f1f2;
   position: relative;
+  color: var(--brand-support);
 }
 
 .producers .section-label {
@@ -983,7 +984,7 @@
   font-weight: var(--font-weight-black);
   line-height: 1.25;
   margin-bottom: var(--space-6);
-  color: #ffffff;
+  color: var(--brand-support);
 }
 
 .producers__headline-highlight {
@@ -996,7 +997,7 @@
 
 .producers__text {
   font-size: var(--text-lg);
-  color: var(--color-text-secondary);
+  color: #6a667d;
   margin-bottom: var(--space-8);
   line-height: var(--leading-relaxed);
 }
@@ -1012,8 +1013,8 @@
   gap: var(--space-4);
   padding: var(--space-4);
   border-radius: 0;
-  background: var(--color-bg-tertiary);
-  border: none;
+  background: #ffffff;
+  border: 1px solid rgba(29, 7, 70, 0.06);
   transition: all var(--duration-fast);
 }
 
@@ -1038,20 +1039,21 @@
 .producers__benefit-title {
   font-family: var(--font-display);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-text-primary);
+  color: var(--brand-support);
   margin-bottom: var(--space-1);
 }
 
 .producers__benefit-text {
   font-size: var(--text-sm);
-  color: var(--color-text-secondary);
+  color: #6a667d;
 }
 
 .producers__form {
-  background: var(--color-bg-tertiary);
-  border: none;
+  background: #ffffff;
+  border: 1px solid rgba(29, 7, 70, 0.06);
   border-radius: var(--radius-2xl);
   padding: var(--space-8);
+  box-shadow: 0 10px 30px rgba(29, 7, 70, 0.04);
 }
 
 .producers__form-title {
@@ -1060,15 +1062,41 @@
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-6);
   text-align: center;
+  color: var(--brand-support);
 }
 
 .producers__form-subtitle {
   font-size: var(--text-sm);
-  color: var(--color-text-secondary);
+  color: #6a667d;
   text-align: center;
   margin-bottom: var(--space-6);
   margin-top: calc(-1 * var(--space-3));
   line-height: 1.5;
+}
+
+.producers__form .form-label {
+  color: #5c5870;
+}
+
+.producers__form .form-input,
+.producers__form .form-select,
+.producers__form .form-textarea {
+  background: #ffffff;
+  border: 1px solid rgba(29, 7, 70, 0.12);
+  color: var(--brand-support);
+}
+
+.producers__form .form-input:focus,
+.producers__form .form-select:focus,
+.producers__form .form-textarea:focus {
+  background: #ffffff;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(255, 1, 73, 0.1);
+}
+
+.producers__form .form-input::placeholder,
+.producers__form .form-textarea::placeholder {
+  color: #a0a0ba;
 }
 
 .producers__form-row {
