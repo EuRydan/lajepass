@@ -822,11 +822,10 @@
 /* ---- Footer ---- */
 
 .footer {
-  background: #160538; /* Matches brand-dark color consistently on all pages */
+  background: #160538;
   color: var(--brand-white);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 24px 24px 0 0;
-  margin-inline: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  margin: 0 16px 16px;
   padding-block: var(--space-20) var(--space-12);
 }
 
