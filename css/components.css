@@ -824,8 +824,6 @@
 .footer {
   background: #160538;
   color: var(--brand-white);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  margin: 0 16px 16px;
   padding-block: var(--space-20) var(--space-12);
 }
 
