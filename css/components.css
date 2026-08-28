@@ -691,6 +691,11 @@
   padding-inline: var(--space-6);
 }
 
+.header__menu-group {
+  display: flex;
+  align-items: center;
+}
+
 .header__logo {
   display: flex;
   align-items: center;
@@ -1106,6 +1111,10 @@ img.pass-card {
 }
 
 @media (max-width: 768px) {
+  .header__menu-group {
+    display: none;
+  }
+
   .header__nav {
     display: none;
   }
