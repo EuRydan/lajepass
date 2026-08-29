@@ -296,7 +296,7 @@
 .pesquisa-input {
   background: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-lg);
+  border-radius: 0;
   padding: var(--space-3) var(--space-4);
   color: var(--color-text-primary);
   font-size: var(--text-base);

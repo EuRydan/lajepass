@@ -859,7 +859,7 @@
 .radar__form {
   background: var(--color-bg-tertiary);
   border: none;
-  border-radius: var(--radius-2xl);
+  border-radius: 0;
   padding: var(--space-8);
 }
 
@@ -1051,7 +1051,7 @@
 .producers__form {
   background: #ffffff;
   border: 1px solid rgba(29, 7, 70, 0.06);
-  border-radius: var(--radius-2xl);
+  border-radius: 0;
   padding: var(--space-8);
   box-shadow: 0 10px 30px rgba(29, 7, 70, 0.04);
 }

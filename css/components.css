@@ -601,7 +601,7 @@
   color: var(--color-text-primary);
   background: var(--color-bg-secondary);
   border: none;
-  border-radius: var(--radius-lg);
+  border-radius: 0;
   transition: all var(--duration-fast) var(--ease-out);
 }
 
