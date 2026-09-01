@@ -36,12 +36,15 @@
   <!-- ================================================
        HEADER (Event Specific)
        ================================================ -->
-  <header class="header scrolled">
+  <header class="header scrolled" id="header">
     <div class="header__inner">
+      <a href="home.html" class="header__logo">
+        <img src="public/Comu logo.svg" alt="Comu" class="header__logo-img" />
+      </a>
       <div class="header__menu-group">
-        <nav class="header__nav">
-          <a href="index.html" class="header__link"><i class="ph ph-arrow-left"></i> Voltar para Início</a>
-        </nav>
+        <a href="home.html" class="btn btn--secondary btn--sm header__back-btn">
+          <i class="fa-solid fa-arrow-left"></i> <span>Voltar ao início</span>
+        </a>
       </div>
     </div>
   </header>
@@ -53,6 +56,9 @@
     
     <!-- Hero Section -->
     <section id="event-hero" class="event-hero">
+      <a href="home.html" class="event-floating-back" aria-label="Voltar para o início">
+        <i class="fa-solid fa-arrow-left"></i>
+      </a>
       <div class="event-hero__bg">
         <img id="event-bg-image" class="event-hero__bg-img" src="" alt="" />
       </div>
@@ -64,7 +70,7 @@
       <span id="event-badge" class="badge"></span>
       <h1 id="event-title" class="event-header__title"></h1>
       <div class="event-header__meta">
-        <span class="event-header__meta-item"><i class="ph ph-map-pin"></i> <span id="event-meta-location"></span></span>
+        <span class="event-header__meta-item"><i class="fa-solid fa-location-dot"></i> <span id="event-meta-location"></span></span>
       </div>
     </header>
 
@@ -95,7 +101,7 @@
             <div class="event-sidebar-card__info-group">
               
               <div class="event-sidebar-card__info-item">
-                <div class="event-sidebar-card__icon-wrapper"><i class="ph ph-calendar"></i></div>
+                <div class="event-sidebar-card__icon-wrapper"><i class="fa-regular fa-calendar"></i></div>
                 <div>
                   <div class="event-sidebar-card__label">Data</div>
                   <div id="event-info-date" class="event-sidebar-card__value"></div>
@@ -103,7 +109,7 @@
               </div>
 
               <div class="event-sidebar-card__info-item">
-                <div class="event-sidebar-card__icon-wrapper"><i class="ph ph-clock"></i></div>
+                <div class="event-sidebar-card__icon-wrapper"><i class="fa-regular fa-clock"></i></div>
                 <div>
                   <div class="event-sidebar-card__label">Horário</div>
                   <div id="event-info-time" class="event-sidebar-card__value"></div>
@@ -111,7 +117,7 @@
               </div>
 
               <div class="event-sidebar-card__info-item">
-                <div class="event-sidebar-card__icon-wrapper"><i class="ph ph-ticket"></i></div>
+                <div class="event-sidebar-card__icon-wrapper"><i class="fa-solid fa-ticket"></i></div>
                 <div>
                   <div class="event-sidebar-card__label">Valor Geral</div>
                   <div id="event-info-price" class="event-sidebar-card__value"></div>
@@ -119,7 +125,7 @@
               </div>
 
               <div class="event-sidebar-card__info-item">
-                <div class="event-sidebar-card__icon-wrapper"><i class="ph ph-map-pin"></i></div>
+                <div class="event-sidebar-card__icon-wrapper"><i class="fa-solid fa-location-dot"></i></div>
                 <div>
                   <div class="event-sidebar-card__label">Localização</div>
                   <div id="event-info-location" class="event-sidebar-card__value"></div>
@@ -133,7 +139,7 @@
               <a href="https://chat.whatsapp.com/CaifVi3wOTmDLgZnw5arJS" target="_blank" class="btn btn--primary btn--full-width">
                 📡 Entrar no Radar
               </a>
-              <a href="index.html#pass" class="btn btn--secondary btn--full-width">
+              <a href="home.html#pass" class="btn btn--secondary btn--full-width">
                 🎟️ Obter Comu Pass
               </a>
             </div>
