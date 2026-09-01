@@ -317,25 +317,12 @@ body {
   max-width: 680px;
   margin-top: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  text-align: center;
   padding-top: 2rem;
   font-size: 0.825rem;
   color: rgba(255, 255, 255, 0.6);
-}
-
-.admin-link {
-  color: rgba(255, 255, 255, 0.35);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  transition: color 0.2s ease;
-  font-size: 0.75rem;
-}
-
-.admin-link:hover {
-  color: #ffffff;
 }
 
 /* ==========================================================================
