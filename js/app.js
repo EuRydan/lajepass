@@ -108,13 +108,13 @@
           <h3 class="card__name">${exp.name}</h3>
           <div class="card__meta">
             <div class="card__meta-item">
-              <span class="card__meta-icon"><i class="ph ph-calendar"></i></span>
-              <span class="card__meta-text">${formatDate(exp.date)}</span> · ${formatTime(exp.date)}
+              <span class="card__meta-icon"><i class="fa-regular fa-calendar"></i></span>
+              <span class="card__meta-text">${formatDate(exp.date)} · ${formatTime(exp.date)}</span>
             </div>
-            <span class="card__meta-item">
-              <span class="card__meta-icon"><i class="ph ph-map-pin"></i></span>
-              ${exp.location}
-            </span>
+            <div class="card__meta-item">
+              <span class="card__meta-icon"><i class="fa-solid fa-location-dot"></i></span>
+              <span class="card__meta-text">${exp.location}</span>
+            </div>
           </div>
           <p class="card__description">${exp.description}</p>
           ${benefitTagHTML}

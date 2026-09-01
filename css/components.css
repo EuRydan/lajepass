@@ -209,10 +209,18 @@
 }
 
 .card__meta-icon {
-  font-size: var(--text-base);
-  width: 20px;
+  font-size: var(--text-sm);
+  color: var(--brand-primary);
+  width: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   flex-shrink: 0;
+}
+
+.card__meta-icon i {
+  color: var(--brand-primary);
 }
 
 .card__description {
@@ -1185,8 +1193,13 @@ img.pass-card {
   }
 
   .card__meta-icon {
-    font-size: 0.7rem;
-    width: 13px;
+    font-size: 0.75rem;
+    width: 14px;
+    color: var(--brand-primary);
+  }
+
+  .card__meta-icon i {
+    color: var(--brand-primary);
   }
 
   .card__description {
