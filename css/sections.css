@@ -617,8 +617,23 @@
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
+  justify-content: center;
+  gap: 0.65rem;
   align-self: flex-start;
+  text-decoration: none;
+  transition: all var(--duration-base) var(--ease-out);
+}
+
+.picks .btn--picks i {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  display: inline-block;
+  line-height: 1;
+}
+
+.picks .btn--picks span {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .picks .btn--picks:hover {
@@ -681,6 +696,26 @@
 
   .picks-card__visual {
     min-height: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .picks-card__info {
+    padding: var(--space-8) var(--space-5);
+  }
+
+  .picks .btn--picks {
+    width: 100%;
+    align-self: stretch;
+    justify-content: center;
+    padding: 0.875rem 1rem;
+    font-size: 0.775rem;
+    letter-spacing: 0.03em;
+    gap: 0.5rem;
+  }
+  
+  .picks .btn--picks i {
+    font-size: 1.15rem;
   }
 }
 
