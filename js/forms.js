@@ -3,15 +3,16 @@
 // 1. Rate limiting (60s cooldown with countdown)
 // 2. Input Sanitization (<> removal, trim, length constraints)
 // 3. reCAPTCHA v3 Integration
-// 4. Google Sheets / Google Apps Script payload preparation
+// 4. Google Sheets / Google Apps Script payload dispatch
 // ==========================================
 
 (function () {
   'use strict';
 
   // ---- Configuration ----
-  const RECAPTCHA_SITE_KEY = 'SITE_KEY'; // Subsitua pelo seu site key do Google reCAPTCHA v3
+  const RECAPTCHA_SITE_KEY = 'SITE_KEY'; // Substitua pelo seu site key do Google reCAPTCHA v3
   const RATE_LIMIT_SECONDS = 60;
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw47e7NkL9E24tEMhVrn8yD6c2cHkVy-kM6LJsJ1Oue4Gfo9Won06QVTgwrJSuD7Hll/exec';
 
   // ---- Security Helpers ----
 
@@ -114,7 +115,29 @@
         console.warn('reCAPTCHA execution error:', err);
       }
     }
-    return 'RECAPTCHA_PLACEHOLDER_TOKEN';
+    return '';
+  }
+
+  /**
+   * Dispatches JSON payload to Google Apps Script / Google Sheets
+   * @param {object} payload 
+   * @returns {Promise<boolean>}
+   */
+  async function sendToGoogleScript(payload) {
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8'
+        },
+        body: JSON.stringify(payload)
+      });
+      return true;
+    } catch (err) {
+      console.error('Erro ao enviar dados para o Google Sheets:', err);
+      return false;
+    }
   }
 
   // ==========================================
@@ -142,6 +165,7 @@
       const reasonInput = form.querySelector('[name="radar-reason"]');
 
       const data = {
+        formulario: 'radar',
         name: sanitizeInput(nameInput ? nameInput.value : '', false),             // Short text: max 100
         type: sanitizeInput(typeInput ? typeInput.value : '', false),             // Short text: max 100
         instagram: sanitizeInput(instagramInput ? instagramInput.value : '', false), // Short text: max 100
@@ -156,7 +180,7 @@
         return;
       }
 
-      // Execute reCAPTCHA v3
+      // UI Loading state
       const submitBtn = form.querySelector('button[type="submit"]');
       if (submitBtn) {
         submitBtn.disabled = true;
@@ -164,26 +188,16 @@
         submitBtn.innerHTML = '<i class="ph ph-spinner ph-spin"></i> Enviando...';
       }
 
+      // Execute reCAPTCHA v3
       data.recaptchaToken = await getRecaptchaToken('radar_submit');
 
       // Record rate limit in localStorage
       setRateLimitTimestamp('radar-form');
 
-      console.log('📡 Comu Radar — Payload sanitizado para Google Sheets:', data);
+      console.log('📡 Comu Radar — Enviando POST para Google Apps Script:', data);
 
-      // (If a Google Apps Script action URL is configured in form.action, send via fetch)
-      if (form.action && form.action.includes('script.google.com')) {
-        try {
-          await fetch(form.action, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-          });
-        } catch (err) {
-          console.warn('Erro ao enviar para o Google Sheets:', err);
-        }
-      }
+      // Send to Google Sheets via fetch POST
+      await sendToGoogleScript(data);
 
       // Show success
       showFormSuccess(form, {
@@ -222,6 +236,7 @@
       const messageInput = form.querySelector('[name="producer-message"]');
 
       const data = {
+        formulario: 'parceiro',
         name: sanitizeInput(nameInput ? nameInput.value : '', false),                 // Short text: max 100
         company: sanitizeInput(companyInput ? companyInput.value : '', false),           // Short text: max 100
         instagram: sanitizeInput(instagramInput ? instagramInput.value : '', false),       // Short text: max 100
@@ -239,7 +254,7 @@
         return;
       }
 
-      // Execute reCAPTCHA v3
+      // UI Loading state
       const submitBtn = form.querySelector('button[type="submit"]');
       if (submitBtn) {
         submitBtn.disabled = true;
@@ -247,26 +262,16 @@
         submitBtn.innerHTML = '<i class="ph ph-spinner ph-spin"></i> Enviando...';
       }
 
+      // Execute reCAPTCHA v3
       data.recaptchaToken = await getRecaptchaToken('producers_submit');
 
       // Record rate limit in localStorage
       setRateLimitTimestamp('producers-form');
 
-      console.log('🤝 Comu — Payload parceiro sanitizado para Google Sheets:', data);
+      console.log('🤝 Comu — Enviando POST de parceiro para Google Apps Script:', data);
 
-      // (If a Google Apps Script action URL is configured in form.action, send via fetch)
-      if (form.action && form.action.includes('script.google.com')) {
-        try {
-          await fetch(form.action, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-          });
-        } catch (err) {
-          console.warn('Erro ao enviar para o Google Sheets:', err);
-        }
-      }
+      // Send to Google Sheets via fetch POST
+      await sendToGoogleScript(data);
 
       // Show success
       showFormSuccess(form, {
@@ -299,6 +304,7 @@
       const whatsappInput = form.querySelector('[name="pass-whatsapp"]');
 
       const data = {
+        formulario: 'pass',
         name: sanitizeInput(nameInput ? nameInput.value : '', false),
         email: sanitizeInput(emailInput ? emailInput.value : '', false),
         whatsapp: sanitizeInput(whatsappInput ? whatsappInput.value : '', false),
@@ -314,7 +320,9 @@
       data.recaptchaToken = await getRecaptchaToken('pass_submit');
       setRateLimitTimestamp('pass-form');
 
-      console.log('💳 Comu Pass — Payload sanitizado:', data);
+      console.log('💳 Comu Pass — Enviando POST para Google Apps Script:', data);
+
+      await sendToGoogleScript(data);
 
       showFormSuccess(form, {
         icon: '<i class="ph-fill ph-confetti" style="font-size: 24px; color: var(--brand-primary)"></i>',
