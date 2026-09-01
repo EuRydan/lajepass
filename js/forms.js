@@ -109,17 +109,39 @@
    */
   function getRecaptchaToken(action = 'submit') {
     return new Promise((resolve) => {
-      if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.execute === 'function' && RECAPTCHA_SITE_KEY && RECAPTCHA_SITE_KEY !== 'SITE_KEY') {
-        grecaptcha.ready(function () {
-          grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: action })
-            .then(token => resolve(token))
-            .catch(err => {
-              console.warn('reCAPTCHA execution error:', err);
+      // Timeout fallback: never let the form hang for more than 2.5 seconds
+      const timeout = setTimeout(() => {
+        console.warn('reCAPTCHA timed out — proceeding with submission');
+        resolve('');
+      }, 2500);
+
+      try {
+        if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.ready === 'function' && RECAPTCHA_SITE_KEY && RECAPTCHA_SITE_KEY !== 'SITE_KEY') {
+          grecaptcha.ready(function () {
+            try {
+              grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: action })
+                .then(token => {
+                  clearTimeout(timeout);
+                  resolve(token || '');
+                })
+                .catch(err => {
+                  clearTimeout(timeout);
+                  console.warn('reCAPTCHA execution error:', err);
+                  resolve('');
+                });
+            } catch (innerErr) {
+              clearTimeout(timeout);
+              console.warn('reCAPTCHA execute sync error:', innerErr);
               resolve('');
-            });
-        });
-      } else {
-        // Se ainda estiver com o placeholder SITE_KEY, retorna vazio
+            }
+          });
+        } else {
+          clearTimeout(timeout);
+          resolve('');
+        }
+      } catch (outerErr) {
+        clearTimeout(timeout);
+        console.warn('reCAPTCHA ready error:', outerErr);
         resolve('');
       }
     });
