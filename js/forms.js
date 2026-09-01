@@ -10,7 +10,8 @@
   'use strict';
 
   // ---- Configuration ----
-  const RECAPTCHA_SITE_KEY = 'SITE_KEY'; // Substitua pelo seu site key do Google reCAPTCHA v3
+  // Insira sua chave pública do reCAPTCHA v3 (Site Key) abaixo:
+  const RECAPTCHA_SITE_KEY = 'SITE_KEY';
   const RATE_LIMIT_SECONDS = 60;
   const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw47e7NkL9E24tEMhVrn8yD6c2cHkVy-kM6LJsJ1Oue4Gfo9Won06QVTgwrJSuD7Hll/exec';
 
@@ -94,7 +95,6 @@
 
     warningEl.innerHTML = `<i class="ph-fill ph-clock-countdown" style="font-size: 1.2em;"></i> Aguarde <strong>${remainingSeconds}s</strong> antes de enviar novamente.`;
 
-    // Clear warning automatically after 4 seconds
     setTimeout(() => {
       if (warningEl && warningEl.parentNode) {
         warningEl.remove();
@@ -103,23 +103,30 @@
   }
 
   /**
-   * Fetches reCAPTCHA v3 token if script is loaded
+   * Fetches reCAPTCHA v3 token if script is loaded and site key is present
    * @param {string} action 
    * @returns {Promise<string>}
    */
-  async function getRecaptchaToken(action = 'submit') {
-    if (typeof grecaptcha !== 'undefined' && RECAPTCHA_SITE_KEY && RECAPTCHA_SITE_KEY !== 'SITE_KEY') {
-      try {
-        return await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action });
-      } catch (err) {
-        console.warn('reCAPTCHA execution error:', err);
+  function getRecaptchaToken(action = 'submit') {
+    return new Promise((resolve) => {
+      if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.execute === 'function' && RECAPTCHA_SITE_KEY && RECAPTCHA_SITE_KEY !== 'SITE_KEY') {
+        grecaptcha.ready(function () {
+          grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: action })
+            .then(token => resolve(token))
+            .catch(err => {
+              console.warn('reCAPTCHA execution error:', err);
+              resolve('');
+            });
+        });
+      } else {
+        // Se ainda estiver com o placeholder SITE_KEY, retorna vazio
+        resolve('');
       }
-    }
-    return '';
+    });
   }
 
   /**
-   * Dispatches JSON payload to Google Apps Script / Google Sheets
+   * Dispatches JSON payload to Google Apps Script Web App
    * @param {object} payload 
    * @returns {Promise<boolean>}
    */
@@ -164,18 +171,13 @@
       const instagramInput = form.querySelector('[name="radar-instagram"]');
       const reasonInput = form.querySelector('[name="radar-reason"]');
 
-      const data = {
-        formulario: 'radar',
-        name: sanitizeInput(nameInput ? nameInput.value : '', false),             // Short text: max 100
-        type: sanitizeInput(typeInput ? typeInput.value : '', false),             // Short text: max 100
-        instagram: sanitizeInput(instagramInput ? instagramInput.value : '', false), // Short text: max 100
-        reason: sanitizeInput(reasonInput ? reasonInput.value : '', true),          // Long text: max 1000
-        recaptchaToken: '',
-        timestamp: new Date().toISOString()
-      };
+      const nameVal = sanitizeInput(nameInput ? nameInput.value : '', false);
+      const typeVal = sanitizeInput(typeInput ? typeInput.value : '', false);
+      const instaVal = sanitizeInput(instagramInput ? instagramInput.value : '', false);
+      const reasonVal = sanitizeInput(reasonInput ? reasonInput.value : '', true);
 
       // Basic validation
-      if (!data.name || !data.type || !data.reason) {
+      if (!nameVal || !typeVal || !reasonVal) {
         shakeForm(form);
         return;
       }
@@ -189,12 +191,26 @@
       }
 
       // Execute reCAPTCHA v3
-      data.recaptchaToken = await getRecaptchaToken('radar_submit');
+      const token = await getRecaptchaToken('radar_submit');
+
+      const data = {
+        formulario: 'radar',
+        name: nameVal,
+        nome: nameVal,
+        type: typeVal,
+        tipo: typeVal,
+        instagram: instaVal,
+        reason: reasonVal,
+        motivo: reasonVal,
+        porQueIndicar: reasonVal,
+        recaptchaToken: token,
+        timestamp: new Date().toISOString()
+      };
 
       // Record rate limit in localStorage
       setRateLimitTimestamp('radar-form');
 
-      console.log('📡 Comu Radar — Enviando POST para Google Apps Script:', data);
+      console.log('📡 Comu Radar — Payload enviado para Google Apps Script:', data);
 
       // Send to Google Sheets via fetch POST
       await sendToGoogleScript(data);
@@ -235,21 +251,16 @@
       const websiteInput = form.querySelector('[name="producer-website"]');
       const messageInput = form.querySelector('[name="producer-message"]');
 
-      const data = {
-        formulario: 'parceiro',
-        name: sanitizeInput(nameInput ? nameInput.value : '', false),                 // Short text: max 100
-        company: sanitizeInput(companyInput ? companyInput.value : '', false),           // Short text: max 100
-        instagram: sanitizeInput(instagramInput ? instagramInput.value : '', false),       // Short text: max 100
-        whatsapp: sanitizeInput(whatsappInput ? whatsappInput.value : '', false),         // Short text: max 100
-        eventType: sanitizeInput(eventTypeInput ? eventTypeInput.value : '', false),       // Short text: max 100
-        website: sanitizeInput(websiteInput ? websiteInput.value : '', false),           // Short text: max 100
-        message: sanitizeInput(messageInput ? messageInput.value : '', true),            // Long text: max 1000
-        recaptchaToken: '',
-        timestamp: new Date().toISOString()
-      };
+      const nameVal = sanitizeInput(nameInput ? nameInput.value : '', false);
+      const companyVal = sanitizeInput(companyInput ? companyInput.value : '', false);
+      const instaVal = sanitizeInput(instagramInput ? instagramInput.value : '', false);
+      const waVal = sanitizeInput(whatsappInput ? whatsappInput.value : '', false);
+      const eventTypeVal = sanitizeInput(eventTypeInput ? eventTypeInput.value : '', false);
+      const siteVal = sanitizeInput(websiteInput ? websiteInput.value : '', false);
+      const msgVal = sanitizeInput(messageInput ? messageInput.value : '', true);
 
       // Basic validation
-      if (!data.name || !data.company || !data.eventType) {
+      if (!nameVal || !companyVal || !eventTypeVal) {
         shakeForm(form);
         return;
       }
@@ -263,12 +274,32 @@
       }
 
       // Execute reCAPTCHA v3
-      data.recaptchaToken = await getRecaptchaToken('producers_submit');
+      const token = await getRecaptchaToken('producers_submit');
+
+      const data = {
+        formulario: 'parceiro',
+        name: nameVal,
+        nome: nameVal,
+        company: companyVal,
+        empresa: companyVal,
+        projeto: companyVal,
+        instagram: instaVal,
+        whatsapp: waVal,
+        eventType: eventTypeVal,
+        tipoEvento: eventTypeVal,
+        tipo: eventTypeVal,
+        website: siteVal,
+        site: siteVal,
+        message: msgVal,
+        mensagem: msgVal,
+        recaptchaToken: token,
+        timestamp: new Date().toISOString()
+      };
 
       // Record rate limit in localStorage
       setRateLimitTimestamp('producers-form');
 
-      console.log('🤝 Comu — Enviando POST de parceiro para Google Apps Script:', data);
+      console.log('🤝 Comu — Payload de parceiro enviado para Google Apps Script:', data);
 
       // Send to Google Sheets via fetch POST
       await sendToGoogleScript(data);
@@ -303,24 +334,30 @@
       const emailInput = form.querySelector('[name="pass-email"]');
       const whatsappInput = form.querySelector('[name="pass-whatsapp"]');
 
-      const data = {
-        formulario: 'pass',
-        name: sanitizeInput(nameInput ? nameInput.value : '', false),
-        email: sanitizeInput(emailInput ? emailInput.value : '', false),
-        whatsapp: sanitizeInput(whatsappInput ? whatsappInput.value : '', false),
-        recaptchaToken: '',
-        timestamp: new Date().toISOString()
-      };
+      const nameVal = sanitizeInput(nameInput ? nameInput.value : '', false);
+      const emailVal = sanitizeInput(emailInput ? emailInput.value : '', false);
+      const waVal = sanitizeInput(whatsappInput ? whatsappInput.value : '', false);
 
-      if (!data.name || !data.email) {
+      if (!nameVal || !emailVal) {
         shakeForm(form);
         return;
       }
 
-      data.recaptchaToken = await getRecaptchaToken('pass_submit');
+      const token = await getRecaptchaToken('pass_submit');
+
+      const data = {
+        formulario: 'pass',
+        name: nameVal,
+        nome: nameVal,
+        email: emailVal,
+        whatsapp: waVal,
+        recaptchaToken: token,
+        timestamp: new Date().toISOString()
+      };
+
       setRateLimitTimestamp('pass-form');
 
-      console.log('💳 Comu Pass — Enviando POST para Google Apps Script:', data);
+      console.log('💳 Comu Pass — Payload enviado para Google Apps Script:', data);
 
       await sendToGoogleScript(data);
 
@@ -338,10 +375,9 @@
 
   function shakeForm(form) {
     form.style.animation = 'none';
-    void form.offsetHeight; // Force reflow
+    void form.offsetHeight;
     form.style.animation = 'shake 0.4s ease-in-out';
 
-    // Highlight empty required fields
     form.querySelectorAll('[required]').forEach(input => {
       if (!input.value.trim()) {
         input.style.borderColor = 'var(--color-rose)';
