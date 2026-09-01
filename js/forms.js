@@ -13,7 +13,7 @@
   // Insira sua chave pública do reCAPTCHA v3 (Site Key) abaixo:
   const RECAPTCHA_SITE_KEY = '6LclA6QtAAAAAAc98Y4QdzQf3oomZrt-PydXgikN';
   const RATE_LIMIT_SECONDS = 60;
-  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw47e7NkL9E24tEMhVrn8yD6c2cHkVy-kM6LJsJ1Oue4Gfo9Won06QVTgwrJSuD7Hll/exec';
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwv6U91qlBEJZIzlOPCnbAhdO-a2nPlZJW1MS2_KOPZ0UA7wmv6MxgZ_fZDx0p0QU9b/exec';
 
   // ---- Security Helpers ----
 
