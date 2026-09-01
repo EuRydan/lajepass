@@ -11,7 +11,7 @@
 
   // ---- Configuration ----
   // Insira sua chave pública do reCAPTCHA v3 (Site Key) abaixo:
-  const RECAPTCHA_SITE_KEY = '6Ldz2aMtAAAAL_EQdVtngqlkalT_tujO4MQ-0NL';
+  const RECAPTCHA_SITE_KEY = '6LclA6QtAAAAAAc98Y4QdzQf3oomZrt-PydXgikN';
   const RATE_LIMIT_SECONDS = 60;
   const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw47e7NkL9E24tEMhVrn8yD6c2cHkVy-kM6LJsJ1Oue4Gfo9Won06QVTgwrJSuD7Hll/exec';
 
