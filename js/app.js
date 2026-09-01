@@ -612,6 +612,82 @@
     initActiveNav();
     initMapView();
     initFaqAccordion();
+    initTermosModal();
+    initPrivacidadeModal();
+  }
+
+  // ---- Termos de Uso Modal ----
+  function initTermosModal() {
+    const trigger  = document.getElementById('termos-trigger');
+    const overlay  = document.getElementById('termos-overlay');
+    const closeBtn = document.getElementById('termos-close');
+    if (!trigger || !overlay || !closeBtn) return;
+
+    function openModal() {
+      overlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+
+    function closeModal() {
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+      trigger.focus();
+    }
+
+    trigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      openModal();
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeModal();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+  }
+
+  // ---- Política de Privacidade Modal ----
+  function initPrivacidadeModal() {
+    const trigger  = document.getElementById('privacidade-trigger');
+    const overlay  = document.getElementById('privacidade-overlay');
+    const closeBtn = document.getElementById('privacidade-close');
+    if (!trigger || !overlay || !closeBtn) return;
+
+    function openModal() {
+      overlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+
+    function closeModal() {
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+      trigger.focus();
+    }
+
+    trigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      openModal();
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeModal();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
   }
 
   // Run when DOM is ready

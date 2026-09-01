@@ -1149,3 +1149,200 @@ img.pass-card {
     max-width: 100%;
   }
 }
+
+/* ==========================================
+   MODAL — TERMOS DE USO
+   ========================================== */
+
+.termos-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-slow) var(--ease-out);
+}
+
+.termos-overlay.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.termos-modal {
+  position: relative;
+  background: #ffffff;
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.45);
+  transform: translateY(24px) scale(0.97);
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.termos-overlay.is-open .termos-modal {
+  transform: translateY(0) scale(1);
+}
+
+/* Header with logo */
+.termos-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-8) var(--space-6);
+  border-bottom: 1px solid #ebebeb;
+  flex-shrink: 0;
+  background: #ffffff;
+}
+
+.termos-modal__logo {
+  height: 32px;
+  width: auto;
+  /* Invert the white logo to dark for white background */
+  filter: invert(1) hue-rotate(180deg) brightness(0);
+}
+
+/* Close button */
+.termos-modal__close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  border: none;
+  background: #f0f0f0;
+  color: #444;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: background var(--duration-fast), color var(--duration-fast);
+  z-index: 2;
+}
+
+.termos-modal__close:hover {
+  background: #e0e0e0;
+  color: #111;
+}
+
+/* Scrollable body */
+.termos-modal__body {
+  overflow-y: auto;
+  padding: var(--space-8);
+  flex: 1;
+  color: #1a1a2e;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+
+  /* Custom scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #ddd transparent;
+}
+
+.termos-modal__body::-webkit-scrollbar {
+  width: 6px;
+}
+.termos-modal__body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.termos-modal__body::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 99px;
+}
+
+.termos-modal__title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-bold);
+  color: #111;
+  margin-bottom: var(--space-1);
+  letter-spacing: var(--tracking-tight);
+}
+
+.termos-modal__updated {
+  font-size: var(--text-xs);
+  color: #888;
+  margin-bottom: var(--space-8);
+}
+
+.termos-modal__body h2 {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  color: #111;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1.5px solid #f0f0f0;
+}
+
+.termos-modal__body p {
+  color: #444;
+  margin-bottom: var(--space-4);
+}
+
+.termos-modal__body ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.termos-modal__body ul li {
+  color: #444;
+  padding-left: var(--space-5);
+  position: relative;
+}
+
+.termos-modal__body ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.termos-modal__body strong {
+  color: #222;
+  font-weight: var(--font-weight-semibold);
+}
+
+.termos-modal__body a {
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--duration-fast);
+}
+
+.termos-modal__body a:hover {
+  border-bottom-color: var(--color-accent);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .termos-overlay {
+    padding: var(--space-4) var(--space-3);
+    align-items: flex-end;
+  }
+
+  .termos-modal {
+    max-height: 92vh;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  }
+}
+

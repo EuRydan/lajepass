@@ -1,0 +1,366 @@
+/* ==========================================================================
+   COMU / LAJE PASS — UNDER CONSTRUCTION (ESTAMOS CONSTRUINDO)
+   Solid Clean Background (#5700ff) & Flat PNG Logo
+   ========================================================================== */
+
+:root {
+  --bg-solid: #5700ff;
+  --color-primary: #ff0149;
+  --color-primary-hover: #ff2a68;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-hover: #1ebd5a;
+  --color-white: #ffffff;
+  --color-white-translucent: rgba(255, 255, 255, 0.9);
+  --color-white-muted: rgba(255, 255, 255, 0.75);
+  --color-input-bg: rgba(255, 255, 255, 0.12);
+  --color-border: rgba(255, 255, 255, 0.2);
+  --color-border-focus: rgba(255, 255, 255, 0.5);
+  
+  --font-main: 'Gotham', 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-solid);
+  color: var(--color-white);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2.5rem 1.5rem;
+  background-color: #5700ff;
+  background-image: url('../public/background hero.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* ==========================================================================
+   MAIN CONTAINER
+   ========================================================================== */
+.main-wrapper {
+  width: 100%;
+  max-width: 680px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+/* ==========================================================================
+   LOGO (FLAT PNG, NO 3D / NO ROTATION)
+   ========================================================================== */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.main-logo {
+  width: 220px;
+  max-width: 85%;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.flag-badge-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.flag-badge-img {
+  width: 70px;
+  height: auto;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ==========================================================================
+   CONTENT & TYPOGRAPHY
+   ========================================================================== */
+.content-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  gap: 1.25rem;
+}
+
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--color-border);
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.main-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.text-pink {
+  color: var(--color-primary);
+}
+
+.main-desc {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.6;
+  color: var(--color-white-muted);
+  max-width: 540px;
+}
+
+/* ==========================================================================
+   INTERACTIVE NOTIFY / VIP CARD
+   ========================================================================== */
+.card-container {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 20px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-white-translucent);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.notify-form {
+  display: flex;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.notify-input {
+  flex: 1;
+  background: var(--color-input-bg);
+  border: none;
+  border-radius: 12px;
+  padding: 0.85rem 1.15rem;
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-family: var(--font-body);
+  outline: none;
+  transition: background-color 0.2s ease;
+}
+
+.notify-input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.notify-input:focus {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-notify {
+  background: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 0.85rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: var(--font-main);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-notify:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-notify:active {
+  transform: translateY(0);
+}
+
+/* Success Message */
+.notify-success {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem;
+  background: rgba(255, 255, 255, 0.18);
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* WhatsApp Radar CTA Button */
+.btn-whatsapp-comu {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background: var(--color-whatsapp);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.25rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+}
+
+.btn-whatsapp-comu:hover {
+  background: var(--color-whatsapp-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp-comu i {
+  font-size: 1.25rem;
+}
+
+/* Divider Line */
+.card-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Social Media Links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.social-btn:hover {
+  background: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.bottom-footer {
+  width: 100%;
+  max-width: 680px;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  font-size: 0.825rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.admin-link {
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.2s ease;
+  font-size: 0.75rem;
+}
+
+.admin-link:hover {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 600px) {
+  body {
+    padding: 2rem 1.25rem;
+  }
+  
+  .main-logo {
+    width: 140px;
+  }
+  
+  .notify-form {
+    flex-direction: column;
+  }
+  
+  .btn-notify {
+    justify-content: center;
+  }
+  
+  .bottom-footer {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+}

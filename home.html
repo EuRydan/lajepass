@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO -->
+  <title>Comu — Descubra o que acontece no Rio</title>
+  <meta name="description" content="A Comu conecta você às melhores experiências, eventos, bares, festas e cultura do Rio de Janeiro. Descubra, explore e faça parte." />
+  <meta name="keywords" content="Rio de Janeiro, eventos, experiências, festas, bares, gastronomia, cultura, comunidade" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Comu — Descubra o que acontece no Rio" />
+  <meta property="og:description" content="Eventos, experiências e cultura curados para quem vive o Rio de verdade." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  
+  <!-- Flatpickr CSS & Dark Theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css" />
+
+  <link rel="stylesheet" href="css/components.css?v=2" />
+  <link rel="stylesheet" href="css/sections.css?v=4" />
+  
+  <!-- Phosphor Icons (Vector icons) -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 256 256%22><rect width=%22256%22 height=%22256%22 fill=%22none%22/><path d=%22M112,16H32A16,16,0,0,0,16,32V224a16,16,0,0,0,16,16h80%22 fill=%22none%22 stroke=%22%23ff0149%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%2216%22/><path d=%22M240,224H112V64a16,16,0,0,1,16-16h96a16,16,0,0,1,16,16Z%22 fill=%22none%22 stroke=%22%23ff0149%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%2216%22/></svg>" />
+</head>
+<body>
+
+  <!-- ================================================
+       HEADER / NAVIGATION
+       ================================================ -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="#" class="header__logo">
+        <img src="public/Comu logo.svg" alt="Comu Pass" class="header__logo-img" />
+      </a>
+
+      <div class="header__menu-group">
+        <nav class="header__nav">
+          <a href="#experiencias" class="header__link">Experiências</a>
+          <a href="#picks" class="header__link">Radar</a>
+          <a href="#pass" class="header__link">Comu Pass</a>
+          <a href="#produtores" class="header__link">Para Produtores</a>
+        </nav>
+
+        <a href="#pass" class="header__cta btn btn--primary btn--sm">FAZER PARTE</a>
+      </div>
+
+      <button class="header__burger" aria-label="Menu" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav" id="mobile-nav">
+    <button class="mobile-nav__close" id="mobile-nav-close" aria-label="Fechar menu">
+      <i class="ph ph-x"></i>
+    </button>
+    <a href="#experiencias" class="mobile-nav__link">Experiências</a>
+    <a href="#picks" class="mobile-nav__link">Radar</a>
+    <a href="#pass" class="mobile-nav__link">Comu Pass</a>
+    <a href="#produtores" class="mobile-nav__link">Para Produtores</a>
+    <a href="#pass" class="mobile-nav__link btn btn--primary" style="margin-top: 1rem;">FAZER PARTE</a>
+  </nav>
+
+
+  <!-- ================================================
+       01. HERO — "O RIO ACONTECE. A COMU TE LEVA ATÉ ELE."
+       ================================================ -->
+  <section class="hero" id="hero">
+    <!-- Background SVG pattern -->
+    <div class="hero__bg">
+      <img src="public/background hero.svg" alt="" class="hero__bg-image" />
+    </div>
+
+    <div class="hero__content">
+      <!-- Comu Logo -->
+      <div class="hero__logo">
+        <img src="public/bandeira2.svg" alt="Comu" class="hero__logo-img" />
+      </div>
+
+      <!-- Typographic hero text (HTML styled with Gotham) -->
+      <h1 class="hero__title-new">
+        <span class="hero__title-line">O <span class="text-accent">RIO</span> ACONTECE.</span>
+        <span class="hero__title-line">A <img src="public/Ativo 21.svg" class="hero__title-logo" alt="Comu Pass" /> TE LEVA ATÉ ELE.</span>
+      </h1>
+      <p class="hero__subtitle-new">
+        Descubra o que vale a pena viver no Rio / eventos, lugares, benefícios e experiências em um só lugar.
+      </p>
+
+      <div class="hero__ctas">
+        <a href="#experiencias" class="btn btn--hero-left">EXPLORAR A COMU</a>
+        <a href="#picks" class="btn btn--hero-right">ENTRAR NO RADAR</a>
+      </div>
+    </div>
+
+    <!-- Divider SVG (overlapping the bottom of the hero) -->
+    <div class="hero-divider">
+      <img src="public/divisória hero.svg" alt="" />
+    </div>
+  </section>
+
+  <!-- ================================================
+       02. COMU RADAR
+       ================================================ -->
+  <section class="section picks" id="picks">
+    <div class="container">
+      <div class="picks-card">
+        <div class="picks-card__content">
+          <div class="picks-card__info">
+            <div class="section-header animate-on-scroll">
+              <span class="section-label" style="color: #ffffff;"><i class="ph-fill ph-broadcast"></i> Comu Radar</span>
+              <h2 class="section-title">O QUE ESTÁ NO SEU RADAR?</h2>
+              <p class="section-subtitle">Os melhores rolês do Rio, filtrados por quem vive a cidade.</p>
+              <div class="picks-categories" style="color: rgba(255, 255, 255, 0.85); font-family: var(--font-display); font-size: var(--text-sm); font-weight: var(--font-weight-semibold); margin-top: var(--space-4); letter-spacing: var(--tracking-wide);">
+                Festas &middot; Shows &middot; Gastronomia &middot; Cultura &middot; Experiências
+              </div>
+            </div>
+
+            <a href="https://chat.whatsapp.com/CaifVi3wOTmDLgZnw5arJS" target="_blank" class="btn btn--picks animate-on-scroll">
+              <i class="fa-brands fa-whatsapp" style="font-size: 1.25em;"></i> ENTRAR NO RADAR GRATUITO
+            </a>
+          </div>
+          <div class="picks-card__visual animate-on-scroll">
+            <img src="public/tai-s-captures-OQDDvB5r0bM-unsplash.jpg" alt="Comu Radar Curadoria" class="picks-card__image" loading="lazy" />
+          </div>
+        </div>
+      </div> <!-- /picks-card -->
+    </div>
+  </section>
+
+
+
+  <!-- ================================================
+       04. CATEGORIAS E EXPERIÊNCIAS
+       ================================================ -->
+  <section class="section experiences" id="experiencias">
+    <div class="container experiences-layout-grid">
+      
+      <!-- Left Sidebar -->
+      <aside class="experiences-sidebar">
+        <p class="hero-categories__label">O que você quer viver?</p>
+        
+        <!-- Modern Calendar range picker -->
+        <div class="sidebar-time-filters">
+          <p class="sidebar-filter-label">Quando?</p>
+          <div class="datepicker-wrapper">
+            <span class="datepicker-icon"><i class="ph ph-calendar"></i></span>
+            <input type="text" id="datepicker-input" class="datepicker-input" placeholder="Selecione data ou período..." readonly />
+            <button id="datepicker-clear" class="datepicker-clear-btn" aria-label="Limpar data" title="Limpar filtro de data">
+              <i class="ph ph-x"></i>
+            </button>
+          </div>
+        </div>
+
+        <p class="sidebar-filter-label" style="margin-top: var(--space-6);">Categorias</p>
+        <div class="hero-categories__grid">
+          <!-- Botão "Todos" adicionado caso o usuário queira limpar as categorias -->
+          <button class="hero__category active" data-hero-category="todos">Todos</button>
+          <button class="hero__category" data-hero-category="musica"><i class="ph ph-music-notes"></i> Música</button>
+          <button class="hero__category" data-hero-category="festas"><i class="ph ph-confetti"></i> Festas</button>
+          <button class="hero__category" data-hero-category="bares"><i class="ph ph-martini"></i> Bares</button>
+          <button class="hero__category" data-hero-category="gastronomia"><i class="ph ph-fork-knife"></i> Gastronomia</button>
+          <button class="hero__category" data-hero-category="cultura"><i class="ph ph-mask-happy"></i> Cultura</button>
+          <button class="hero__category" data-hero-category="experiencias"><i class="ph ph-sparkle"></i> Experiências</button>
+        </div>
+
+      </aside>
+
+      <!-- Experiences Main Content Area -->
+      <div class="experiences-main">
+        <div class="experiences__header">
+          <h2 class="section-title">O que está acontecendo</h2>
+          <p class="section-subtitle">Eventos e rolês em destaque pela cidade selecionados a dedo.</p>
+        </div>
+
+        <!-- View Toggle -->
+        <div class="view-toggle" id="view-toggle">
+          <button class="view-toggle__btn active" id="btn-view-cards" aria-label="Ver como cards">
+            <i class="ph ph-squares-four"></i> Cards
+          </button>
+          <button class="view-toggle__btn" id="btn-view-map" aria-label="Ver no mapa">
+            <i class="ph ph-map-trifold"></i> Mapa
+          </button>
+        </div>
+
+        <!-- Experience Cards Grid (rendered by JS) -->
+        <div class="experiences__grid" id="experiences-grid">
+          <!-- Cards injected by app.js -->
+        </div>
+
+        <!-- Map View -->
+        <div class="map-view" id="map-view" hidden>
+          <div class="map-container" id="map-container"></div>
+          <!-- Legenda -->
+          <div class="map-legend" id="map-legend">
+            <span class="map-legend__title"><i class="ph ph-map-pin"></i> Legenda</span>
+            <div class="map-legend__items" id="map-legend-items"></div>
+          </div>
+        </div>
+
+      </div> <!-- /experiences-main -->
+    </div> <!-- /container -->
+  </section>
+
+
+  <!-- ================================================
+       04. COMU PASS
+       ================================================ -->
+  <section class="section pass" id="pass" style="padding-top: 0; position: relative;">
+    <!-- Divider separating white picks area from dark pass area -->
+    <div class="pass-divider" style="width: 100%; line-height: 0; transform: scaleY(-1); margin-bottom: var(--space-8);">
+      <svg viewBox="0 0 1890.67 281.54" preserveAspectRatio="none" style="width: 100%; height: auto; display: block;">
+        <polygon fill="var(--brand-white)" points="0 88.33 382.51 239.11 998.11 115.11 1557.62 163.11 1890.67 0 1890.67 281.54 0 281.54 0 88.33"/>
+      </svg>
+    </div>
+
+    <div class="container">
+      <!-- Centered Header -->
+      <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="ph-fill ph-credit-card"></i> Comu Pass</span>
+        <h2 class="section-title pass__title">VIVER MAIS.<br><span class="text-accent">PAGAR MENOS.</span></h2>
+      </div>
+
+      <div class="pass__content">
+        <div class="pass__info animate-left">
+          <p class="pass__text">
+            Com o Comu Pass, você desbloqueia benefícios exclusivos em eventos, bares, restaurantes e experiências parceiros.
+          </p>
+
+          <div class="pass__benefits">
+            <div class="pass__benefit-item">
+              <span class="pass__benefit-icon"><i class="ph ph-gift"></i></span>
+              <span class="pass__benefit-label">Compre 1 &rarr; Leve 2</span>
+            </div>
+            <div class="pass__benefit-item">
+              <span class="pass__benefit-icon"><i class="ph ph-percent"></i></span>
+              <span class="pass__benefit-label">Descontos</span>
+            </div>
+            <div class="pass__benefit-item">
+              <span class="pass__benefit-icon"><i class="ph ph-ticket"></i></span>
+              <span class="pass__benefit-label">Acessos</span>
+            </div>
+            <div class="pass__benefit-item">
+              <span class="pass__benefit-icon"><i class="ph ph-star"></i></span>
+              <span class="pass__benefit-label">Experiências</span>
+            </div>
+          </div>
+
+          <div style="margin-top: var(--space-6);">
+            <a href="pass.html" class="btn btn--primary btn--lg" style="display: inline-flex; align-items: center; gap: var(--space-2);">
+              Saiba mais sobre a Comu Pass <i class="ph ph-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="pass__visual animate-right">
+          <!-- Pass Card Visual -->
+          <img src="public/copiar.png" alt="Comu Pass" class="pass-card" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       03. COMO FUNCIONA?
+       ================================================ -->
+  <section class="section como-funciona" id="como-funciona">
+    <div class="como-funciona__container">
+      
+      <!-- Left side header -->
+      <div class="como-funciona__info animate-on-scroll">
+        <span class="section-label"><i class="ph-fill ph-info"></i> Passo a Passo</span>
+        <h2 class="section-title">Como Funciona?</h2>
+      </div>
+
+      <!-- Right side grid -->
+      <div class="como-funciona__grid">
+        <!-- Passo 1 -->
+        <div class="como-funciona__step animate-on-scroll">
+          <img src="public/Entre.png" alt="Entre" class="como-funciona__img" />
+        </div>
+
+        <!-- Passo 2 -->
+        <div class="como-funciona__step animate-on-scroll">
+          <img src="public/Descubra.png" alt="Descubra" class="como-funciona__img" />
+        </div>
+
+        <!-- Passo 3 -->
+        <div class="como-funciona__step animate-on-scroll">
+          <img src="public/Viva.png" alt="Viva" class="como-funciona__img" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       05. COMU RADAR
+       ================================================ -->
+  <section class="section radar" id="radar">
+    <div class="container">
+      <div class="radar__content">
+        <div class="radar__info animate-left">
+          <span class="section-label"><i class="ph-fill ph-broadcast"></i> Comu Radar</span>
+          
+          <h2 class="radar__headline">
+            Conhece um lugar que merece estar na <span class="text-accent">Comu</span>?
+          </h2>
+          
+          <p class="radar__text">
+            A Comu é feita pela comunidade. Se você conhece um evento, bar, restaurante ou experiência que merece entrar no radar, indica pra gente.
+          </p>
+        </div>
+
+        <form class="radar__form animate-right" id="radar-form">
+          <div class="form-group">
+            <label class="form-label" for="radar-name">Nome do lugar ou evento</label>
+            <input type="text" id="radar-name" name="radar-name" class="form-input" placeholder="Ex: Bar do Mineiro" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="radar-type">Tipo</label>
+            <select id="radar-type" name="radar-type" class="form-select" required>
+              <option value="" disabled selected>Selecione o tipo</option>
+              <option value="bar"><i class="ph ph-beer-stein"></i> Bar</option>
+              <option value="restaurante"><i class="ph ph-fork-knife"></i> Restaurante</option>
+              <option value="festa"><i class="ph ph-confetti"></i> Festa / Evento</option>
+              <option value="musica"><i class="ph ph-music-note"></i> Música ao vivo</option>
+              <option value="cultura"><i class="ph ph-mask-happy"></i> Cultural</option>
+              <option value="experiencia"><i class="ph ph-sparkle"></i> Experiência</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="radar-instagram">Instagram (opcional)</label>
+            <input type="text" id="radar-instagram" name="radar-instagram" class="form-input" placeholder="@perfil" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="radar-reason">Por que indicar?</label>
+            <textarea id="radar-reason" name="radar-reason" class="form-textarea" placeholder="Conta pra gente por que esse lugar é especial..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg btn--full">INDICAR PARA A COMU</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       07. PARA PRODUTORES
+       ================================================ -->
+  <section class="section producers" id="produtores">
+    <div class="container">
+      <div class="producers__content">
+        <div class="producers__info animate-left">
+          <span class="section-label"><i class="ph-fill ph-handshake"></i> Para Produtores</span>
+          
+          <h2 class="producers__headline">
+            SEU EVENTO MERECE<br>
+            <span class="producers__headline-highlight">MAIS DO QUE ALCANCE.</span>
+          </h2>
+          
+          <p class="producers__text">
+            A Comu conecta seu evento a pessoas que já estão procurando o que viver no Rio.
+          </p>
+
+          <div class="producers__benefits">
+            <div class="producers__benefit">
+              <span class="producers__benefit-icon"><i class="ph ph-target"></i></span>
+              <div>
+                <div class="producers__benefit-title">CURADORIA</div>
+                <div class="producers__benefit-text">Seu evento entra no Radar da Comu. Selecionamos experiências que realmente fazem sentido para nossa comunidade.</div>
+              </div>
+            </div>
+            <div class="producers__benefit">
+              <span class="producers__benefit-icon"><i class="ph ph-users"></i></span>
+              <div>
+                <div class="producers__benefit-title">COMUNIDADE</div>
+                <div class="producers__benefit-text">Chegue a quem realmente quer viver isso. Conectamos seu evento a pessoas interessadas em descobrir novas experiências. Com um publico majoritariamente Carioca.</div>
+              </div>
+            </div>
+            <div class="producers__benefit">
+              <span class="producers__benefit-icon"><i class="ph ph-gift"></i></span>
+              <div>
+                <div class="producers__benefit-title">BENEFÍCIOS</div>
+                <div class="producers__benefit-text">Transforme interesse em presença. Crie benefícios e condições exclusivas para a comunidade Comu.</div>
+              </div>
+            </div>
+            <div class="producers__benefit">
+              <span class="producers__benefit-icon"><i class="ph ph-sparkle"></i></span>
+              <div>
+                <div class="producers__benefit-title">EXPERIÊNCIAS</div>
+                <div class="producers__benefit-text">Vá além da divulgação. Criamos ativações e experiências que aproximam seu público da sua marca.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="producers__form animate-right" id="producers-form">
+          <h3 class="producers__form-title">Quero ser parceiro</h3>
+          <p class="producers__form-subtitle">
+            Quer colocar seu evento no Radar?<br>
+            Conte um pouco sobre ele. A gente entra em contato para entender como podemos construir essa parceria.
+          </p>
+
+          <div class="producers__form-row">
+            <div class="form-group">
+              <label class="form-label" for="producer-name">Nome</label>
+              <input type="text" id="producer-name" name="producer-name" class="form-input" placeholder="Seu nome" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="producer-company">Empresa / Projeto</label>
+              <input type="text" id="producer-company" name="producer-company" class="form-input" placeholder="Nome do projeto" required />
+            </div>
+          </div>
+
+          <div class="producers__form-row">
+            <div class="form-group">
+              <label class="form-label" for="producer-instagram">Instagram</label>
+              <input type="text" id="producer-instagram" name="producer-instagram" class="form-input" placeholder="@perfil" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="producer-whatsapp">WhatsApp</label>
+              <input type="text" id="producer-whatsapp" name="producer-whatsapp" class="form-input" placeholder="(21) 99999-9999" />
+            </div>
+          </div>
+
+          <div class="producers__form-row">
+            <div class="form-group">
+              <label class="form-label" for="producer-event-type">Tipo de evento</label>
+              <select id="producer-event-type" name="producer-event-type" class="form-select" required>
+                <option value="" disabled selected>Selecione</option>
+                <option value="festa">Festa / Balada</option>
+                <option value="show">Show / Música ao vivo</option>
+                <option value="gastronomia">Gastronomia</option>
+                <option value="cultural">Cultural / Exposição</option>
+                <option value="experiencia">Experiência / Turismo</option>
+                <option value="universitario">Atlética / Universitário</option>
+                <option value="bar">Bar / Pub</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="producer-website">Site (opcional)</label>
+              <input type="text" id="producer-website" name="producer-website" class="form-input" placeholder="www.seusite.com" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="producer-message">Como podemos ajudar?</label>
+            <textarea id="producer-message" name="producer-message" class="form-textarea" placeholder="Conta pra gente sobre seu evento ou projeto..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg btn--full">QUERO SER PARCEIRO DA COMU</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       08. FAQ (Landing Page Selection)
+       ================================================ -->
+  <section class="section faq" id="faq-section">
+    <div class="container container--narrow">
+      <div class="section-header animate-on-scroll">
+        <h2 class="section-title">FAQ</h2>
+        <p class="section-subtitle">Tire suas dúvidas sobre a Comu, o Comu Pass e o Radar.</p>
+      </div>
+
+      <div class="faq__accordion animate-on-scroll">
+        
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>O que é a Comu?</span>
+            <i class="ph ph-caret-down faq__icon"></i>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-content">
+              <p>A Comu é uma comunidade voltada para pessoas que gostam de sair, descobrir eventos e viver experiências no Rio de Janeiro. A proposta é conectar pessoas a festas, shows, eventos, gastronomia, experiências e benefícios, criando uma rede que aproxima o público, produtores, casas, artistas e marcas.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>O que é o Comu Pass?</span>
+            <i class="ph ph-caret-down faq__icon"></i>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-content">
+              <p>O Comu Pass é o produto pago da Comu. Ele dá acesso a uma rede de benefícios e condições exclusivas oferecidos por parceiros da Comu. A lógica é simples: você paga pelo Pass e pode utilizar benefícios que, ao longo do mês, podem superar o valor pago pela assinatura.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>A Comu é paga?</span>
+            <i class="ph ph-caret-down faq__icon"></i>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-content">
+              <p>A comunidade in si não. A entrada na Comu e o Comu Radar são totalmente gratuitos. O que é pago é o Comu Pass, que dá acesso à camada de benefícios exclusivos oferecidos por nossos parceiros.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>O que é o Comu Radar?</span>
+            <i class="ph ph-caret-down faq__icon"></i>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-content">
+              <p>É a porta de entrada gratuita da Comu. O Radar faz a curadoria dos eventos e experiências que estão acontecendo no Rio e entrega isso para a comunidade através de canais como o WhatsApp e Instagram. A ideia não é listar tudo, mas sim filtrar o que realmente vale a pena (festas, shows, gastronomia, novidades e eventos culturais).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>O que eu ganho pagando pelo Comu Pass?</span>
+            <i class="ph ph-caret-down faq__icon"></i>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-content">
+              <p>Você ganha acesso à rede de benefícios da Comu. Dependendo dos parceiros, podem existir mecânicas de "compre 1, ganhe 1", descontos diretos, ingressos promocionais, condições especiais em bares e restaurantes, acesso especial ou vantagens exclusivas em eventos parceiros.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Posso usar os benefícios do Comu Pass quantas vezes quiser?</span>
+            <i class="ph ph-caret-down faq__icon"></i>
+          </button>
+          <div class="faq__answer">
+            <div class="faq__answer-content">
+              <p>Isso depende da regra estabelecida com cada parceiro. Cada benefício terá suas próprias condições, validade, frequência, limitações e datas de utilização. Tudo isso estará sempre especificado e transparente para o membro na página de detalhes de cada evento antes da utilização.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="animate-on-scroll" style="text-align: center; margin-top: var(--space-8); line-height: 1.6;">
+        <p style="color: var(--color-text-secondary); margin-bottom: var(--space-1); font-size: var(--text-sm);">Tem outras dúvidas sobre a Comu, Parceiros ou Estratégia?</p>
+        <a href="faq.html" style="color: var(--brand-primary); text-decoration: none; font-weight: var(--font-weight-semibold); font-size: var(--text-sm); transition: color var(--duration-fast);" onmouseover="this.style.color='var(--color-accent-hover)'" onmouseout="this.style.color='var(--brand-primary)'">
+          Clique aqui e veja o FAQ completo
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       09. SOBRE / MANIFESTO
+       ================================================ -->
+  <section class="section about" id="sobre">
+    <div class="container container--narrow">
+      <div class="animate-on-scroll">
+        <div class="divider"></div>
+        <p class="about__manifesto">
+          <strong>A Comu</strong> nasceu da vontade de tornar mais simples descobrir o que realmente vale a pena viver. Em meio a tantos eventos, lugares, artistas, marcas e experiências, acreditamos que encontrar algo bom não deveria depender de sorte ou de estar no grupo certo.<br /><br />
+          A gente acredita que <strong>as melhores experiências acontecem quando as pessoas certas encontram as oportunidades certas</strong>. É isso que a Comu constrói: uma rede que organiza, conecta e aproxima pessoas de tudo aquilo que merece ser descoberto, acessado e vivido.
+        </p>
+        <div class="divider"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       FOOTER
+       ================================================ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="#" class="footer__logo" style="display: inline-block; margin-bottom: var(--space-2);">
+            <img src="public/Comu logo.svg" alt="Comu Pass" class="footer__logo-img" style="height: 44px; width: auto;" />
+          </a>
+          <p class="footer__brand-text">
+            Descubra eventos, lugares e experiências que movimentam o Rio de Janeiro. Feito por quem vive o Rio.
+          </p>
+          <div class="footer__socials">
+            <a href="https://www.instagram.com/comupass/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="TikTok">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a href="https://wa.me/5521978949944" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer__heading">Explorar</h4>
+          <nav class="footer__links">
+            <a href="#experiencias" class="footer__link">Experiências</a>
+            <a href="#picks" class="footer__link">Comu Radar</a>
+            <a href="#pass" class="footer__link">Comu Pass</a>
+            <a href="#radar" class="footer__link">Indicar ao Radar</a>
+          </nav>
+        </div>
+        
+        <div>
+          <h4 class="footer__heading">Comunidade</h4>
+          <nav class="footer__links">
+            <a href="pass.html" class="footer__link">Membros</a>
+            <a href="#produtores" class="footer__link">Para Produtores</a>
+            <a href="#sobre" class="footer__link">Sobre a Comu</a>
+          </nav>
+        </div>
+        
+        <div>
+          <h4 class="footer__heading">Contato</h4>
+          <nav class="footer__links">
+            <a href="mailto:relacionamento@comupass.com.br" class="footer__link">relacionamento@comupass.com.br</a>
+            <a href="faq.html" class="footer__link">FAQ</a>
+            <a href="#" class="footer__link" id="termos-trigger">Termos de Uso</a>
+            <a href="#" class="footer__link" id="privacidade-trigger">Privacidade</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 Comu. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ================================================
+       MODAL — TERMOS DE USO
+       ================================================ -->
+  <div class="termos-overlay" id="termos-overlay" role="dialog" aria-modal="true" aria-labelledby="termos-title">
+    <div class="termos-modal">
+      <button class="termos-modal__close" id="termos-close" aria-label="Fechar">
+        <i class="ph ph-x"></i>
+      </button>
+
+      <div class="termos-modal__header">
+        <img src="public/Comu logo.svg" alt="Comu" class="termos-modal__logo" />
+      </div>
+
+      <div class="termos-modal__body">
+        <h1 id="termos-title" class="termos-modal__title">Termos de Uso</h1>
+        <p class="termos-modal__updated">Última atualização: 29 de agosto de 2026</p>
+
+        <p>Bem-vindo à Comu.</p>
+        <p>Estes Termos de Uso estabelecem as regras para utilização do site, conteúdos e serviços disponibilizados pela Comu.</p>
+        <p>Ao acessar ou utilizar nosso site, você declara que leu e concorda com estes Termos. Caso não concorde com qualquer parte deles, recomendamos que não utilize o site.</p>
+
+        <h2>1. SOBRE A COMU</h2>
+        <p>A Comu é uma iniciativa voltada à descoberta e conexão entre pessoas, eventos, lugares, marcas e experiências.</p>
+        <p>Através de suas diferentes frentes, a Comu poderá disponibilizar conteúdos, curadoria, informações, benefícios, experiências e oportunidades relacionadas ao entretenimento e à cultura.</p>
+        <p>Algumas funcionalidades e produtos ainda estão em fase de desenvolvimento e validação e poderão ser alterados, ampliados ou descontinuados ao longo do tempo.</p>
+
+        <h2>2. USO DO SITE</h2>
+        <p>O usuário se compromete a utilizar o site de maneira legítima e responsável.</p>
+        <p>Não é permitido:</p>
+        <ul>
+          <li>utilizar o site para fins ilícitos ou fraudulentos;</li>
+          <li>tentar acessar áreas ou informações não disponibilizadas ao usuário;</li>
+          <li>interferir no funcionamento do site;</li>
+          <li>utilizar informações ou conteúdos da Comu de maneira que viole direitos de terceiros;</li>
+          <li>realizar qualquer atividade que possa prejudicar a Comu, seus usuários ou parceiros.</li>
+        </ul>
+
+        <h2>3. CONTEÚDOS E INFORMAÇÕES</h2>
+        <p>A Comu busca disponibilizar informações relevantes e atualizadas sobre eventos, lugares, experiências e oportunidades.</p>
+        <p>Entretanto, determinadas informações podem ser fornecidas por terceiros, incluindo estabelecimentos, produtores, artistas, marcas e organizadores de eventos.</p>
+        <p>Por isso, informações como horários, preços, disponibilidade, programação, classificação etária, condições de acesso e realização dos eventos podem sofrer alterações.</p>
+        <p>Quando necessário, recomendamos que o usuário confirme as informações diretamente com o responsável pela experiência.</p>
+
+        <h2>4. RELAÇÃO COM PARCEIROS</h2>
+        <p>A presença de um estabelecimento, evento, marca ou experiência na Comu não significa necessariamente que a Comu seja a responsável pela sua realização.</p>
+        <p>Quando uma experiência for realizada por um terceiro, a responsabilidade pela prestação do serviço, realização do evento, condições de acesso e demais obrigações relacionadas à experiência será do respectivo responsável, conforme aplicável.</p>
+
+        <h2>5. PROPRIEDADE INTELECTUAL</h2>
+        <p>As marcas, nomes, logotipos, textos, elementos visuais, interfaces e demais conteúdos próprios da Comu pertencem à Comu ou são utilizados de acordo com as respectivas autorizações.</p>
+        <p>Nenhum conteúdo deste site poderá ser reproduzido, distribuído ou utilizado comercialmente sem autorização prévia, salvo quando permitido pela legislação aplicável.</p>
+        <p>Conteúdos de terceiros permanecem de titularidade de seus respectivos proprietários.</p>
+
+        <h2>6. DISPONIBILIDADE</h2>
+        <p>A Comu busca manter o site disponível e funcionando adequadamente, mas não garante que o serviço estará livre de interrupções, erros ou indisponibilidades.</p>
+        <p>A Comu poderá realizar alterações, atualizações, manutenções ou modificações no site e em suas funcionalidades.</p>
+
+        <h2>7. ALTERAÇÕES</h2>
+        <p>A Comu poderá atualizar estes Termos de Uso sempre que necessário.</p>
+        <p>A versão mais recente estará disponível nesta página, acompanhada da respectiva data de atualização.</p>
+
+        <h2>8. PRIVACIDADE</h2>
+        <p>O tratamento de dados pessoais realizado pela Comu está descrito em nossa <strong>Política de Privacidade</strong>, que faz parte integrante destes Termos de Uso.</p>
+
+        <h2>9. CONTATO</h2>
+        <p>Em caso de dúvidas, solicitações ou informações relacionadas a estes Termos, entre em contato conosco:</p>
+        <p><strong>E-mail:</strong> <a href="mailto:relacionamento@comupass.com.br">relacionamento@comupass.com.br</a></p>
+
+        <h2>10. DISPOSIÇÕES FINAIS</h2>
+        <p>A utilização do site implica a ciência e aceitação destes Termos de Uso.</p>
+        <p>Caso alguma disposição destes Termos seja considerada inválida ou inaplicável, as demais disposições permanecerão válidas.</p>
+        <p>Estes Termos serão interpretados de acordo com a legislação brasileira.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================================================
+       MODAL — POLÍTICA DE PRIVACIDADE
+       ================================================ -->
+  <div class="termos-overlay" id="privacidade-overlay" role="dialog" aria-modal="true" aria-labelledby="privacidade-title">
+    <div class="termos-modal">
+      <button class="termos-modal__close" id="privacidade-close" aria-label="Fechar">
+        <i class="ph ph-x"></i>
+      </button>
+
+      <div class="termos-modal__header">
+        <img src="public/Comu logo.svg" alt="Comu" class="termos-modal__logo" />
+      </div>
+
+      <div class="termos-modal__body">
+        <h1 id="privacidade-title" class="termos-modal__title">Política de Privacidade</h1>
+        <p class="termos-modal__updated">Última atualização: 29 de agosto de 2026</p>
+
+        <p>A Comu valoriza a privacidade e a proteção dos dados pessoais de seus usuários.</p>
+        <p>Esta Política de Privacidade explica, de forma clara e transparente, quais dados pessoais podem ser coletados, para quais finalidades podem ser utilizados e quais são os direitos dos titulares.</p>
+
+        <h2>1. QUEM SOMOS</h2>
+        <p>A Comu é responsável pelo tratamento dos dados pessoais coletados por meio de seus canais digitais, nos limites estabelecidos pela legislação aplicável.</p>
+        <p><strong>E-mail de contato:</strong> <a href="mailto:relacionamento@comupass.com.br">relacionamento@comupass.com.br</a></p>
+
+        <h2>2. QUAIS DADOS PODEMOS COLETAR</h2>
+        <p>Dependendo da forma como você interage com a Comu, podemos coletar dados como:</p>
+        <ul>
+          <li>nome;</li>
+          <li>endereço de e-mail;</li>
+          <li>telefone, quando fornecido;</li>
+          <li>informações fornecidas voluntariamente em formulários;</li>
+          <li>informações relacionadas à utilização do site;</li>
+          <li>endereço IP e informações técnicas do dispositivo ou navegador;</li>
+          <li>informações relacionadas às suas interações com nossos canais digitais.</li>
+        </ul>
+        <p>A Comu procura coletar apenas os dados necessários para cada finalidade.</p>
+
+        <h2>3. COMO UTILIZAMOS OS DADOS</h2>
+        <p>Os dados pessoais poderão ser utilizados para:</p>
+        <ul>
+          <li>responder solicitações e contatos enviados pelo usuário;</li>
+          <li>realizar inscrições ou cadastros solicitados pelo usuário;</li>
+          <li>enviar informações relacionadas à Comu, quando autorizado ou quando houver outra base legal aplicável;</li>
+          <li>melhorar o site, nossos produtos e nossa experiência;</li>
+          <li>compreender como as pessoas utilizam nossos canais;</li>
+          <li>desenvolver e validar produtos e funcionalidades;</li>
+          <li>prevenir fraudes, abusos e usos indevidos;</li>
+          <li>cumprir obrigações legais ou regulatórias.</li>
+        </ul>
+        <p>Não utilizaremos dados pessoais para finalidades incompatíveis com aquelas informadas ao titular.</p>
+
+        <h2>4. COMPARTILHAMENTO DE DADOS</h2>
+        <p>A Comu poderá utilizar fornecedores e parceiros necessários para o funcionamento de seus serviços, como plataformas de hospedagem, ferramentas de comunicação, análise, armazenamento e tecnologia.</p>
+        <p>Quando necessário, dados poderão ser compartilhados com terceiros para execução de determinada funcionalidade ou serviço, observadas as finalidades informadas e a legislação aplicável.</p>
+        <p>A Comu não comercializa dados pessoais dos usuários.</p>
+
+        <h2>5. COOKIES E TECNOLOGIAS SEMELHANTES</h2>
+        <p>O site poderá utilizar cookies e tecnologias semelhantes para permitir seu funcionamento, compreender como os usuários utilizam nossas páginas, melhorar a experiência e, quando aplicável, medir resultados de comunicação e marketing.</p>
+        <p>Quando necessário, o usuário poderá gerenciar suas preferências de cookies por meio dos mecanismos disponibilizados no site.</p>
+
+        <h2>6. ARMAZENAMENTO E SEGURANÇA</h2>
+        <p>A Comu adota medidas técnicas e administrativas razoáveis para proteger os dados pessoais contra acessos não autorizados, perda, alteração, divulgação ou destruição indevida.</p>
+        <p>Nenhum sistema eletrônico é completamente seguro. Por isso, embora adotemos medidas de proteção, não podemos garantir segurança absoluta.</p>
+        <p>Os dados serão mantidos pelo período necessário para cumprir as finalidades para as quais foram coletados, atender obrigações legais e exercer direitos legítimos.</p>
+
+        <h2>7. DIREITOS DO TITULAR</h2>
+        <p>Nos termos da legislação aplicável, especialmente da Lei Geral de Proteção de Dados Pessoais, o titular poderá solicitar, conforme aplicável:</p>
+        <ul>
+          <li>confirmação da existência de tratamento;</li>
+          <li>acesso aos seus dados;</li>
+          <li>correção de dados incompletos, inexatos ou desatualizados;</li>
+          <li>anonimização, bloqueio ou eliminação de dados desnecessários ou tratados em desconformidade;</li>
+          <li>informações sobre compartilhamento de dados;</li>
+          <li>revogação do consentimento, quando o tratamento estiver baseado nessa hipótese;</li>
+          <li>eliminação de dados tratados com base no consentimento, observadas as exceções legais;</li>
+          <li>demais direitos previstos na legislação aplicável.</li>
+        </ul>
+        <p>A ANPD confirma esses direitos e orienta que o titular deve, inicialmente, solicitar seu atendimento diretamente ao controlador.</p>
+
+        <h2>8. COMO EXERCER SEUS DIREITOS</h2>
+        <p>Para solicitar informações ou exercer seus direitos relacionados aos seus dados pessoais, entre em contato:</p>
+        <p><strong>E-mail:</strong> <a href="mailto:relacionamento@comupass.com.br">relacionamento@comupass.com.br</a></p>
+        <p>A solicitação poderá exigir informações suficientes para confirmar a identidade do solicitante e proteger os dados contra acesso indevido.</p>
+        <p>As solicitações serão analisadas e respondidas conforme os prazos e condições previstos na legislação aplicável.</p>
+
+        <h2>9. DADOS DE MENORES</h2>
+        <p>A Comu não pretende coletar intencionalmente dados pessoais de crianças ou adolescentes em desconformidade com a legislação aplicável.</p>
+        <p>Caso identifique uma coleta indevida, entre em contato conosco para que possamos avaliar e tomar as medidas cabíveis.</p>
+
+        <h2>10. ALTERAÇÕES DESTA POLÍTICA</h2>
+        <p>Esta Política de Privacidade poderá ser atualizada para refletir mudanças em nossas atividades, produtos, tecnologias ou obrigações legais.</p>
+        <p>A versão mais recente estará sempre disponível nesta página.</p>
+
+        <h2>11. CONTATO</h2>
+        <p>Para dúvidas sobre esta Política ou sobre o tratamento de dados pessoais:</p>
+        <p><strong>E-mail:</strong> <a href="mailto:relacionamento@comupass.com.br">relacionamento@comupass.com.br</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts (order matters: data first, then logic) -->
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <!-- Flatpickr JS & Locale -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/forms.js"></script>
+
+</body>
+</html>
