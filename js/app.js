@@ -251,28 +251,58 @@
   // ---- Mobile Menu ----
 
   function initMobileMenu() {
-    if (!burger || !mobileNav) return;
-
+    const burgerBtn = document.querySelector('.header__burger');
+    const mobileNavEl = document.querySelector('.mobile-nav');
+    const overlay = document.getElementById('mobile-nav-overlay');
     const closeBtn = document.getElementById('mobile-nav-close');
+    const navLinks = document.querySelectorAll('.mobile-nav a');
+
+    if (!burgerBtn || !mobileNavEl) return;
+
+    function openMenu() {
+      burgerBtn.classList.add('open');
+      mobileNavEl.classList.add('open');
+      if (overlay) overlay.classList.add('open');
+      mobileNavEl.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
 
     function closeMenu() {
-      burger.classList.remove('open');
-      mobileNav.classList.remove('open');
+      burgerBtn.classList.remove('open');
+      mobileNavEl.classList.remove('open');
+      if (overlay) overlay.classList.remove('open');
+      mobileNavEl.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
     }
 
-    burger.addEventListener('click', () => {
-      burger.classList.toggle('open');
-      mobileNav.classList.toggle('open');
-      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    burgerBtn.addEventListener('click', () => {
+      const isOpen = mobileNavEl.classList.contains('open');
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
 
     if (closeBtn) {
       closeBtn.addEventListener('click', closeMenu);
     }
 
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', closeMenu);
+    if (overlay) {
+      overlay.addEventListener('click', closeMenu);
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        closeMenu();
+      });
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNavEl.classList.contains('open')) {
+        closeMenu();
+      }
     });
   }
 

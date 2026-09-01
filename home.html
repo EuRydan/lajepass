@@ -75,16 +75,98 @@
     </div>
   </header>
 
-  <!-- Mobile Navigation -->
-  <nav class="mobile-nav" id="mobile-nav">
-    <button class="mobile-nav__close" id="mobile-nav-close" aria-label="Fechar menu">
-      <i class="ph ph-x"></i>
-    </button>
-    <a href="#experiencias" class="mobile-nav__link">Experiências</a>
-    <a href="#picks" class="mobile-nav__link">Radar</a>
-    <a href="#pass" class="mobile-nav__link">Comu Pass</a>
-    <a href="#produtores" class="mobile-nav__link">Para Produtores</a>
-    <a href="#pass" class="mobile-nav__link btn btn--primary" style="margin-top: 1rem;">FAZER PARTE</a>
+  <!-- Mobile Navigation Overlay & Drawer -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+  <nav class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav__header">
+      <a href="home.html" class="mobile-nav__logo">
+        <img src="public/Comu logo.svg" alt="Comu" class="mobile-nav__logo-img" />
+      </a>
+      <button class="mobile-nav__close" id="mobile-nav-close" aria-label="Fechar menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="mobile-nav__body">
+      <div class="mobile-nav__section-label">Navegação</div>
+      
+      <div class="mobile-nav__links">
+        <a href="#experiencias" class="mobile-nav__item" style="--i: 1;">
+          <div class="mobile-nav__item-icon"><i class="fa-regular fa-calendar"></i></div>
+          <div class="mobile-nav__item-text">
+            <span class="mobile-nav__item-title">Experiências</span>
+            <span class="mobile-nav__item-sub">O que está acontecendo no Rio</span>
+          </div>
+          <i class="fa-solid fa-chevron-right mobile-nav__item-arrow"></i>
+        </a>
+
+        <a href="#picks" class="mobile-nav__item" style="--i: 2;">
+          <div class="mobile-nav__item-icon"><i class="fa-solid fa-satellite-dish"></i></div>
+          <div class="mobile-nav__item-text">
+            <span class="mobile-nav__item-title">Comu Radar</span>
+            <span class="mobile-nav__item-sub">Curadoria semanal gratuita</span>
+          </div>
+          <span class="mobile-nav__item-badge">Grátis</span>
+          <i class="fa-solid fa-chevron-right mobile-nav__item-arrow"></i>
+        </a>
+
+        <a href="#pass" class="mobile-nav__item" style="--i: 3;">
+          <div class="mobile-nav__item-icon mobile-nav__item-icon--pass"><i class="fa-solid fa-ticket"></i></div>
+          <div class="mobile-nav__item-text">
+            <span class="mobile-nav__item-title">Comu Pass</span>
+            <span class="mobile-nav__item-sub">Benefícios e acessos VIP</span>
+          </div>
+          <span class="mobile-nav__item-badge mobile-nav__item-badge--hot">🔥 VIP</span>
+          <i class="fa-solid fa-chevron-right mobile-nav__item-arrow"></i>
+        </a>
+
+        <a href="#produtores" class="mobile-nav__item" style="--i: 4;">
+          <div class="mobile-nav__item-icon"><i class="fa-solid fa-handshake"></i></div>
+          <div class="mobile-nav__item-text">
+            <span class="mobile-nav__item-title">Para Produtores</span>
+            <span class="mobile-nav__item-sub">Cadastre seu evento ou espaço</span>
+          </div>
+          <i class="fa-solid fa-chevron-right mobile-nav__item-arrow"></i>
+        </a>
+
+        <a href="faq.html" class="mobile-nav__item" style="--i: 5;">
+          <div class="mobile-nav__item-icon"><i class="fa-solid fa-circle-question"></i></div>
+          <div class="mobile-nav__item-text">
+            <span class="mobile-nav__item-title">Dúvidas (FAQ)</span>
+            <span class="mobile-nav__item-sub">Tire suas dúvidas sobre a Comu</span>
+          </div>
+          <i class="fa-solid fa-chevron-right mobile-nav__item-arrow"></i>
+        </a>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="mobile-nav__actions" style="--i: 6;">
+        <a href="#pass" class="btn btn--primary btn--full-width mobile-nav__cta">
+          <span>FAZER PARTE DO PASS</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="https://chat.whatsapp.com/CaifVi3wOTmDLgZnw5arJS" target="_blank" rel="noopener noreferrer" class="mobile-nav__wa-btn">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>Entrar no Radar Gratuito</span>
+        </a>
+      </div>
+
+      <!-- Footer Info -->
+      <div class="mobile-nav__footer" style="--i: 7;">
+        <div class="mobile-nav__socials">
+          <a href="https://www.instagram.com/comupass/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="js-obfuscated-wa" data-country="55" data-ddd="21" data-num="978949944" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+        <span class="mobile-nav__copy">© 2026 Comu · Feito no Rio</span>
+      </div>
+    </div>
   </nav>
 
 
