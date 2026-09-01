@@ -569,12 +569,14 @@
 @media (max-width: 1024px) {
   .experiences__grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
   }
 }
 
 @media (max-width: 640px) {
   .experiences__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
   }
 }
 
