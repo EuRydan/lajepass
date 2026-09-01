@@ -15,15 +15,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet" />
 
   <!-- Icons -->
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/components.css?v=2" />
   <link rel="stylesheet" href="css/sections.css" />
-  <link rel="stylesheet" href="css/faq.css?v=2" />
+  <link rel="stylesheet" href="css/faq.css?v=3" />
 </head>
 <body class="faq-page-body">
 
@@ -32,12 +31,12 @@
        ================================================ -->
   <header class="header scrolled">
     <div class="header__inner">
-      <a href="index.html" class="header__logo">
+      <a href="home.html" class="header__logo">
         <img src="public/Comu logo.svg" alt="Comu Pass" class="header__logo-img" style="height: 44px; width: auto;" />
       </a>
       <div class="header__menu-group">
         <nav class="header__nav">
-          <a href="index.html" class="header__link"><i class="ph ph-arrow-left"></i> Voltar para Início</a>
+          <a href="home.html" class="header__link"><i class="fa-solid fa-arrow-left"></i> Voltar para Início</a>
         </nav>
       </div>
     </div>
@@ -52,8 +51,8 @@
       <p class="faq-hero__subtitle">Tudo o que você precisa saber sobre a Comu, o Comu Pass, benefícios, parcerias e nossa estratégia.</p>
       
       <div class="faq-hero__actions">
-        <button id="btn-expand-all" class="btn btn--secondary btn--sm"><i class="ph ph-plus"></i> Expandir Todas</button>
-        <button id="btn-collapse-all" class="btn btn--secondary btn--sm" style="margin-left: var(--space-3);"><i class="ph ph-minus"></i> Recolher Todas</button>
+        <button id="btn-expand-all" class="btn btn--secondary btn--sm"><i class="fa-solid fa-plus"></i> Expandir Todas</button>
+        <button id="btn-collapse-all" class="btn btn--secondary btn--sm" style="margin-left: var(--space-3);"><i class="fa-solid fa-minus"></i> Recolher Todas</button>
       </div>
     </div>
   </section>
@@ -69,12 +68,12 @@
         <div class="faq-sidebar__card">
           <h3 class="faq-sidebar__title">Categorias</h3>
           <nav class="faq-sidebar__nav">
-            <a href="#cat-sobre" class="faq-sidebar__link active"><i class="ph ph-info"></i> Sobre a Comu</a>
-            <a href="#cat-pass" class="faq-sidebar__link"><i class="ph ph-sparkle"></i> Comu Pass</a>
-            <a href="#cat-eventos" class="faq-sidebar__link"><i class="ph ph-calendar"></i> Eventos & Experiências</a>
-            <a href="#cat-parceiros" class="faq-sidebar__link"><i class="ph ph-handshake"></i> Parceiros</a>
-            <a href="#cat-comunidade" class="faq-sidebar__link"><i class="ph ph-users"></i> Comunidade</a>
-            <a href="#cat-privacidade" class="faq-sidebar__link"><i class="ph ph-lock"></i> Privacidade</a>
+            <a href="#cat-sobre" class="faq-sidebar__link active"><i class="fa-solid fa-circle-info"></i> Sobre a Comu</a>
+            <a href="#cat-pass" class="faq-sidebar__link"><i class="fa-solid fa-ticket"></i> Comu Pass</a>
+            <a href="#cat-eventos" class="faq-sidebar__link"><i class="fa-regular fa-calendar"></i> Eventos & Experiências</a>
+            <a href="#cat-parceiros" class="faq-sidebar__link"><i class="fa-solid fa-handshake"></i> Parceiros</a>
+            <a href="#cat-comunidade" class="faq-sidebar__link"><i class="fa-solid fa-users"></i> Comunidade</a>
+            <a href="#cat-privacidade" class="faq-sidebar__link"><i class="fa-solid fa-lock"></i> Privacidade</a>
           </nav>
         </div>
       </aside>
@@ -84,14 +83,14 @@
         
         <!-- CATEGORY 1: SOBRE A COMU -->
         <div id="cat-sobre" class="faq-section-block">
-          <h2 class="faq-section-block__title"><i class="ph-fill ph-info"></i> Sobre a Comu</h2>
+          <h2 class="faq-section-block__title"><i class="fa-solid fa-circle-info"></i> Sobre a Comu</h2>
           
           <div class="faq-section-block__accordion">
             
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>O que é a Comu?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -103,7 +102,7 @@
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>O que é o Comu Radar?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -115,7 +114,7 @@
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>A Comu é uma agenda de eventos?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -127,7 +126,7 @@
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>Quem pode fazer parte da Comu?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -141,14 +140,14 @@
 
         <!-- CATEGORY 2: COMU PASS -->
         <div id="cat-pass" class="faq-section-block">
-          <h2 class="faq-section-block__title"><i class="ph-fill ph-sparkle"></i> Comu Pass</h2>
+          <h2 class="faq-section-block__title"><i class="fa-solid fa-ticket"></i> Comu Pass</h2>
           
           <div class="faq-section-block__accordion">
             
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>O que é o Comu Pass?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -160,7 +159,7 @@
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>O que eu ganho com o Comu Pass?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -172,7 +171,7 @@
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>Como funciona o “compre 1, ganhe 1”?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -184,7 +183,7 @@
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>Todos os benefícios são “compre 1, ganhe 1”?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -196,7 +195,7 @@
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>Onde posso usar o Comu Pass?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -208,7 +207,7 @@
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>Os benefícios mudam?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -220,7 +219,7 @@
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>Preciso pagar para entrar na comunidade?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -232,7 +231,7 @@
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>Quanto custa o Comu Pass?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -244,7 +243,7 @@
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>O benefício tem regras de utilização?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -256,7 +255,7 @@
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>Como uso um benefício?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -270,14 +269,14 @@
 
         <!-- CATEGORY 3: EVENTOS & EXPERIÊNCIAS -->
         <div id="cat-eventos" class="faq-section-block">
-          <h2 class="faq-section-block__title"><i class="ph-fill ph-calendar"></i> Eventos & Experiências</h2>
+          <h2 class="faq-section-block__title"><i class="fa-regular fa-calendar"></i> Eventos & Experiências</h2>
           
           <div class="faq-section-block__accordion">
             
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>Que tipo de evento aparece no Radar?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -289,7 +288,7 @@
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>O que são as Comu Experiences?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -301,7 +300,7 @@
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>O Comu Pass garante entrada em todos os eventos?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -315,14 +314,14 @@
 
         <!-- CATEGORY 4: PARCEIROS -->
         <div id="cat-parceiros" class="faq-section-block">
-          <h2 class="faq-section-block__title"><i class="ph-fill ph-handshake"></i> Parceiros</h2>
+          <h2 class="faq-section-block__title"><i class="fa-solid fa-handshake"></i> Parceiros</h2>
           
           <div class="faq-section-block__accordion">
             
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>Quais lugares podem fazer parte da Comu?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -334,7 +333,7 @@
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>Como um estabelecimento pode entrar para a rede?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -346,7 +345,7 @@
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>Como faço para indicar um lugar ou evento?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -360,14 +359,14 @@
 
         <!-- CATEGORY 5: COMUNIDADE -->
         <div id="cat-comunidade" class="faq-section-block">
-          <h2 class="faq-section-block__title"><i class="ph-fill ph-users"></i> Comunidade</h2>
+          <h2 class="faq-section-block__title"><i class="fa-solid fa-users"></i> Comunidade</h2>
           
           <div class="faq-section-block__accordion">
             
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>Onde acompanho a Comu?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -379,7 +378,7 @@
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>O que recebo entrando no Comu Radar?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -391,7 +390,7 @@
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>Por que entrar no Radar se posso procurar eventos sozinho?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">
@@ -405,14 +404,14 @@
 
         <!-- CATEGORY 6: PRIVACIDADE -->
         <div id="cat-privacidade" class="faq-section-block">
-          <h2 class="faq-section-block__title"><i class="ph-fill ph-lock"></i> Privacidade</h2>
+          <h2 class="faq-section-block__title"><i class="fa-solid fa-lock"></i> Privacidade</h2>
           
           <div class="faq-section-block__accordion">
             
             <div class="faq__item">
               <button class="faq__question" aria-expanded="false">
                 <span>A Comu compartilha meus dados com parceiros?</span>
-                <i class="ph ph-caret-down faq__icon"></i>
+                <i class="fa-solid fa-chevron-down faq__icon"></i>
               </button>
               <div class="faq__answer">
                 <div class="faq__answer-content">

@@ -131,13 +131,21 @@ body.faq-page-body {
 }
 
 .faq-sidebar__link i {
-  font-size: var(--text-base);
-  transition: transform var(--duration-fast) var(--ease-out);
+  font-size: 1rem;
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+  color: #8c8cb0;
+  transition: transform var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
 }
 
 .faq-sidebar__link:hover {
   background: rgba(29, 7, 70, 0.03);
   color: var(--brand-support);
+}
+
+.faq-sidebar__link:hover i {
+  color: var(--brand-primary);
 }
 
 .faq-sidebar__link.active {
@@ -178,7 +186,10 @@ body.faq-page-body {
 
 .faq-section-block__title i {
   color: var(--brand-primary);
-  font-size: var(--text-3xl);
+  font-size: 1.4rem;
+  width: 32px;
+  text-align: center;
+  flex-shrink: 0;
 }
 
 .faq-section-block__accordion {
