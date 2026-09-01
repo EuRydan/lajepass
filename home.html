@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="css/components.css?v=2" />
   <link rel="stylesheet" href="css/sections.css?v=4" />
   
-  <!-- Phosphor Icons (Vector icons) -->
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <!-- reCAPTCHA v3 -->
+  <script src="https://www.google.com/recaptcha/api.js?render=SITE_KEY"></script>
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 256 256%22><rect width=%22256%22 height=%22256%22 fill=%22none%22/><path d=%22M112,16H32A16,16,0,0,0,16,32V224a16,16,0,0,0,16,16h80%22 fill=%22none%22 stroke=%22%23ff0149%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%2216%22/><path d=%22M240,224H112V64a16,16,0,0,1,16-16h96a16,16,0,0,1,16,16Z%22 fill=%22none%22 stroke=%22%23ff0149%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%2216%22/></svg>" />
@@ -342,7 +342,7 @@
         <form class="radar__form animate-right" id="radar-form">
           <div class="form-group">
             <label class="form-label" for="radar-name">Nome do lugar ou evento</label>
-            <input type="text" id="radar-name" name="radar-name" class="form-input" placeholder="Ex: Bar do Mineiro" required />
+            <input type="text" id="radar-name" name="radar-name" class="form-input" placeholder="Ex: Bar do Mineiro" maxlength="100" required />
           </div>
 
           <div class="form-group">
@@ -361,12 +361,12 @@
 
           <div class="form-group">
             <label class="form-label" for="radar-instagram">Instagram (opcional)</label>
-            <input type="text" id="radar-instagram" name="radar-instagram" class="form-input" placeholder="@perfil" />
+            <input type="text" id="radar-instagram" name="radar-instagram" class="form-input" placeholder="@perfil" maxlength="100" />
           </div>
 
           <div class="form-group">
             <label class="form-label" for="radar-reason">Por que indicar?</label>
-            <textarea id="radar-reason" name="radar-reason" class="form-textarea" placeholder="Conta pra gente por que esse lugar é especial..." required></textarea>
+            <textarea id="radar-reason" name="radar-reason" class="form-textarea" placeholder="Conta pra gente por que esse lugar é especial..." maxlength="1000" required></textarea>
           </div>
 
           <button type="submit" class="btn btn--primary btn--lg btn--full">INDICAR PARA A COMU</button>
@@ -436,22 +436,22 @@
           <div class="producers__form-row">
             <div class="form-group">
               <label class="form-label" for="producer-name">Nome</label>
-              <input type="text" id="producer-name" name="producer-name" class="form-input" placeholder="Seu nome" required />
+              <input type="text" id="producer-name" name="producer-name" class="form-input" placeholder="Seu nome" maxlength="100" required />
             </div>
             <div class="form-group">
               <label class="form-label" for="producer-company">Empresa / Projeto</label>
-              <input type="text" id="producer-company" name="producer-company" class="form-input" placeholder="Nome do projeto" required />
+              <input type="text" id="producer-company" name="producer-company" class="form-input" placeholder="Nome do projeto" maxlength="100" required />
             </div>
           </div>
 
           <div class="producers__form-row">
             <div class="form-group">
               <label class="form-label" for="producer-instagram">Instagram</label>
-              <input type="text" id="producer-instagram" name="producer-instagram" class="form-input" placeholder="@perfil" />
+              <input type="text" id="producer-instagram" name="producer-instagram" class="form-input" placeholder="@perfil" maxlength="100" />
             </div>
             <div class="form-group">
               <label class="form-label" for="producer-whatsapp">WhatsApp</label>
-              <input type="text" id="producer-whatsapp" name="producer-whatsapp" class="form-input" placeholder="(21) 99999-9999" />
+              <input type="text" id="producer-whatsapp" name="producer-whatsapp" class="form-input" placeholder="(21) 99999-9999" maxlength="100" />
             </div>
           </div>
 
@@ -472,13 +472,13 @@
             </div>
             <div class="form-group">
               <label class="form-label" for="producer-website">Site (opcional)</label>
-              <input type="text" id="producer-website" name="producer-website" class="form-input" placeholder="www.seusite.com" />
+              <input type="text" id="producer-website" name="producer-website" class="form-input" placeholder="www.seusite.com" maxlength="100" />
             </div>
           </div>
 
           <div class="form-group">
             <label class="form-label" for="producer-message">Como podemos ajudar?</label>
-            <textarea id="producer-message" name="producer-message" class="form-textarea" placeholder="Conta pra gente sobre seu evento ou projeto..."></textarea>
+            <textarea id="producer-message" name="producer-message" class="form-textarea" placeholder="Conta pra gente sobre seu evento ou projeto..." maxlength="1000"></textarea>
           </div>
 
           <button type="submit" class="btn btn--primary btn--lg btn--full">QUERO SER PARCEIRO DA COMU</button>
@@ -620,7 +620,7 @@
             <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="TikTok">
               <i class="fa-brands fa-tiktok"></i>
             </a>
-            <a href="https://wa.me/5521978949944" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="WhatsApp">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="footer__social-link js-obfuscated-wa" data-country="55" data-ddd="21" data-num="978949944" aria-label="WhatsApp">
               <i class="fa-brands fa-whatsapp"></i>
             </a>
           </div>
@@ -648,7 +648,7 @@
         <div>
           <h4 class="footer__heading">Contato</h4>
           <nav class="footer__links">
-            <a href="mailto:relacionamento@comupass.com.br" class="footer__link">relacionamento@comupass.com.br</a>
+            <a href="#" class="footer__link js-obfuscated-email" data-user="relacionamento" data-domain="comupass.com.br"></a>
             <a href="faq.html" class="footer__link">FAQ</a>
             <a href="#" class="footer__link" id="termos-trigger">Termos de Uso</a>
             <a href="#" class="footer__link" id="privacidade-trigger">Privacidade</a>
@@ -728,7 +728,7 @@
 
         <h2>9. CONTATO</h2>
         <p>Em caso de dúvidas, solicitações ou informações relacionadas a estes Termos, entre em contato conosco:</p>
-        <p><strong>E-mail:</strong> <a href="mailto:relacionamento@comupass.com.br">relacionamento@comupass.com.br</a></p>
+        <p><strong>E-mail:</strong> <a href="#" class="js-obfuscated-email" data-user="relacionamento" data-domain="comupass.com.br"></a></p>
 
         <h2>10. DISPOSIÇÕES FINAIS</h2>
         <p>A utilização do site implica a ciência e aceitação destes Termos de Uso.</p>
@@ -761,7 +761,7 @@
 
         <h2>1. QUEM SOMOS</h2>
         <p>A Comu é responsável pelo tratamento dos dados pessoais coletados por meio de seus canais digitais, nos limites estabelecidos pela legislação aplicável.</p>
-        <p><strong>E-mail de contato:</strong> <a href="mailto:relacionamento@comupass.com.br">relacionamento@comupass.com.br</a></p>
+        <p><strong>E-mail de contato:</strong> <a href="#" class="js-obfuscated-email" data-user="relacionamento" data-domain="comupass.com.br"></a></p>
 
         <h2>2. QUAIS DADOS PODEMOS COLETAR</h2>
         <p>Dependendo da forma como você interage com a Comu, podemos coletar dados como:</p>
@@ -820,7 +820,7 @@
 
         <h2>8. COMO EXERCER SEUS DIREITOS</h2>
         <p>Para solicitar informações ou exercer seus direitos relacionados aos seus dados pessoais, entre em contato:</p>
-        <p><strong>E-mail:</strong> <a href="mailto:relacionamento@comupass.com.br">relacionamento@comupass.com.br</a></p>
+        <p><strong>E-mail:</strong> <a href="#" class="js-obfuscated-email" data-user="relacionamento" data-domain="comupass.com.br"></a></p>
         <p>A solicitação poderá exigir informações suficientes para confirmar a identidade do solicitante e proteger os dados contra acesso indevido.</p>
         <p>As solicitações serão analisadas e respondidas conforme os prazos e condições previstos na legislação aplicável.</p>
 
@@ -834,7 +834,7 @@
 
         <h2>11. CONTATO</h2>
         <p>Para dúvidas sobre esta Política ou sobre o tratamento de dados pessoais:</p>
-        <p><strong>E-mail:</strong> <a href="mailto:relacionamento@comupass.com.br">relacionamento@comupass.com.br</a></p>
+        <p><strong>E-mail:</strong> <a href="#" class="js-obfuscated-email" data-user="relacionamento" data-domain="comupass.com.br"></a></p>
       </div>
     </div>
   </div>
@@ -849,6 +849,7 @@
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/obfuscate.js"></script>
   <script src="js/forms.js"></script>
 
 </body>

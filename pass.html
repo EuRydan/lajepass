@@ -18,6 +18,9 @@
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
+  <!-- reCAPTCHA v3 -->
+  <script src="https://www.google.com/recaptcha/api.js?render=SITE_KEY"></script>
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/variables.css" />
@@ -125,9 +128,9 @@
 
         <!-- Signup form -->
         <form id="pass-form" class="pass__signup" style="display: flex; flex-direction: column; gap: var(--space-3); max-width: 420px;">
-          <input type="text" name="pass-name" class="form-input" placeholder="Seu nome" required />
-          <input type="email" name="pass-email" class="form-input" placeholder="Seu melhor email" required />
-          <input type="tel" name="pass-whatsapp" class="form-input" placeholder="WhatsApp (opcional)" />
+          <input type="text" name="pass-name" class="form-input" placeholder="Seu nome" maxlength="100" required />
+          <input type="email" name="pass-email" class="form-input" placeholder="Seu melhor email" maxlength="100" required />
+          <input type="tel" name="pass-whatsapp" class="form-input" placeholder="WhatsApp (opcional)" maxlength="100" />
           <button type="submit" class="btn btn--primary btn--lg btn--full">QUERO ENTRAR NA COMU</button>
         </form>
       </div>
@@ -147,7 +150,7 @@
         <div class="footer__nav-group">
           <h4 class="footer__nav-title">Contato</h4>
           <nav class="footer__links">
-            <a href="mailto:relacionamento@comupass.com.br" class="footer__link">relacionamento@comupass.com.br</a>
+            <a href="#" class="footer__link js-obfuscated-email" data-user="relacionamento" data-domain="comupass.com.br"></a>
             <a href="faq.html" class="footer__link">FAQ</a>
           </nav>
         </div>
@@ -160,6 +163,7 @@
 
   <!-- Scripts -->
   <script src="js/animations.js"></script>
+  <script src="js/obfuscate.js"></script>
   <script src="js/forms.js"></script>
 
 </body>

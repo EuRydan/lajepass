@@ -614,9 +614,10 @@
     // Advance to Thank You slide immediately
     goToStep(steps.length - 1);
 
-    // Submit to FormSubmit.co via background fetch (Option A)
-    // Email: relacionamento@comupass.com.br
-    const formSubmitUrl = 'https://formsubmit.co/ajax/relacionamento@comupass.com.br';
+    // Target email constructed dynamically
+    const _u = 'relacionamento';
+    const _d = 'comupass.com.br';
+    const formSubmitUrl = 'https://formsubmit.co/ajax/' + _u + '@' + _d;
     
     // Prepare FormData
     const formData = new FormData();
