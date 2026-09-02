@@ -10,7 +10,7 @@ const CATEGORIES = {
   gastronomia: { emoji: '<i class="fa-solid fa-utensils"></i>', label: 'Gastronomia', color: '#2DD4BF', colorRaw: '#2DD4BF' },
   cultura: { emoji: '<i class="fa-solid fa-masks-theater"></i>', label: 'Cultura', color: '#38BDF8', colorRaw: '#38BDF8' },
   esportes: { emoji: '<i class="fa-solid fa-trophy"></i>', label: 'Esportes', color: '#10B981', colorRaw: '#10B981' },
-  experiencias: { emoji: '<i class="fa-solid fa-sparkles"></i>', label: 'Experiências', color: '#FFB84D', colorRaw: '#FFB84D' },
+  experiencias: { emoji: '<i class="fa-solid fa-wand-magic-sparkles"></i>', label: 'Experiências', color: '#FFB84D', colorRaw: '#FFB84D' },
 };
 
 // Coordenadas dos bairros no mapa (geográficas lat, lng e SVG em % — left, top)

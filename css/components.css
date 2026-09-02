@@ -147,8 +147,8 @@
 
 .card__badge {
   position: absolute;
-  top: var(--space-3);
-  left: var(--space-3);
+  top: 0.85rem;
+  left: 0.85rem;
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -157,13 +157,21 @@
   font-weight: 800;
   padding: 0.35rem 0.8rem;
   border-radius: var(--radius-full);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  background: rgba(14, 7, 30, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
   z-index: 2;
   transition: transform var(--duration-fast, 0.2s) var(--ease-out);
+}
+
+.card__badge:hover {
+  transform: translateY(-2px);
+  background: rgba(14, 7, 30, 0.95);
 }
 
 .card__badge i {
@@ -375,78 +383,46 @@
   font-weight: 800;
   padding: 0.35rem 0.8rem;
   border-radius: var(--radius-full);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(14, 7, 30, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #ffffff;
+  border: none;
 }
 
 .badge i {
   font-size: 0.85rem;
 }
 
-/* Translucent Frosted Glass / Cutout Badges with Dedicated Colors */
-.badge--musica {
-  background: rgba(18, 10, 36, 0.72);
-  color: #a78bfa;
-  border: 1.5px solid rgba(167, 139, 250, 0.65);
-}
+/* Dedicated signature icon colors */
 .badge--musica i {
-  color: #c4b5fd;
+  color: #a78bfa;
 }
 
-.badge--festas {
-  background: rgba(28, 6, 18, 0.72);
-  color: #ff2a6d;
-  border: 1.5px solid rgba(255, 1, 73, 0.65);
-}
 .badge--festas i {
-  color: #ff5c8a;
+  color: #ff0149;
 }
 
-.badge--bares {
-  background: rgba(28, 16, 6, 0.72);
-  color: #fbbf24;
-  border: 1.5px solid rgba(245, 158, 11, 0.65);
-}
 .badge--bares i {
-  color: #fde68a;
+  color: #fbbf24;
 }
 
-.badge--gastronomia {
-  background: rgba(6, 24, 22, 0.72);
-  color: #2dd4bf;
-  border: 1.5px solid rgba(45, 212, 191, 0.65);
-}
 .badge--gastronomia i {
-  color: #5eead4;
+  color: #2dd4bf;
 }
 
-.badge--cultura {
-  background: rgba(6, 20, 32, 0.72);
-  color: #38bdf8;
-  border: 1.5px solid rgba(56, 189, 248, 0.65);
-}
 .badge--cultura i {
-  color: #7dd3fc;
+  color: #38bdf8;
 }
 
-.badge--esportes {
-  background: rgba(6, 26, 18, 0.72);
-  color: #34d399;
-  border: 1.5px solid rgba(16, 185, 129, 0.65);
-}
 .badge--esportes i {
-  color: #6ee7b7;
+  color: #10b981;
 }
 
-.badge--experiencias {
-  background: rgba(30, 14, 6, 0.72);
-  color: #fb923c;
-  border: 1.5px solid rgba(249, 115, 22, 0.65);
-}
 .badge--experiencias i {
-  color: #fdba74;
+  color: #f59e0b;
 }
 
 /* ---- Filter Pills ---- */
