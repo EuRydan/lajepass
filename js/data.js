@@ -4,13 +4,13 @@
 // ==========================================
 
 const CATEGORIES = {
-  musica: { emoji: '<i class="ph ph-music-notes"></i>', label: 'Música', color: 'var(--color-purple)', colorRaw: '#8B5CF6' },
-  festas: { emoji: '<i class="ph ph-confetti"></i>', label: 'Festas', color: 'var(--color-rose)', colorRaw: '#F43F7A' },
-  bares: { emoji: '<i class="ph ph-martini"></i>', label: 'Bares', color: 'var(--color-amber)', colorRaw: '#F59E0B' },
-  gastronomia: { emoji: '<i class="ph ph-fork-knife"></i>', label: 'Gastronomia', color: 'var(--color-teal)', colorRaw: '#2DD4BF' },
-  cultura: { emoji: '<i class="ph ph-mask-happy"></i>', label: 'Cultura', color: 'var(--color-sky)', colorRaw: '#38BDF8' },
-  esportes: { emoji: '<i class="ph ph-trophy"></i>', label: 'Esportes', color: '#10B981', colorRaw: '#10B981' },
-  experiencias: { emoji: '<i class="ph ph-sparkle"></i>', label: 'Experiências', color: 'var(--color-gold)', colorRaw: '#FFB84D' },
+  musica: { emoji: '<i class="fa-solid fa-music"></i>', label: 'Música', color: '#8B5CF6', colorRaw: '#8B5CF6' },
+  festas: { emoji: '<i class="fa-solid fa-champagne-glasses"></i>', label: 'Festas', color: '#FF0149', colorRaw: '#FF0149' },
+  bares: { emoji: '<i class="fa-solid fa-martini-glass-citrus"></i>', label: 'Bares', color: '#F59E0B', colorRaw: '#F59E0B' },
+  gastronomia: { emoji: '<i class="fa-solid fa-utensils"></i>', label: 'Gastronomia', color: '#2DD4BF', colorRaw: '#2DD4BF' },
+  cultura: { emoji: '<i class="fa-solid fa-masks-theater"></i>', label: 'Cultura', color: '#38BDF8', colorRaw: '#38BDF8' },
+  esportes: { emoji: '<i class="fa-solid fa-trophy"></i>', label: 'Esportes', color: '#10B981', colorRaw: '#10B981' },
+  experiencias: { emoji: '<i class="fa-solid fa-sparkles"></i>', label: 'Experiências', color: '#FFB84D', colorRaw: '#FFB84D' },
 };
 
 // Coordenadas dos bairros no mapa (geográficas lat, lng e SVG em % — left, top)

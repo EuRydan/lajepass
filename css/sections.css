@@ -436,19 +436,37 @@
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  gap: var(--space-2);
+  gap: var(--space-3);
   font-family: var(--font-display);
   font-size: var(--text-sm);
   font-weight: var(--font-weight-semibold);
   color: var(--brand-support);
-  padding: var(--space-3) var(--space-5);
+  padding: 0.75rem 1.1rem;
   border-radius: 0;
   background: #ffffff;
-  border: none;
+  border: 1px solid rgba(29, 7, 70, 0.08);
   cursor: pointer;
   transition: all var(--duration-base) var(--ease-out);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
+
+.hero__category i {
+  font-size: 0.95rem;
+  width: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-primary);
+  transition: color var(--duration-base) var(--ease-out);
+}
+
+.hero__category[data-hero-category="musica"] i { color: #8B5CF6; }
+.hero__category[data-hero-category="festas"] i { color: #FF0149; }
+.hero__category[data-hero-category="bares"] i { color: #F59E0B; }
+.hero__category[data-hero-category="gastronomia"] i { color: #0D9488; }
+.hero__category[data-hero-category="cultura"] i { color: #0284C7; }
+.hero__category[data-hero-category="esportes"] i { color: #059669; }
+.hero__category[data-hero-category="experiencias"] i { color: #EA580C; }
 
 .hero__category:hover,
 .hero__category.active {
@@ -456,7 +474,12 @@
   background: var(--brand-primary);
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 1, 73, 0.15);
+  box-shadow: 0 4px 12px rgba(255, 1, 73, 0.2);
+}
+
+.hero__category:hover i,
+.hero__category.active i {
+  color: #ffffff !important;
 }
 
 .hero__scroll-hint {
