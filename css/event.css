@@ -164,7 +164,8 @@
   background: var(--color-bg-secondary);
   padding: 0.4rem 0.85rem;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border);
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
 .event-header__meta-item i {
@@ -215,8 +216,9 @@
 /* ---- ATRAÇÕES CONFIRMADAS ---- */
 .event-attractions-card {
   background: linear-gradient(135deg, rgba(255, 1, 73, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
-  border: 1px solid rgba(255, 1, 73, 0.18);
+  border: none;
   padding: var(--space-6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 .event-section-tag {
@@ -248,19 +250,39 @@
   color: var(--brand-support);
   background: #ffffff;
   padding: 0.5rem 1rem;
-  border: 1px solid rgba(29, 7, 70, 0.12);
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .attraction-pill i {
   color: var(--brand-primary);
 }
 
+.event-openbar-card {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(255, 1, 73, 0.04) 100%);
+  border: none;
+  padding: var(--space-6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.event-section-tag--gold {
+  color: #d97706;
+}
+
+.event-openbar-card__text {
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--brand-support);
+  font-weight: var(--font-weight-medium);
+}
+
 /* ---- HIGHLIGHTS & O QUE VOCÊ VAI ENCONTRAR ---- */
 .event-highlights-card {
   background: #ffffff;
-  border: 1px solid var(--color-border);
-  padding: var(--space-6);
+  border: none;
   border-left: 4px solid var(--brand-primary);
+  padding: var(--space-6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 .event-highlights-card__title {
@@ -303,8 +325,9 @@
 /* ---- INFO LIST / INFORMAÇÕES IMPORTANTES ---- */
 .event-infolist-card {
   background: var(--color-bg-secondary);
-  border: 1px solid var(--color-border);
+  border: none;
   padding: var(--space-6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 .event-infolist-card__title {
@@ -525,9 +548,10 @@
   display: flex;
   gap: var(--space-6);
   background: var(--color-bg-secondary);
-  border: 1px solid var(--color-border);
+  border: none;
   padding: var(--space-6);
   align-items: flex-start;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 .event-birthday-card__visual {
@@ -696,10 +720,11 @@
 /* ---- RIGHT COLUMN (SIDEBAR CARD) ---- */
 .event-sidebar-card {
   background: var(--color-bg-secondary);
-  border: 1px solid var(--color-border);
+  border: none;
   padding: var(--space-6);
   position: sticky;
   top: calc(var(--header-height) + var(--space-6));
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .event-sidebar-card__info-group {
@@ -719,13 +744,14 @@
   width: 40px;
   height: 40px;
   background: #ffffff;
-  border: 1px solid rgba(29, 7, 70, 0.08);
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: var(--text-sm);
   color: var(--brand-primary);
   flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .event-sidebar-card__label {
