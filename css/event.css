@@ -741,17 +741,18 @@
 }
 
 .event-sidebar-card__icon-wrapper {
-  width: 40px;
-  height: 40px;
-  background: #ffffff;
+  width: 24px;
+  height: 24px;
+  background: transparent;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--text-sm);
+  font-size: 1.15rem;
   color: var(--brand-primary);
   flex-shrink: 0;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  box-shadow: none;
+  margin-top: 2px;
 }
 
 .event-sidebar-card__label {
@@ -822,6 +823,27 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+}
+
+.btn--comu-pass {
+  background: linear-gradient(135deg, #1d0746 0%, #2e0854 100%);
+  color: #ffd280;
+  border: 1px solid rgba(255, 210, 128, 0.35);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  transition: all 0.2s ease;
+}
+
+.btn--comu-pass:hover {
+  background: #1d0746;
+  color: #ffffff;
+  border-color: #ffd280;
+  box-shadow: 0 4px 14px rgba(29, 7, 70, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn--comu-pass i {
+  color: #ffd280;
 }
 
 .btn--radar-wa {
