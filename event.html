@@ -67,10 +67,17 @@
 
     <!-- Event Header (Title, Badge, Location) below the hero banner -->
     <header class="event-header container">
-      <span id="event-badge" class="badge"></span>
+      <div class="event-header__top">
+        <span id="event-badge" class="badge"></span>
+        <span id="event-partner-badge" class="badge badge--partner"></span>
+      </div>
       <h1 id="event-title" class="event-header__title"></h1>
+      <p id="event-subtitle" class="event-header__subtitle"></p>
+      
       <div class="event-header__meta">
         <span class="event-header__meta-item"><i class="fa-solid fa-location-dot"></i> <span id="event-meta-location"></span></span>
+        <span class="event-header__meta-item"><i class="fa-regular fa-calendar"></i> <span id="event-meta-date"></span></span>
+        <span id="event-meta-capacity-wrapper" class="event-header__meta-item"><i class="fa-solid fa-users"></i> <span id="event-meta-capacity"></span></span>
       </div>
     </header>
 
@@ -80,19 +87,103 @@
         
         <!-- Left Column: Details & Benefits -->
         <div class="event-details__left">
-          <div class="event-details__section">
-            <h3 class="event-details__section-title">Sobre a Experiência</h3>
-            <p id="event-description" class="event-details__description"></p>
-          </div>
 
-          <!-- Highlighted Comu Pass Benefit Card -->
-          <div id="event-benefit-card" class="event-benefit-card">
-            <div class="event-benefit-card__icon">🔥</div>
-            <div class="event-benefit-card__content">
-              <h4 class="event-benefit-card__title">Vantagem Exclusiva Comu Pass</h4>
-              <p id="event-benefit-text" class="event-benefit-card__text"></p>
+          <!-- Atrações Confirmadas Section -->
+          <div id="event-attractions-section" class="event-attractions-card">
+            <div class="event-attractions-card__header">
+              <span class="event-section-tag"><i class="fa-solid fa-microphone-lines"></i> Atrações Confirmadas</span>
+            </div>
+            <div id="event-attractions-content" class="event-attractions-card__body">
+              <!-- Rendered by JS -->
             </div>
           </div>
+
+          <!-- Premium Open Bar Section (Conditional) -->
+          <div id="event-openbar-section" class="event-openbar-card" style="display: none;">
+            <div class="event-openbar-card__header">
+              <span class="event-section-tag event-section-tag--gold"><i class="fa-solid fa-martini-glass-citrus"></i> Premium Open Bar</span>
+            </div>
+            <p id="event-openbar-content" class="event-openbar-card__text"></p>
+          </div>
+
+          <!-- Sobre a Experiência -->
+          <div class="event-details__section">
+            <h3 class="event-details__section-title">Sobre a Experiência</h3>
+            <div id="event-description-container" class="event-details__description">
+              <!-- Paragraphs rendered by JS -->
+            </div>
+          </div>
+
+          <!-- O que você vai encontrar (Highlights) -->
+          <div id="event-highlights-section" class="event-highlights-card" style="display: none;">
+            <h4 class="event-highlights-card__title"><i class="fa-solid fa-sparkles"></i> O que você vai encontrar</h4>
+            <ul id="event-highlights-list" class="event-highlights-list">
+              <!-- Rendered by JS -->
+            </ul>
+          </div>
+
+          <!-- Informações Importantes (Info List) -->
+          <div id="event-infolist-section" class="event-infolist-card" style="display: none;">
+            <h4 class="event-infolist-card__title"><i class="fa-solid fa-circle-info"></i> Informações Importantes</h4>
+            <ul id="event-infolist-items" class="event-infolist-items">
+              <!-- Rendered by JS -->
+            </ul>
+          </div>
+
+          <!-- Onde Comprar & Desconto Exclusivo Card -->
+          <div id="event-tickets-section" class="event-tickets-card">
+            <div class="event-tickets-card__badge">
+              <i class="fa-solid fa-ticket"></i> Ingressos &amp; Acesso
+            </div>
+            <h4 id="event-tickets-title" class="event-tickets-card__title">Garanta seu ingresso</h4>
+            <p id="event-tickets-text" class="event-tickets-card__text">
+              Garanta sua entrada de forma rápida e segura na bilheteria oficial:
+            </p>
+
+            <div id="event-promo-box" class="promo-code-box" style="display: none;">
+              <div class="promo-code-box__left">
+                <span class="promo-code-box__label">Código Promocional</span>
+                <span id="event-promo-code" class="promo-code-box__code">BRAGA</span>
+              </div>
+              <button id="btn-copy-promo" class="btn btn--copy-promo" title="Copiar código promocional">
+                <i class="fa-regular fa-copy"></i>
+                <span>Copiar Código</span>
+              </button>
+            </div>
+
+            <div class="event-tickets-card__action">
+              <a id="event-buy-ticket-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--full-width btn--buy-ticket">
+                <span>Comprar na Bilheteria Oficial</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <a id="event-pix-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn--pix btn--full-width" style="display: none;">
+                <i class="fa-brands fa-pix"></i>
+                <span>Comprar via PIX sem taxas de conveniência</span>
+              </a>
+              <a id="event-vip-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn--vip btn--full-width" style="display: none;">
+                <i class="fa-solid fa-star"></i>
+                <span>Colocar nome na Lista VIP</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Aniversários & Despedidas Section -->
+          <div id="event-birthday-section" class="event-birthday-card" style="display: none;">
+            <div class="event-birthday-card__visual">
+              <i class="fa-solid fa-champagne-glasses"></i>
+            </div>
+            <div class="event-birthday-card__content">
+              <h4 class="event-birthday-card__title">Aniversários &amp; Despedidas</h4>
+              <p class="event-birthday-card__text">
+                Quer comemorar o seu aniversário ou despedida de solteiro(a) neste evento? Clique no botão abaixo e solicite condições exclusivas para você celebrar com a sua galera!
+              </p>
+              <a id="event-birthday-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn--secondary event-birthday-card__btn">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>Solicitar Condições Especiais</span>
+              </a>
+            </div>
+          </div>
+
         </div>
 
         <!-- Right Column: Info & Action Sidebar -->
@@ -117,14 +208,6 @@
               </div>
 
               <div class="event-sidebar-card__info-item">
-                <div class="event-sidebar-card__icon-wrapper"><i class="fa-solid fa-ticket"></i></div>
-                <div>
-                  <div class="event-sidebar-card__label">Valor Geral</div>
-                  <div id="event-info-price" class="event-sidebar-card__value"></div>
-                </div>
-              </div>
-
-              <div class="event-sidebar-card__info-item">
                 <div class="event-sidebar-card__icon-wrapper"><i class="fa-solid fa-location-dot"></i></div>
                 <div>
                   <div class="event-sidebar-card__label">Localização</div>
@@ -132,15 +215,46 @@
                 </div>
               </div>
 
+              <div id="event-info-format-wrapper" class="event-sidebar-card__info-item">
+                <div class="event-sidebar-card__icon-wrapper"><i class="fa-solid fa-bolt"></i></div>
+                <div>
+                  <div class="event-sidebar-card__label">Formato &amp; Vibe</div>
+                  <div id="event-info-format" class="event-sidebar-card__value"></div>
+                </div>
+              </div>
+
+              <div class="event-sidebar-card__info-item event-sidebar-card__info-item--promo">
+                <div class="event-sidebar-card__icon-wrapper"><i class="fa-solid fa-tag"></i></div>
+                <div style="flex-grow: 1;">
+                  <div class="event-sidebar-card__label">Cupom de Desconto</div>
+                  <div class="sidebar-promo-badge">
+                    <span id="event-sidebar-promo">BRAGA</span>
+                    <button id="btn-sidebar-copy-promo" class="sidebar-copy-btn" title="Copiar código">
+                      <i class="fa-regular fa-copy"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
             <!-- Primary CTAs -->
             <div class="event-sidebar-card__actions">
-              <a href="https://chat.whatsapp.com/CaifVi3wOTmDLgZnw5arJS" target="_blank" class="btn btn--primary btn--full-width">
-                📡 Entrar no Radar
+              <a id="event-sidebar-buy-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--full-width">
+                <i class="fa-solid fa-ticket"></i>
+                <span>Garantir Ingresso</span>
               </a>
-              <a href="home.html#pass" class="btn btn--secondary btn--full-width">
-                🎟️ Obter Comu Pass
+              <a id="event-sidebar-vip-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn--vip btn--full-width" style="display: none;">
+                <i class="fa-solid fa-star"></i>
+                <span>Nome na Lista VIP</span>
+              </a>
+              <a id="event-sidebar-birthday-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--full-width">
+                <i class="fa-solid fa-cake-candles"></i>
+                <span>Condições de Aniversário</span>
+              </a>
+              <a href="https://chat.whatsapp.com/CaifVi3wOTmDLgZnw5arJS" target="_blank" rel="noopener noreferrer" class="btn btn--radar-wa btn--full-width">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>Entrar no Comu Radar</span>
               </a>
             </div>
           </div>

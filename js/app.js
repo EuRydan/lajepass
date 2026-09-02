@@ -70,7 +70,12 @@
 
     // Category filter
     if (activeCategoryFilter !== 'todos') {
-      filtered = filtered.filter(exp => exp.category === activeCategoryFilter);
+      filtered = filtered.filter(exp => {
+        if (Array.isArray(exp.categories)) {
+          return exp.categories.includes(activeCategoryFilter) || exp.category === activeCategoryFilter;
+        }
+        return exp.category === activeCategoryFilter;
+      });
     }
 
     // Sort by date
