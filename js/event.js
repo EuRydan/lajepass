@@ -31,7 +31,7 @@
     const eventId = urlParams.get('id');
 
     if (!eventId) {
-      window.location.href = 'home.html';
+      window.location.href = 'index.html';
       return;
     }
 
@@ -40,7 +40,7 @@
 
     if (!event) {
       // Fallback: if not found, redirect to home
-      window.location.href = 'home.html';
+      window.location.href = 'index.html';
       return;
     }
 
