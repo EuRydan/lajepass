@@ -1435,6 +1435,17 @@ img.pass-card {
     display: none;
   }
 
+  .btn--lg {
+    padding: 0.95rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .btn--full {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+
   /* 2-column mobile experience cards */
   .card__image {
     height: 125px;

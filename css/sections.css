@@ -1160,8 +1160,44 @@
 }
 
 @media (max-width: 640px) {
+  .producers__form {
+    padding: var(--space-6) var(--space-4);
+  }
+
   .producers__form-row {
     grid-template-columns: 1fr;
+  }
+
+  .producers__form .btn--full,
+  .radar__form .btn--full,
+  .pass__form .btn--full {
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    padding: 1rem 1rem;
+    white-space: normal;
+    line-height: 1.35;
+    width: 100%;
+    height: auto;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: var(--radius-sm);
+  }
+}
+
+@media (max-width: 380px) {
+  .producers__form {
+    padding: var(--space-5) var(--space-3);
+  }
+
+  .producers__form .btn--full,
+  .radar__form .btn--full,
+  .pass__form .btn--full {
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+    padding: 0.9rem 0.5rem;
   }
 }
 
