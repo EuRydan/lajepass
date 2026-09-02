@@ -192,7 +192,7 @@ const EXPERIENCES = [
     ],
     image: 'public/trem-do-corcovado.jpg',
     price: 'Ingresso Adulto (a partir dos 12 anos)',
-    ticketUrl: 'https://docs.google.com/document/d/e/2PACX-1vQyTk3AiBNjOm4HjbIdCNc4pNzUUe7O5U5sDuB0WIXwqSubKrtZnsjiO9iTXhPdYl9dgPrTSmYibSz9/pub',
+    ticketUrl: 'https://tremdocorcovado.rio/',
     ticketPartner: 'Trem do Corcovado Oficial',
     termsUrl: 'https://docs.google.com/document/d/e/2PACX-1vQyTk3AiBNjOm4HjbIdCNc4pNzUUe7O5U5sDuB0WIXwqSubKrtZnsjiO9iTXhPdYl9dgPrTSmYibSz9/pub',
     capacity: 'Acesso Sem Filas',
