@@ -283,7 +283,7 @@ Este documento reúne o código atualizado dos formulários, regras de seguranç
         method: 'POST',
         mode: 'no-cors',
         headers: {
-          'Content-Type': 'text/plain;charset=utf-8'
+          'Content-Type': 'text/plain'
         },
         body: JSON.stringify(payload)
       });

@@ -657,7 +657,7 @@
         method: 'POST',
         mode: 'no-cors', // Opaque request to avoid CORS redirect blocks from Google Apps Script
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'text/plain'
         },
         body: JSON.stringify({
           timestamp: payload.timestamp,
