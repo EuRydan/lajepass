@@ -131,20 +131,31 @@
   <!-- ================================================
        SIGNUP FORM SECTION
        ================================================ -->
+  <!-- ================================================
+       SIGNUP FORM / MANIFESTO CTA SECTION
+       ================================================ -->
   <section class="pass-signup-section">
     <div class="container">
       <div class="pass-signup-section__content animate-on-scroll">
-        <h2 class="pass-signup-section__title">Garanta o seu Pass</h2>
-        <p class="pass-signup-section__text">
-          O Pass se paga sozinho. Use em apenas um evento e você já recupera o valor. Entre na lista de espera preenchendo os dados abaixo.
+        <p class="pass-signup-section__manifesto">
+          Você não assina para ter mais um aplicativo.<br />
+          <strong>Você entra para fazer parte.</strong>
         </p>
 
+        <div class="pass-signup-section__brand-call">
+          <span class="pass-signup-section__tag">COMU PASS</span>
+          <h2 class="pass-signup-section__title">Seu acesso para uma cidade que nunca para.</h2>
+        </div>
+
         <!-- Signup form -->
-        <form id="pass-form" class="pass__signup" style="display: flex; flex-direction: column; gap: var(--space-3); max-width: 420px;">
+        <form id="pass-form" class="pass__signup">
           <input type="text" name="pass-name" class="form-input" placeholder="Seu nome" maxlength="100" required />
           <input type="email" name="pass-email" class="form-input" placeholder="Seu melhor email" maxlength="100" required />
           <input type="tel" name="pass-whatsapp" class="form-input" placeholder="WhatsApp (opcional)" maxlength="100" />
-          <button type="submit" class="btn btn--primary btn--lg btn--full">QUERO ENTRAR NA COMU</button>
+          <button type="submit" class="btn btn--primary btn--lg btn--full">
+            <span>QUERO FAZER PARTE</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </form>
       </div>
     </div>

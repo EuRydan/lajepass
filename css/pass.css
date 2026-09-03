@@ -272,46 +272,85 @@ body.pass-page-body {
   }
 }
 
-/* ---- SIGNUP SECTION ---- */
+/* ---- SIGNUP SECTION / MANIFESTO CTA ---- */
 .pass-signup-section {
-  padding-block: var(--space-20);
+  padding-block: var(--space-24) var(--space-20);
   background: #ffffff;
   text-align: center;
+  position: relative;
 }
 
 .pass-signup-section__content {
-  max-width: 500px;
+  max-width: 640px;
   margin-inline: auto;
 }
 
-.pass-signup-section__title {
-  font-size: var(--text-3xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--brand-support);
-  margin-bottom: var(--space-2);
+.pass-signup-section__manifesto {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+  font-weight: 500;
 }
 
-.pass-signup-section__text {
-  font-size: var(--text-base);
-  color: #5d5d75;
-  margin-bottom: var(--space-8);
-  line-height: 1.6;
+.pass-signup-section__manifesto strong {
+  display: block;
+  font-size: 1.15em;
+  font-weight: 900;
+  color: var(--brand-support);
+  margin-top: var(--space-2);
+}
+
+.pass-signup-section__brand-call {
+  margin-bottom: var(--space-10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.pass-signup-section__tag {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-primary);
+  background: rgba(255, 1, 73, 0.08);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+}
+
+.pass-signup-section__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--brand-support);
+  line-height: 1.25;
+  margin-top: var(--space-2);
 }
 
 .pass-signup-section .pass__signup {
   margin-inline: auto;
   text-align: left;
-  background: #fbf9ff;
+  background: #faf8fd;
   padding: var(--space-8);
   border-radius: var(--radius-xl);
-  border: 1px solid rgba(29, 7, 70, 0.06);
-  box-shadow: 0 4px 20px rgba(29, 7, 70, 0.02);
+  border: 1px solid rgba(29, 7, 70, 0.08);
+  box-shadow: 0 10px 30px rgba(29, 7, 70, 0.04);
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
 }
 
 .pass-signup-section .form-input {
   background: #ffffff;
   border-color: rgba(29, 7, 70, 0.12);
   color: var(--brand-support);
+  padding: 0.85rem 1rem;
 }
 
 .pass-signup-section .form-input:focus {
@@ -321,6 +360,17 @@ body.pass-page-body {
 
 .pass-signup-section .form-input::placeholder {
   color: #a0a0ba;
+}
+
+.pass-signup-section .btn--primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  font-size: var(--text-base);
 }
 
 
