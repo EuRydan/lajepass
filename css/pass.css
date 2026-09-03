@@ -48,6 +48,22 @@ body.pass-page-body {
   max-width: 800px;
 }
 
+.pass-hero__title {
+  font-size: var(--text-5xl);
+  font-weight: var(--font-weight-black);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.1;
+  color: #ffffff;
+  margin-bottom: var(--space-4);
+}
+
+.pass-hero__subtitle {
+  font-size: var(--text-xl);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--space-6);
+  line-height: var(--leading-relaxed);
+}
+
 @media (max-width: 768px) {
   .pass-hero__grid {
     grid-template-columns: 1fr;
