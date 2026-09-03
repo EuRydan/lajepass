@@ -124,7 +124,7 @@ body.pass-page-body {
 
 .pass-video-center-logo {
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 4;
@@ -133,14 +133,14 @@ body.pass-page-body {
   justify-content: center;
   pointer-events: none;
   width: 100%;
-  max-width: 600px;
+  max-width: 540px;
   padding-inline: var(--space-6);
 }
 
 .pass-video-center-logo__img {
   width: 100%;
   height: auto;
-  max-height: 220px;
+  max-height: 200px;
   object-fit: contain;
   filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.85));
 }
