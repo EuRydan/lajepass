@@ -151,7 +151,7 @@ Este documento reúne o código atualizado dos formulários, regras de seguranç
   // ---- Configuration ----
   const RECAPTCHA_SITE_KEY = '6LclA6QtAAAAAAc98Y4QdzQf3oomZrt-PydXgikN';
   const RATE_LIMIT_SECONDS = 60;
-  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw47e7NkL9E24tEMhVrn8yD6c2cHkVy-kM6LJsJ1Oue4Gfo9Won06QVTgwrJSuD7Hll/exec';
+  const GOOGLE_SCRIPT_URL = '/api/submit';
 
   // ---- Security Helpers ----
 
@@ -275,19 +275,19 @@ Este documento reúne o código atualizado dos formulários, regras de seguranç
   }
 
   /**
-   * Dispatches JSON payload to Google Apps Script Web App
+   * Dispatches JSON payload to Vercel Serverless Function Proxy (/api/submit)
    */
   async function sendToGoogleScript(payload) {
     try {
-      await fetch(GOOGLE_SCRIPT_URL, {
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
-        mode: 'no-cors',
+        mode: 'cors',
         headers: {
-          'Content-Type': 'text/plain'
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify(payload)
       });
-      return true;
+      return response.ok;
     } catch (err) {
       console.error('Erro ao enviar dados para o Google Sheets:', err);
       return false;
