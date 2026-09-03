@@ -148,6 +148,27 @@ body.pass-page-body {
   filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.85));
 }
 
+/* ---- 4-COLOR SECTION DIVIDER ---- */
+.pass-color-divider {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    #ffffff 0%,
+    #ffffff 25%,
+    #ff0149 25%,
+    #ff0149 50%,
+    #6d00ff 50%,
+    #6d00ff 75%,
+    #1d0746 75%,
+    #1d0746 100%
+  );
+  display: block;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
 /* ---- BENEFITS GRID SVG ---- */
 .pass-benefits-grid-svg {
   padding-block: var(--space-20);
