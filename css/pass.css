@@ -102,10 +102,11 @@ body.pass-page-body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding-block: var(--space-16);
-  height: 652.3851px;
-  display: flex;
-  align-items: center;
+  width: 100%;
+  aspect-ratio: 1200 / 652.48;
+  max-height: 652px;
+  min-height: 240px;
+  display: block;
   overflow: hidden;
   border-bottom: 1px solid rgba(29, 7, 70, 0.08);
 }
