@@ -603,11 +603,14 @@
   }
 }
 
-/* ---- COMU PICKS ---- */
+/* ---- COMU PICKS (FULL-WIDTH) ---- */
 
 .picks {
   background: var(--brand-white);
-  padding-bottom: var(--space-12);
+  padding-top: var(--space-8);
+  padding-bottom: 0;
+  width: 100%;
+  overflow: hidden;
 }
 
 .picks-card {
@@ -615,8 +618,9 @@
   position: relative;
   z-index: 2;
   overflow: hidden;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
   border-radius: 0;
   padding: 0;
 }
@@ -672,11 +676,13 @@
   grid-template-columns: 1fr 1fr;
   gap: 0;
   align-items: stretch;
+  width: 100%;
+  min-height: 520px;
 }
 
 .picks-card__info {
   text-align: left;
-  padding: var(--space-16) var(--space-16) var(--space-16) var(--space-12);
+  padding: var(--space-16) var(--space-12) var(--space-16) clamp(2rem, 8vw, 9rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -690,6 +696,7 @@
 .picks-card__visual {
   width: 100%;
   height: 100%;
+  min-height: 400px;
 }
 
 .picks-card__image {
@@ -713,6 +720,7 @@
   .picks-card__content {
     grid-template-columns: 1fr;
     gap: 0;
+    min-height: auto;
   }
 
   .picks-card__info {
@@ -720,7 +728,8 @@
   }
 
   .picks-card__visual {
-    min-height: 250px;
+    min-height: 300px;
+    height: 350px;
   }
 }
 
@@ -1911,5 +1920,496 @@
   
   .como-funciona__step {
     flex: 0 0 320px;
+  }
+}
+
+/* ================================================
+   PARTNER HIGHLIGHT BANNERS CAROUSEL
+   ================================================ */
+
+.partner-banners-section {
+  width: 100%;
+  background: var(--brand-white);
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-4);
+  overflow: hidden;
+  position: relative;
+}
+
+.partner-banners__header {
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.partner-banners__label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-accent);
+}
+
+.partner-banners__label i {
+  font-size: 0.95rem;
+}
+
+.partner-banners__subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: #5d5d75;
+}
+
+.partner-banners__carousel-wrapper {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  overflow: hidden;
+  position: relative;
+  padding: var(--space-3) 0 var(--space-5) 0;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 2%, black 98%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 2%, black 98%, transparent 100%);
+}
+
+.partner-banners__track {
+  display: flex;
+  width: max-content;
+  gap: 1.25rem;
+  will-change: transform;
+  animation: partnerMarquee 16s linear infinite;
+}
+
+/* Pause on carousel or track hover */
+.partner-banners__carousel-wrapper:hover .partner-banners__track {
+  animation-play-state: paused;
+}
+
+@keyframes partnerMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Partner Banner Card */
+.partner-banner-card {
+  position: relative;
+  flex: 0 0 400px;
+  height: 220px;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem;
+  background-color: #0c0817;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease;
+}
+
+.partner-banner-card__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), filter 0.3s ease;
+  filter: brightness(0.82);
+}
+
+.partner-banner-card__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(12, 8, 23, 0.3) 0%,
+    rgba(12, 8, 23, 0.65) 50%,
+    rgba(12, 8, 23, 0.95) 100%
+  );
+  pointer-events: none;
+}
+
+.partner-banner-card__top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.partner-banner-card__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #ff0149;
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.6rem;
+  border-radius: 3px;
+}
+
+.partner-banner-card__perk {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  color: #ffde59;
+  border: 1px solid rgba(255, 222, 89, 0.4);
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.6rem;
+  border-radius: 3px;
+}
+
+.partner-banner-card__bottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.partner-banner-card__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.22;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.partner-banner-card__meta {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.88);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.partner-banner-card__meta i {
+  color: var(--color-accent);
+  font-size: 0.8rem;
+}
+
+.partner-banner-card__cta {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+/* Hover: Leve inflada suave (sem pulso, sem borda rosa, sem sombra) */
+.partner-banner-card:hover {
+  transform: scale(1.04);
+  box-shadow: none;
+  border-color: rgba(255, 255, 255, 0.3);
+  z-index: 5;
+}
+
+.partner-banner-card:hover .partner-banner-card__bg {
+  transform: scale(1.04);
+  filter: brightness(0.92);
+}
+
+.partner-banner-card:hover .partner-banner-card__cta {
+  gap: 0.55rem;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .partner-banner-card {
+    flex: 0 0 310px;
+    height: 190px;
+    padding: 1rem;
+  }
+  .partner-banner-card__title {
+    font-size: 1rem;
+  }
+}
+
+/* ================================================
+   COMU ECOSYSTEM / UNIVERSOS 4-COLUMN GRID
+   ================================================ */
+
+.comu-ecosystem {
+  background: var(--brand-primary);
+  padding-block: 5.5rem 6.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.comu-ecosystem__header {
+  text-align: center !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3.5rem;
+  width: 100%;
+}
+
+.comu-ecosystem .section-title {
+  font-size: 52px;
+  color: #140432;
+  font-weight: 950;
+  letter-spacing: -0.03em;
+  margin: 0 auto;
+  line-height: 1.1;
+  text-align: center !important;
+}
+
+.comu-ecosystem__subtitle {
+  font-family: var(--font-body);
+  font-size: 1.12rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #ffffff !important;
+  max-width: 740px;
+  margin: 0.85rem auto 0;
+  text-align: center !important;
+  letter-spacing: 0.01em;
+  opacity: 0.95;
+}
+
+.comu-ecosystem .container {
+  max-width: 1760px;
+}
+
+.comu-ecosystem__grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 1340px;
+  margin-inline: auto;
+  flex-wrap: wrap;
+}
+
+.comu-ecosystem__card {
+  width: 292px;
+  height: 384px;
+  min-height: 384px;
+  max-height: 384px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(20, 4, 50, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  background: #f5f4f8;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.comu-ecosystem__card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 48px rgba(20, 4, 50, 0.22), 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.comu-ecosystem__card-top {
+  width: 100%;
+  height: 142px;
+  min-height: 142px;
+  max-height: 142px;
+  position: relative;
+  overflow: hidden;
+  background: #0a0a0f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.comu-ecosystem__banner-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  filter: grayscale(100%) contrast(1.25) brightness(0.6);
+  z-index: 0;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.comu-ecosystem__card:hover .comu-ecosystem__banner-img {
+  transform: scale(1.07);
+}
+
+.comu-ecosystem__banner-noise {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.38 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.comu-ecosystem__banner-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.42) 60%, rgba(0,0,0,0.75) 100%);
+  pointer-events: none;
+}
+
+.comu-ecosystem__banner-logo-wrap {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 1rem;
+}
+
+.comu-ecosystem__banner-logo {
+  height: 36px;
+  width: auto;
+  max-width: 82%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.75));
+  transition: transform 0.35s ease;
+}
+
+.comu-ecosystem__card:hover .comu-ecosystem__banner-logo {
+  transform: scale(1.05);
+}
+
+.comu-ecosystem__card-bottom {
+  flex: 1;
+  background: #f5f4f8;
+  padding: 1.85rem 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.comu-ecosystem__card-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.18rem;
+  color: #140432;
+  margin: 0 0 0.85rem 0;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  text-align: center !important;
+  width: 100%;
+  height: 52px;
+  min-height: 52px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.comu-ecosystem__desc {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14.5px !important;
+  line-height: 1.55;
+  color: #140432 !important;
+  margin: 0;
+  letter-spacing: -0.005em;
+  position: relative;
+  z-index: 1;
+  text-transform: none;
+  text-align: center !important;
+  width: 100%;
+  opacity: 0.92;
+}
+
+.comu-ecosystem__desc--radar,
+.comu-ecosystem__desc--access,
+.comu-ecosystem__desc--exp,
+.comu-ecosystem__desc--brand {
+  color: #140432 !important;
+}
+
+.comu-ecosystem__punchline {
+  display: block;
+  margin-top: 0.65rem;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  font-size: 13.5px;
+  color: #140432 !important;
+  text-align: center !important;
+  letter-spacing: -0.01em;
+}
+
+.comu-ecosystem__desc--pass {
+  color: #ffffff;
+  padding-left: 28%;
+}
+
+.comu-ecosystem__subscript {
+  display: block;
+  font-family: 'Caveat', cursive, var(--font-body);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.55rem;
+  color: #ffffff;
+  margin-top: 0.6rem;
+  text-transform: none;
+  opacity: 0.95;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .comu-ecosystem__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .comu-ecosystem__card {
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 600px) {
+  .comu-ecosystem__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comu-ecosystem__card {
+    min-height: 280px;
   }
 }

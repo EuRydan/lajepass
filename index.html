@@ -18,7 +18,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -64,6 +64,10 @@
           <a href="#produtores" class="header__link">Para Produtores</a>
         </nav>
 
+        <a href="login.html" class="header__btn-login btn btn--outline btn--sm">
+          <i class="fa-regular fa-user"></i>
+          <span>Entrar</span>
+        </a>
         <a href="#pass" class="header__cta btn btn--primary btn--sm">FAZER PARTE</a>
       </div>
 
@@ -141,6 +145,10 @@
 
       <!-- Quick Actions -->
       <div class="mobile-nav__actions" style="--i: 6;">
+        <a href="login.html" class="btn btn--outline btn--full-width mobile-nav__login-btn" style="margin-bottom: var(--space-3); justify-content: center; gap: var(--space-2); border-color: rgba(255,255,255,0.25);">
+          <i class="fa-regular fa-user"></i>
+          <span>ENTRAR NA CONTA</span>
+        </a>
         <a href="#pass" class="btn btn--primary btn--full-width mobile-nav__cta">
           <span>FAZER PARTE DO PASS</span>
           <i class="fa-solid fa-arrow-right"></i>
@@ -207,39 +215,232 @@
   </section>
 
   <!-- ================================================
-       02. COMU RADAR
+       02. DESTAQUES DE PARCEIROS (CARROSSEL FULL-WIDTH)
        ================================================ -->
-  <section class="section picks" id="picks">
-    <div class="container">
-      <div class="picks-card">
-        <div class="picks-card__content">
-          <div class="picks-card__info">
-            <div class="section-header animate-on-scroll">
-              <span class="section-label" style="color: #ffffff;"><i class="ph-fill ph-broadcast"></i> Comu Radar</span>
-              <h2 class="section-title">O QUE ESTÁ NO SEU RADAR?</h2>
-              <p class="section-subtitle">Os melhores rolês do Rio, filtrados por quem vive a cidade.</p>
-              <div class="picks-categories" style="color: rgba(255, 255, 255, 0.85); font-family: var(--font-display); font-size: var(--text-sm); font-weight: var(--font-weight-semibold); margin-top: var(--space-4); letter-spacing: var(--tracking-wide);">
-                Festas &middot; Shows &middot; Gastronomia &middot; Cultura &middot; Experiências
-              </div>
-            </div>
+  <section class="partner-banners-section" id="destaques">
+    <div class="container partner-banners__header">
+      <span class="partner-banners__label">
+        <i class="fa-solid fa-fire"></i> Destaques de Parceiros
+      </span>
+      <span class="partner-banners__subtitle">
+        Experiências e rolês imperdíveis curados com benefícios exclusivos
+      </span>
+    </div>
 
-            <a href="https://chat.whatsapp.com/CaifVi3wOTmDLgZnw5arJS" target="_blank" rel="noopener noreferrer" class="btn btn--picks animate-on-scroll">
-              <i class="fa-brands fa-whatsapp"></i>
-              <span>ENTRAR NO RADAR GRATUITO</span>
-            </a>
+    <div class="partner-banners__carousel-wrapper">
+      <div class="partner-banners__track">
+        
+        <!-- Item 1: Encontrin -->
+        <a href="event.html?id=encontrin-di-proposito" class="partner-banner-card">
+          <img src="public/encontrin-di-proposito.png" alt="Encontrin com Di Propósito" class="partner-banner-card__bg" loading="lazy" />
+          <div class="partner-banner-card__overlay"></div>
+          <div class="partner-banner-card__top">
+            <span class="partner-banner-card__tag"><i class="fa-solid fa-bolt"></i> Parceiro Oficial</span>
+            <span class="partner-banner-card__perk"><i class="fa-solid fa-ticket"></i> Cupom: BRAGA</span>
           </div>
-          <div class="picks-card__visual animate-on-scroll">
-            <img src="public/tai-s-captures-OQDDvB5r0bM-unsplash.jpg" alt="Comu Radar Curadoria" class="picks-card__image" loading="lazy" />
+          <div class="partner-banner-card__bottom">
+            <h4 class="partner-banner-card__title">Encontrin com Di Propósito</h4>
+            <div class="partner-banner-card__meta">
+              <span><i class="fa-solid fa-location-dot"></i> Planetário da Gávea · 360º</span>
+            </div>
+            <span class="partner-banner-card__cta">Ver evento <i class="fa-solid fa-arrow-right"></i></span>
           </div>
-        </div>
-      </div> <!-- /picks-card -->
+        </a>
+
+        <!-- Item 2: The Fucking Party -->
+        <a href="event.html?id=the-fucking-party-open-bar" class="partner-banner-card">
+          <img src="public/the-fucking-party.png" alt="The Fucking Party" class="partner-banner-card__bg" loading="lazy" />
+          <div class="partner-banner-card__overlay"></div>
+          <div class="partner-banner-card__top">
+            <span class="partner-banner-card__tag"><i class="fa-solid fa-martini-glass"></i> Open Bar</span>
+            <span class="partner-banner-card__perk"><i class="fa-solid fa-ticket"></i> Cupom: BRAGA</span>
+          </div>
+          <div class="partner-banner-card__bottom">
+            <h4 class="partner-banner-card__title">The Fucking Party Open Bar</h4>
+            <div class="partner-banner-card__meta">
+              <span><i class="fa-solid fa-calendar-days"></i> 03 de Outubro · Rio de Janeiro</span>
+            </div>
+            <span class="partner-banner-card__cta">Ver evento <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Item 3: +5521 06 Anos -->
+        <a href="event.html?id=5521-06-anos-open-bar" class="partner-banner-card">
+          <img src="public/5521-06-anos.png" alt="+5521 06 Anos Open Bar" class="partner-banner-card__bg" loading="lazy" />
+          <div class="partner-banner-card__overlay"></div>
+          <div class="partner-banner-card__top">
+            <span class="partner-banner-card__tag"><i class="fa-solid fa-fire-flame-curved"></i> Feriado</span>
+            <span class="partner-banner-card__perk"><i class="fa-solid fa-ticket"></i> Cupom: BRAGA</span>
+          </div>
+          <div class="partner-banner-card__bottom">
+            <h4 class="partner-banner-card__title">+5521 06 Anos Open Bar</h4>
+            <div class="partner-banner-card__meta">
+              <span><i class="fa-solid fa-calendar-days"></i> 04 de Setembro · Leblon</span>
+            </div>
+            <span class="partner-banner-card__cta">Ver evento <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Item 4: Trem do Corcovado -->
+        <a href="event.html?id=trem-do-corcovado-cristo-redentor" class="partner-banner-card">
+          <img src="public/trem-do-corcovado.jpg" alt="Trem do Corcovado & Cristo Redentor" class="partner-banner-card__bg" loading="lazy" />
+          <div class="partner-banner-card__overlay"></div>
+          <div class="partner-banner-card__top">
+            <span class="partner-banner-card__tag"><i class="fa-solid fa-star"></i> Ponto Turístico</span>
+            <span class="partner-banner-card__perk"><i class="fa-solid fa-bolt"></i> Sem Filas</span>
+          </div>
+          <div class="partner-banner-card__bottom">
+            <h4 class="partner-banner-card__title">Trem do Corcovado & Cristo Redentor</h4>
+            <div class="partner-banner-card__meta">
+              <span><i class="fa-solid fa-location-dot"></i> Cosme Velho · Todos os dias</span>
+            </div>
+            <span class="partner-banner-card__cta">Ver evento <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Item 5: Pearl Jam Symphonic -->
+        <a href="event.html?id=pearl-jam-symphonic" class="partner-banner-card">
+          <img src="public/pearl-jam-symphonic.jpg" alt="Pearl Jam Symphonic" class="partner-banner-card__bg" loading="lazy" />
+          <div class="partner-banner-card__overlay"></div>
+          <div class="partner-banner-card__top">
+            <span class="partner-banner-card__tag"><i class="fa-solid fa-guitar"></i> Show Especial</span>
+            <span class="partner-banner-card__perk"><i class="fa-solid fa-percent"></i> Desconto Multi</span>
+          </div>
+          <div class="partner-banner-card__bottom">
+            <h4 class="partner-banner-card__title">Pearl Jam Symphonic</h4>
+            <div class="partner-banner-card__meta">
+              <span><i class="fa-solid fa-location-dot"></i> Teatro Multiplan · VillageMall</span>
+            </div>
+            <span class="partner-banner-card__cta">Ver evento <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Item 6: Sul-Americano de Vôlei -->
+        <a href="event.html?id=sulamericano-volei-maracanazinho" class="partner-banner-card">
+          <img src="public/sulamericano-volei.jpg" alt="Campeonato Sul-Americano de Vôlei" class="partner-banner-card__bg" loading="lazy" />
+          <div class="partner-banner-card__overlay"></div>
+          <div class="partner-banner-card__top">
+            <span class="partner-banner-card__tag"><i class="fa-solid fa-trophy"></i> Esportes</span>
+            <span class="partner-banner-card__perk"><i class="fa-solid fa-medal"></i> Vaga Olímpica</span>
+          </div>
+          <div class="partner-banner-card__bottom">
+            <h4 class="partner-banner-card__title">Sul-Americano de Vôlei</h4>
+            <div class="partner-banner-card__meta">
+              <span><i class="fa-solid fa-location-dot"></i> Ginásio do Maracanãzinho</span>
+            </div>
+            <span class="partner-banner-card__cta">Ver evento <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- DUPLICATED SET FOR CONTINUOUS SEAMLESS LOOP -->
+        <!-- Item 1 (Dup) -->
+        <a href="event.html?id=encontrin-di-proposito" class="partner-banner-card" aria-hidden="true" tabindex="-1">
+          <img src="public/encontrin-di-proposito.png" alt="Encontrin com Di Propósito" class="partner-banner-card__bg" loading="lazy" />
+          <div class="partner-banner-card__overlay"></div>
+          <div class="partner-banner-card__top">
+            <span class="partner-banner-card__tag"><i class="fa-solid fa-bolt"></i> Parceiro Oficial</span>
+            <span class="partner-banner-card__perk"><i class="fa-solid fa-ticket"></i> Cupom: BRAGA</span>
+          </div>
+          <div class="partner-banner-card__bottom">
+            <h4 class="partner-banner-card__title">Encontrin com Di Propósito</h4>
+            <div class="partner-banner-card__meta">
+              <span><i class="fa-solid fa-location-dot"></i> Planetário da Gávea · 360º</span>
+            </div>
+            <span class="partner-banner-card__cta">Ver evento <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Item 2 (Dup) -->
+        <a href="event.html?id=the-fucking-party-open-bar" class="partner-banner-card" aria-hidden="true" tabindex="-1">
+          <img src="public/the-fucking-party.png" alt="The Fucking Party" class="partner-banner-card__bg" loading="lazy" />
+          <div class="partner-banner-card__overlay"></div>
+          <div class="partner-banner-card__top">
+            <span class="partner-banner-card__tag"><i class="fa-solid fa-martini-glass"></i> Open Bar</span>
+            <span class="partner-banner-card__perk"><i class="fa-solid fa-ticket"></i> Cupom: BRAGA</span>
+          </div>
+          <div class="partner-banner-card__bottom">
+            <h4 class="partner-banner-card__title">The Fucking Party Open Bar</h4>
+            <div class="partner-banner-card__meta">
+              <span><i class="fa-solid fa-calendar-days"></i> 03 de Outubro · Rio de Janeiro</span>
+            </div>
+            <span class="partner-banner-card__cta">Ver evento <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Item 3 (Dup) -->
+        <a href="event.html?id=5521-06-anos-open-bar" class="partner-banner-card" aria-hidden="true" tabindex="-1">
+          <img src="public/5521-06-anos.png" alt="+5521 06 Anos Open Bar" class="partner-banner-card__bg" loading="lazy" />
+          <div class="partner-banner-card__overlay"></div>
+          <div class="partner-banner-card__top">
+            <span class="partner-banner-card__tag"><i class="fa-solid fa-fire-flame-curved"></i> Feriado</span>
+            <span class="partner-banner-card__perk"><i class="fa-solid fa-ticket"></i> Cupom: BRAGA</span>
+          </div>
+          <div class="partner-banner-card__bottom">
+            <h4 class="partner-banner-card__title">+5521 06 Anos Open Bar</h4>
+            <div class="partner-banner-card__meta">
+              <span><i class="fa-solid fa-calendar-days"></i> 04 de Setembro · Leblon</span>
+            </div>
+            <span class="partner-banner-card__cta">Ver evento <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Item 4 (Dup) -->
+        <a href="event.html?id=trem-do-corcovado-cristo-redentor" class="partner-banner-card" aria-hidden="true" tabindex="-1">
+          <img src="public/trem-do-corcovado.jpg" alt="Trem do Corcovado & Cristo Redentor" class="partner-banner-card__bg" loading="lazy" />
+          <div class="partner-banner-card__overlay"></div>
+          <div class="partner-banner-card__top">
+            <span class="partner-banner-card__tag"><i class="fa-solid fa-star"></i> Ponto Turístico</span>
+            <span class="partner-banner-card__perk"><i class="fa-solid fa-bolt"></i> Sem Filas</span>
+          </div>
+          <div class="partner-banner-card__bottom">
+            <h4 class="partner-banner-card__title">Trem do Corcovado & Cristo Redentor</h4>
+            <div class="partner-banner-card__meta">
+              <span><i class="fa-solid fa-location-dot"></i> Cosme Velho · Todos os dias</span>
+            </div>
+            <span class="partner-banner-card__cta">Ver evento <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Item 5 (Dup) -->
+        <a href="event.html?id=pearl-jam-symphonic" class="partner-banner-card" aria-hidden="true" tabindex="-1">
+          <img src="public/pearl-jam-symphonic.jpg" alt="Pearl Jam Symphonic" class="partner-banner-card__bg" loading="lazy" />
+          <div class="partner-banner-card__overlay"></div>
+          <div class="partner-banner-card__top">
+            <span class="partner-banner-card__tag"><i class="fa-solid fa-guitar"></i> Show Especial</span>
+            <span class="partner-banner-card__perk"><i class="fa-solid fa-percent"></i> Desconto Multi</span>
+          </div>
+          <div class="partner-banner-card__bottom">
+            <h4 class="partner-banner-card__title">Pearl Jam Symphonic</h4>
+            <div class="partner-banner-card__meta">
+              <span><i class="fa-solid fa-location-dot"></i> Teatro Multiplan · VillageMall</span>
+            </div>
+            <span class="partner-banner-card__cta">Ver evento <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Item 6 (Dup) -->
+        <a href="event.html?id=sulamericano-volei-maracanazinho" class="partner-banner-card" aria-hidden="true" tabindex="-1">
+          <img src="public/sulamericano-volei.jpg" alt="Campeonato Sul-Americano de Vôlei" class="partner-banner-card__bg" loading="lazy" />
+          <div class="partner-banner-card__overlay"></div>
+          <div class="partner-banner-card__top">
+            <span class="partner-banner-card__tag"><i class="fa-solid fa-trophy"></i> Esportes</span>
+            <span class="partner-banner-card__perk"><i class="fa-solid fa-medal"></i> Vaga Olímpica</span>
+          </div>
+          <div class="partner-banner-card__bottom">
+            <h4 class="partner-banner-card__title">Sul-Americano de Vôlei</h4>
+            <div class="partner-banner-card__meta">
+              <span><i class="fa-solid fa-location-dot"></i> Ginásio do Maracanãzinho</span>
+            </div>
+            <span class="partner-banner-card__cta">Ver evento <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+      </div>
     </div>
   </section>
 
-
-
   <!-- ================================================
-       04. CATEGORIAS E EXPERIÊNCIAS
+       03. CATEGORIAS E EXPERIÊNCIAS
        ================================================ -->
   <section class="section experiences" id="experiencias">
     <div class="container experiences-layout-grid">
@@ -311,6 +512,33 @@
     </div> <!-- /container -->
   </section>
 
+  <!-- ================================================
+       03. COMU RADAR
+       ================================================ -->
+  <section class="section picks" id="picks">
+    <div class="picks-card">
+      <div class="picks-card__content">
+        <div class="picks-card__info">
+          <div class="section-header animate-on-scroll">
+            <span class="section-label" style="color: #ffffff;"><i class="ph-fill ph-broadcast"></i> Comu Radar</span>
+            <h2 class="section-title">O QUE ESTÁ NO SEU RADAR?</h2>
+            <p class="section-subtitle">Os melhores rolês do Rio, filtrados por quem vive a cidade.</p>
+            <div class="picks-categories" style="color: rgba(255, 255, 255, 0.85); font-family: var(--font-display); font-size: var(--text-sm); font-weight: var(--font-weight-semibold); margin-top: var(--space-4); letter-spacing: var(--tracking-wide);">
+              Festas &middot; Shows &middot; Gastronomia &middot; Cultura &middot; Experiências
+            </div>
+          </div>
+
+          <a href="https://chat.whatsapp.com/CaifVi3wOTmDLgZnw5arJS" target="_blank" rel="noopener noreferrer" class="btn btn--picks animate-on-scroll">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>ENTRAR NO RADAR GRATUITO</span>
+          </a>
+        </div>
+        <div class="picks-card__visual animate-on-scroll">
+          <img src="public/tai-s-captures-OQDDvB5r0bM-unsplash.jpg" alt="Comu Radar Curadoria" class="picks-card__image" loading="lazy" />
+        </div>
+      </div>
+    </div> <!-- /picks-card -->
+  </section>
 
   <!-- ================================================
        04. COMU PASS
@@ -372,35 +600,91 @@
 
 
   <!-- ================================================
-       03. COMO FUNCIONA?
+       03. COMO FUNCIONA? / UNIVERSOS COMU
        ================================================ -->
-  <section class="section como-funciona" id="como-funciona">
-    <div class="como-funciona__container">
-      
-      <!-- Left side header -->
-      <div class="como-funciona__info animate-on-scroll">
-        <span class="section-label"><i class="ph-fill ph-info"></i> Passo a Passo</span>
-        <h2 class="section-title">Como Funciona?</h2>
+  <section class="section comu-ecosystem" id="como-funciona">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="comu-ecosystem__header animate-on-scroll text-center" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; margin-bottom: 3.5rem;">
+        <h2 class="section-title" style="text-align: center; margin-inline: auto; color: #140432;">Como Funciona?</h2>
+        <p class="comu-ecosystem__subtitle" style="text-align: center; margin-inline: auto; color: #ffffff; max-width: 740px; font-weight: 400;">
+          Entenda como funciona o ecossistema Comu e descubra infinitas possibilidades para viver o melhor do Rio — da curadoria e acessos exclusivos a experiências inesquecíveis.
+        </p>
       </div>
 
-      <!-- Right side grid -->
-      <div class="como-funciona__grid">
-        <!-- Passo 1 -->
-        <div class="como-funciona__step animate-on-scroll">
-          <img src="public/Entre.png" alt="Entre" class="como-funciona__img" />
+      <div class="comu-ecosystem__grid">
+        <!-- Card 1: Comu Radar -->
+        <div class="comu-ecosystem__card comu-ecosystem__card--radar animate-on-scroll">
+          <div class="comu-ecosystem__card-top">
+            <img src="public/pexels-alexandru-cojanu-828538450-19923642.jpg" alt="Comu Radar" class="comu-ecosystem__banner-img" />
+            <div class="comu-ecosystem__banner-noise"></div>
+            <div class="comu-ecosystem__banner-overlay"></div>
+            <div class="comu-ecosystem__banner-logo-wrap">
+              <img src="public/radar.svg" alt="Comu Radar" class="comu-ecosystem__banner-logo" />
+            </div>
+          </div>
+          <div class="comu-ecosystem__card-bottom">
+            <h3 class="comu-ecosystem__card-title">Descoberta e curadoria</h3>
+            <p class="comu-ecosystem__desc comu-ecosystem__desc--radar">
+              A gente encontra eventos, lugares e experiências que merecem sua atenção. Você descobre o que está acontecendo e escolhe o que realmente vale a pena.
+            </p>
+          </div>
         </div>
 
-        <!-- Passo 2 -->
-        <div class="como-funciona__step animate-on-scroll">
-          <img src="public/Descubra.png" alt="Descubra" class="como-funciona__img" />
+        <!-- Card 2: Comu Access -->
+        <div class="comu-ecosystem__card comu-ecosystem__card--access animate-on-scroll">
+          <div class="comu-ecosystem__card-top">
+            <img src="public/dada-pixel-lifeofpix-dadapixel5953-307455.jpg" alt="Comu Access" class="comu-ecosystem__banner-img" />
+            <div class="comu-ecosystem__banner-noise"></div>
+            <div class="comu-ecosystem__banner-overlay"></div>
+            <div class="comu-ecosystem__banner-logo-wrap">
+              <img src="public/Accsess.svg" alt="Comu Access" class="comu-ecosystem__banner-logo" />
+            </div>
+          </div>
+          <div class="comu-ecosystem__card-bottom">
+            <h3 class="comu-ecosystem__card-title">Mais acesso. Mais possibilidades.</h3>
+            <p class="comu-ecosystem__desc comu-ecosystem__desc--access">
+              Conectamos a Comu a acessos, condições e oportunidades especiais. O que antes parecia distante pode ficar mais próximo.
+            </p>
+          </div>
         </div>
 
-        <!-- Passo 3 -->
-        <div class="como-funciona__step animate-on-scroll">
-          <img src="public/Viva.png" alt="Viva" class="como-funciona__img" />
+        <!-- Card 3: Comu Exp -->
+        <div class="comu-ecosystem__card comu-ecosystem__card--exp animate-on-scroll">
+          <div class="comu-ecosystem__card-top">
+            <img src="public/rawpixel-com-lifeofpix-rawpixelcom1624-308005.jpg" alt="Comu Exp" class="comu-ecosystem__banner-img" />
+            <div class="comu-ecosystem__banner-noise"></div>
+            <div class="comu-ecosystem__banner-overlay"></div>
+            <div class="comu-ecosystem__banner-logo-wrap">
+              <img src="public/Exp.svg" alt="Comu Exp" class="comu-ecosystem__banner-logo" />
+            </div>
+          </div>
+          <div class="comu-ecosystem__card-bottom">
+            <h3 class="comu-ecosystem__card-title">Experiências que aproximam</h3>
+            <p class="comu-ecosystem__desc comu-ecosystem__desc--exp">
+              Criamos experiências que conectam pessoas, artistas, eventos e lugares. Momentos pensados para quem quer estar mais perto do que gosta.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4: Comu Brand -->
+        <div class="comu-ecosystem__card comu-ecosystem__card--brand animate-on-scroll">
+          <div class="comu-ecosystem__card-top">
+            <img src="public/Product Display Interaction.png" alt="Comu Brand" class="comu-ecosystem__banner-img" />
+            <div class="comu-ecosystem__banner-noise"></div>
+            <div class="comu-ecosystem__banner-overlay"></div>
+            <div class="comu-ecosystem__banner-logo-wrap">
+              <img src="public/Brand.svg" alt="Comu Brand" class="comu-ecosystem__banner-logo" />
+            </div>
+          </div>
+          <div class="comu-ecosystem__card-bottom">
+            <h3 class="comu-ecosystem__card-title">Experiências para marcas</h3>
+            <p class="comu-ecosystem__desc comu-ecosystem__desc--brand">
+              Criamos ativações que colocam marcas dentro de experiências reais. Conectando empresas, pessoas e cultura de forma relevante.
+            </p>
+          </div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -728,14 +1012,21 @@
             <a href="#sobre" class="footer__link">Sobre a Comu</a>
           </nav>
         </div>
+
+        <div>
+          <h4 class="footer__heading">Ajuda</h4>
+          <nav class="footer__links">
+            <a href="faq.html" class="footer__link">FAQ</a>
+            <a href="termos.html" class="footer__link">Termos de Uso</a>
+            <a href="#" class="footer__link" id="privacidade-trigger">Privacidade</a>
+          </nav>
+        </div>
         
         <div>
           <h4 class="footer__heading">Contato</h4>
           <nav class="footer__links">
             <a href="#" class="footer__link js-obfuscated-email" data-user="relacionamento" data-domain="comupass.com.br"></a>
-            <a href="faq.html" class="footer__link">FAQ</a>
-            <a href="#" class="footer__link" id="termos-trigger">Termos de Uso</a>
-            <a href="#" class="footer__link" id="privacidade-trigger">Privacidade</a>
+            <a href="#" class="footer__link js-obfuscated-wa" data-country="55" data-ddd="21" data-num="978949944">WhatsApp Oficial</a>
           </nav>
         </div>
       </div>
@@ -762,62 +1053,102 @@
 
       <div class="termos-modal__body">
         <h1 id="termos-title" class="termos-modal__title">Termos de Uso</h1>
-        <p class="termos-modal__updated">Última atualização: 29 de agosto de 2026</p>
 
         <p>Bem-vindo à Comu.</p>
-        <p>Estes Termos de Uso estabelecem as regras para utilização do site, conteúdos e serviços disponibilizados pela Comu.</p>
-        <p>Ao acessar ou utilizar nosso site, você declara que leu e concorda com estes Termos. Caso não concorde com qualquer parte deles, recomendamos que não utilize o site.</p>
+        <p>Estes Termos de Uso estabelecem as condições para acesso e utilização do site, da plataforma e dos recursos disponibilizados pela Comu.</p>
+        <p>Ao criar uma conta ou utilizar a plataforma, você declara que leu, compreendeu e concorda com estes Termos de Uso e com a nossa Política de Privacidade.</p>
+        <p>Caso não concorde com estes termos, recomendamos que não utilize a plataforma ou crie uma conta.</p>
 
         <h2>1. SOBRE A COMU</h2>
-        <p>A Comu é uma iniciativa voltada à descoberta e conexão entre pessoas, eventos, lugares, marcas e experiências.</p>
-        <p>Através de suas diferentes frentes, a Comu poderá disponibilizar conteúdos, curadoria, informações, benefícios, experiências e oportunidades relacionadas ao entretenimento e à cultura.</p>
-        <p>Algumas funcionalidades e produtos ainda estão em fase de desenvolvimento e validação e poderão ser alterados, ampliados ou descontinuados ao longo do tempo.</p>
+        <p>A Comu é uma plataforma voltada à descoberta e conexão entre pessoas, eventos, lugares, marcas e experiências.</p>
+        <p>A plataforma busca facilitar a descoberta de eventos, experiências, estabelecimentos, conteúdos e oportunidades que possam ser relevantes para seus usuários.</p>
+        <p>A Comu está em fase de desenvolvimento e validação. Por isso, determinadas funcionalidades, produtos e serviços poderão ser modificados, adicionados ou removidos ao longo do tempo.</p>
 
-        <h2>2. USO DO SITE</h2>
-        <p>O usuário se compromete a utilizar o site de maneira legítima e responsável.</p>
-        <p>Não é permitido:</p>
+        <h2>2. CONTA COMU</h2>
+        <p>Para utilizar determinadas funcionalidades da plataforma, o usuário poderá criar uma conta.</p>
+        <p>Ao criar uma conta, o usuário se compromete a fornecer informações verdadeiras, atualizadas e completas.</p>
+        <p>O usuário é responsável por manter seus dados de acesso seguros e por todas as atividades realizadas em sua conta.</p>
+        <p>A conta é pessoal e não deve ser compartilhada ou utilizada em nome de terceiros.</p>
+        <p>Caso identifique qualquer uso não autorizado de sua conta, o usuário deverá comunicar a Comu através dos canais de contato disponibilizados na plataforma.</p>
+
+        <h2>3. CADASTRO E ACESSO</h2>
+        <p>A criação da conta Comu é atualmente gratuita.</p>
+        <p>A Comu poderá, futuramente, disponibilizar produtos, serviços, benefícios, experiências ou funcionalidades que possuam condições específicas de utilização ou cobrança.</p>
+        <p>Quando isso ocorrer, as respectivas condições serão apresentadas ao usuário antes da contratação.</p>
+        <p>A criação de uma conta não garante acesso gratuito ou permanente a todos os produtos, eventos, benefícios ou experiências que possam ser disponibilizados futuramente pela Comu.</p>
+
+        <h2>4. UTILIZAÇÃO DA PLATAFORMA</h2>
+        <p>O usuário deverá utilizar a Comu de maneira responsável, respeitando a legislação brasileira e os direitos de terceiros.</p>
+        <p>Não é permitido utilizar a plataforma para:</p>
         <ul>
-          <li>utilizar o site para fins ilícitos ou fraudulentos;</li>
-          <li>tentar acessar áreas ou informações não disponibilizadas ao usuário;</li>
-          <li>interferir no funcionamento do site;</li>
-          <li>utilizar informações ou conteúdos da Comu de maneira que viole direitos de terceiros;</li>
-          <li>realizar qualquer atividade que possa prejudicar a Comu, seus usuários ou parceiros.</li>
+          <li>praticar atividades ilícitas ou fraudulentas;</li>
+          <li>fornecer informações falsas ou utilizar identidade de terceiros;</li>
+          <li>tentar acessar contas ou informações de outros usuários;</li>
+          <li>interferir no funcionamento da plataforma;</li>
+          <li>explorar falhas ou vulnerabilidades do sistema;</li>
+          <li>distribuir conteúdos que violem direitos de terceiros;</li>
+          <li>utilizar a plataforma para finalidades que possam prejudicar a Comu, seus usuários ou parceiros.</li>
         </ul>
+        <p>A Comu poderá adotar medidas para impedir ou restringir acessos que violem estes Termos ou a legislação aplicável.</p>
 
-        <h2>3. CONTEÚDOS E INFORMAÇÕES</h2>
-        <p>A Comu busca disponibilizar informações relevantes e atualizadas sobre eventos, lugares, experiências e oportunidades.</p>
-        <p>Entretanto, determinadas informações podem ser fornecidas por terceiros, incluindo estabelecimentos, produtores, artistas, marcas e organizadores de eventos.</p>
-        <p>Por isso, informações como horários, preços, disponibilidade, programação, classificação etária, condições de acesso e realização dos eventos podem sofrer alterações.</p>
-        <p>Quando necessário, recomendamos que o usuário confirme as informações diretamente com o responsável pela experiência.</p>
+        <h2>5. EVENTOS, LUGARES E EXPERIÊNCIAS</h2>
+        <p>A Comu poderá apresentar informações sobre eventos, estabelecimentos, artistas, marcas, experiências e outras atividades realizadas por terceiros.</p>
+        <p>A presença de um evento ou estabelecimento na plataforma não significa necessariamente que a Comu seja responsável por sua realização.</p>
+        <p>Informações como datas, horários, preços, disponibilidade, localização, programação, classificação etária e condições de acesso podem ser alteradas pelos respectivos responsáveis.</p>
+        <p>Sempre que necessário, recomendamos que o usuário confirme as informações diretamente com o organizador ou estabelecimento responsável.</p>
+        <p>Quando uma experiência for organizada ou realizada por terceiros, as condições específicas de participação serão determinadas pelo respectivo responsável.</p>
 
-        <h2>4. RELAÇÃO COM PARCEIROS</h2>
-        <p>A presença de um estabelecimento, evento, marca ou experiência na Comu não significa necessariamente que a Comu seja a responsável pela sua realização.</p>
-        <p>Quando uma experiência for realizada por um terceiro, a responsabilidade pela prestação do serviço, realização do evento, condições de acesso e demais obrigações relacionadas à experiência será do respectivo responsável, conforme aplicável.</p>
+        <h2>6. COMU PASS E OUTROS PRODUTOS</h2>
+        <p>A Comu poderá disponibilizar produtos ou serviços próprios, incluindo o Comu Pass, conforme o desenvolvimento da plataforma.</p>
+        <p>Cada produto poderá possuir condições específicas, que serão apresentadas ao usuário no momento de sua disponibilização.</p>
+        <p>A existência destes Termos de Uso não significa que todos os produtos ou funcionalidades mencionados pela Comu estejam atualmente disponíveis.</p>
 
-        <h2>5. PROPRIEDADE INTELECTUAL</h2>
-        <p>As marcas, nomes, logotipos, textos, elementos visuais, interfaces e demais conteúdos próprios da Comu pertencem à Comu ou são utilizados de acordo com as respectivas autorizações.</p>
-        <p>Nenhum conteúdo deste site poderá ser reproduzido, distribuído ou utilizado comercialmente sem autorização prévia, salvo quando permitido pela legislação aplicável.</p>
-        <p>Conteúdos de terceiros permanecem de titularidade de seus respectivos proprietários.</p>
+        <h2>7. CONTEÚDO DA COMU</h2>
+        <p>Os conteúdos, textos, elementos gráficos, identidade visual, interfaces, marcas, logotipos e demais materiais produzidos pela Comu são protegidos pela legislação aplicável e pertencem à Comu ou são utilizados mediante autorização.</p>
+        <p>O usuário não poderá reproduzir, modificar, distribuir ou utilizar comercialmente esses conteúdos sem autorização prévia, salvo quando permitido pela legislação.</p>
+        <p>Conteúdos pertencentes a terceiros permanecem sob responsabilidade e titularidade de seus respectivos proprietários.</p>
 
-        <h2>6. DISPONIBILIDADE</h2>
-        <p>A Comu busca manter o site disponível e funcionando adequadamente, mas não garante que o serviço estará livre de interrupções, erros ou indisponibilidades.</p>
-        <p>A Comu poderá realizar alterações, atualizações, manutenções ou modificações no site e em suas funcionalidades.</p>
+        <h2>8. CONTEÚDO ENVIADO PELO USUÁRIO</h2>
+        <p>Caso a plataforma permita o envio de informações, avaliações, comentários, imagens ou outros conteúdos pelo usuário, este declara possuir os direitos necessários para realizar o envio.</p>
+        <p>O usuário não deverá enviar conteúdos ilegais, ofensivos, fraudulentos ou que violem direitos de terceiros.</p>
+        <p>A Comu poderá remover conteúdos que violem estes Termos ou a legislação aplicável.</p>
 
-        <h2>7. ALTERAÇÕES</h2>
-        <p>A Comu poderá atualizar estes Termos de Uso sempre que necessário.</p>
-        <p>A versão mais recente estará disponível nesta página, acompanhada da respectiva data de atualização.</p>
+        <h2>9. DISPONIBILIDADE DA PLATAFORMA</h2>
+        <p>A Comu busca manter sua plataforma disponível e funcionando adequadamente.</p>
+        <p>Entretanto, não é possível garantir disponibilidade permanente ou ausência de erros, falhas ou interrupções.</p>
+        <p>A plataforma poderá ficar temporariamente indisponível em razão de manutenção, atualizações, problemas técnicos, falhas de terceiros ou outras circunstâncias fora do controle da Comu.</p>
+        <p>A Comu também poderá modificar, suspender ou encerrar determinadas funcionalidades da plataforma.</p>
 
-        <h2>8. PRIVACIDADE</h2>
-        <p>O tratamento de dados pessoais realizado pela Comu está descrito em nossa <strong>Política de Privacidade</strong>, que faz parte integrante destes Termos de Uso.</p>
+        <h2>10. ENCERRAMENTO DA CONTA</h2>
+        <p>O usuário poderá solicitar o encerramento de sua conta através dos canais disponibilizados pela Comu.</p>
+        <p>A Comu também poderá suspender ou encerrar uma conta quando houver violação destes Termos, uso indevido da plataforma, fraude ou determinação legal.</p>
+        <p>O encerramento da conta não elimina necessariamente informações que precisem ser mantidas para cumprimento de obrigações legais, exercício de direitos ou outras hipóteses previstas na legislação aplicável.</p>
 
-        <h2>9. CONTATO</h2>
-        <p>Em caso de dúvidas, solicitações ou informações relacionadas a estes Termos, entre em contato conosco:</p>
-        <p><strong>E-mail:</strong> <a href="#" class="js-obfuscated-email" data-user="relacionamento" data-domain="comupass.com.br"></a></p>
+        <h2>11. PRIVACIDADE E DADOS PESSOAIS</h2>
+        <p>A Comu realiza o tratamento de dados pessoais de acordo com a legislação aplicável, especialmente a Lei nº 13.709/2018, a Lei Geral de Proteção de Dados Pessoais (LGPD).</p>
+        <p>As informações sobre coleta, utilização, armazenamento, compartilhamento e proteção de dados pessoais estão disponíveis em nossa Política de Privacidade.</p>
+        <p>Ao utilizar a plataforma, o usuário declara estar ciente da Política de Privacidade.</p>
 
-        <h2>10. DISPOSIÇÕES FINAIS</h2>
-        <p>A utilização do site implica a ciência e aceitação destes Termos de Uso.</p>
-        <p>Caso alguma disposição destes Termos seja considerada inválida ou inaplicável, as demais disposições permanecerão válidas.</p>
-        <p>Estes Termos serão interpretados de acordo com a legislação brasileira.</p>
+        <h2>12. ALTERAÇÕES DOS TERMOS</h2>
+        <p>A Comu poderá atualizar estes Termos de Uso para refletir mudanças na plataforma, nos produtos, nos serviços ou na legislação aplicável.</p>
+        <p>A versão mais recente estará sempre disponível no site da Comu.</p>
+        <p>Quando uma alteração for relevante, a Comu poderá comunicar os usuários por meio dos canais disponíveis.</p>
+
+        <h2>13. RESPONSABILIDADE</h2>
+        <p>A Comu não se responsabiliza por serviços, eventos, produtos ou experiências realizados exclusivamente por terceiros.</p>
+        <p>A Comu também não garante que todas as informações fornecidas por terceiros permanecerão disponíveis ou inalteradas.</p>
+        <p>Nada nestes Termos tem a intenção de limitar direitos assegurados ao consumidor pela legislação brasileira.</p>
+
+        <h2>14. LEGISLAÇÃO APLICÁVEL</h2>
+        <p>Estes Termos de Uso são regidos pelas leis da República Federativa do Brasil.</p>
+        <p>Eventuais conflitos deverão ser tratados de acordo com a legislação brasileira e perante o foro competente, respeitados os direitos legalmente assegurados ao consumidor.</p>
+
+        <h2>15. CONTATO</h2>
+        <p>Caso tenha dúvidas sobre estes Termos de Uso, sua conta ou utilização da plataforma, entre em contato conosco:</p>
+        <p>
+          <strong>Comu</strong><br />
+          E-mail: <a href="mailto:relacionamento@comupass.com.br">relacionamento@comupass.com.br</a>
+        </p>
       </div>
     </div>
   </div>
@@ -923,6 +1254,232 @@
     </div>
   </div>
 
+  <!-- ================================================
+       AUTH / LOGIN MODAL POPUP (WHITE POP-UP)
+       ================================================ -->
+  <div class="auth-modal-overlay" id="auth-modal-overlay" aria-hidden="true">
+    <div class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
+      <button class="auth-modal__close" id="auth-modal-close" aria-label="Fechar modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="auth-modal__header">
+        <div class="auth-modal__logo">
+          <img src="public/Comu logo.svg" alt="Comu" />
+        </div>
+        <h3 class="auth-modal__title" id="auth-modal-title">Entrar na Comu</h3>
+        <p class="auth-modal__subtitle">Acesse seus ingressos, benefícios e experiências salvas.</p>
+      </div>
+
+      <form class="auth-modal__form" id="auth-modal-form">
+        <div class="auth-modal__form-group">
+          <label class="auth-modal__label" for="auth-identifier">E-mail ou CPF</label>
+          <div class="auth-modal__input-wrap">
+            <i class="fa-regular fa-user auth-modal__input-icon"></i>
+            <input 
+              type="text" 
+              id="auth-identifier" 
+              name="identifier" 
+              class="auth-modal__input" 
+              placeholder="Digite seu e-mail ou CPF" 
+              autocomplete="username"
+              required 
+            />
+          </div>
+        </div>
+
+        <button type="submit" class="auth-modal__submit-btn">
+          <span>ENTRAR</span>
+        </button>
+
+        <div class="auth-modal__signup-link">
+          <span>Chegando agora?</span>
+          <a href="#pass" class="auth-modal__link-create" id="auth-modal-create-link">Cria uma conta</a>
+        </div>
+      </form>
+
+      <div class="auth-modal__divider">
+        <span>ou continue com</span>
+      </div>
+
+      <div class="auth-modal__social-buttons">
+        <button type="button" class="auth-modal__social-btn auth-modal__social-btn--google" onclick="alert('Login com Google em desenvolvimento')">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.64 9.20455C17.64 8.56636 17.5827 7.95273 17.4764 7.36364H9V10.845H13.8436C13.635 11.97 13.0009 12.9232 12.0477 13.5614V15.8195H14.9564C16.6582 14.2527 17.64 11.9455 17.64 9.20455Z" fill="#4285F4"/>
+            <path d="M9 18C11.43 18 13.4673 17.1941 14.9564 15.8195L12.0477 13.5614C11.2418 14.1014 10.2109 14.4205 9 14.4205C6.65591 14.4205 4.67182 12.8373 3.96409 10.71H0.957275V13.0418C2.43818 15.9832 5.48182 18 9 18Z" fill="#34A853"/>
+            <path d="M3.96409 10.71C3.78409 10.17 3.68182 9.59318 3.68182 9C3.68182 8.40682 3.78409 7.83 3.96409 7.29V4.95818H0.957275C0.347727 6.17318 0 7.54773 0 9C0 10.4523 0.347727 11.8268 0.957275 13.0418L3.96409 10.71Z" fill="#FBBC05"/>
+            <path d="M9 3.57955C10.3214 3.57955 11.5077 4.03364 12.4405 4.92545L15.0218 2.34409C13.4632 0.891818 11.4259 0 9 0C5.48182 0 2.43818 2.01682 0.957275 4.95818L3.96409 7.29C4.67182 5.16273 6.65591 3.57955 9 3.57955Z" fill="#EA4335"/>
+          </svg>
+          <span>Continuar com Google</span>
+        </button>
+
+        <button type="button" class="auth-modal__social-btn auth-modal__social-btn--apple" onclick="alert('Login com Apple ID em desenvolvimento')">
+          <i class="fa-brands fa-apple"></i>
+          <span>Continuar com Apple ID</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+       REGISTER / CADASTRO MODAL POPUP (WHITE POP-UP)
+       ================================================ -->
+  <div class="auth-modal-overlay" id="register-modal-overlay" aria-hidden="true">
+    <div class="auth-modal auth-modal--register" role="dialog" aria-modal="true" aria-labelledby="register-modal-title">
+      <button class="auth-modal__close" id="register-modal-close" aria-label="Fechar modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="auth-modal__header">
+        <div class="auth-modal__logo">
+          <img src="public/Comu logo.svg" alt="Comu" />
+        </div>
+        <h3 class="auth-modal__title" id="register-modal-title">Criar Conta</h3>
+        <p class="auth-modal__subtitle">Faça parte da Comu e aproveite todos os benefícios e rolês do Rio.</p>
+      </div>
+
+      <form class="auth-modal__form" id="register-modal-form">
+        <!-- 1. Documento -->
+        <div class="auth-modal__form-group">
+          <label class="auth-modal__label" for="reg-cpf">Documento</label>
+          <div class="auth-modal__doc-wrap">
+            <div class="auth-modal__country-badge" title="País selecionado">
+              <span class="flag">🇧🇷</span>
+              <span>Brasil</span>
+            </div>
+            <div class="auth-modal__input-wrap" style="flex: 1;">
+              <i class="fa-solid fa-id-card auth-modal__input-icon"></i>
+              <input 
+                type="text" 
+                id="reg-cpf" 
+                name="cpf" 
+                class="auth-modal__input" 
+                placeholder="Inserir CPF" 
+                maxlength="14"
+                required 
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Nome Completo -->
+        <div class="auth-modal__form-group">
+          <label class="auth-modal__label" for="reg-name">Nome Completo</label>
+          <div class="auth-modal__input-wrap">
+            <i class="fa-regular fa-user auth-modal__input-icon"></i>
+            <input 
+              type="text" 
+              id="reg-name" 
+              name="name" 
+              class="auth-modal__input" 
+              placeholder="Digite seu nome completo" 
+              required 
+            />
+          </div>
+        </div>
+
+        <!-- 3. E-mail -->
+        <div class="auth-modal__form-group">
+          <label class="auth-modal__label" for="reg-email">E-mail</label>
+          <div class="auth-modal__input-wrap">
+            <i class="fa-regular fa-envelope auth-modal__input-icon"></i>
+            <input 
+              type="email" 
+              id="reg-email" 
+              name="email" 
+              class="auth-modal__input" 
+              placeholder="seu@email.com" 
+              required 
+            />
+          </div>
+        </div>
+
+        <!-- 4. Telefone & Data de Nascimento -->
+        <div class="auth-modal__row">
+          <div class="auth-modal__form-group">
+            <label class="auth-modal__label" for="reg-phone">Telefone</label>
+            <div class="auth-modal__input-wrap">
+              <i class="fa-solid fa-phone auth-modal__input-icon"></i>
+              <input 
+                type="tel" 
+                id="reg-phone" 
+                name="phone" 
+                class="auth-modal__input" 
+                placeholder="(DDD) Inserir Telefone" 
+                maxlength="15"
+                required 
+              />
+            </div>
+          </div>
+
+          <div class="auth-modal__form-group">
+            <label class="auth-modal__label" for="reg-birthdate">Data de Nascimento</label>
+            <div class="auth-modal__input-wrap">
+              <i class="fa-regular fa-calendar auth-modal__input-icon"></i>
+              <input 
+                type="text" 
+                id="reg-birthdate" 
+                name="birthdate" 
+                class="auth-modal__input" 
+                placeholder="DD/MM/AAAA" 
+                maxlength="10"
+                required 
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Senha & Confirmar Senha -->
+        <div class="auth-modal__row">
+          <div class="auth-modal__form-group">
+            <label class="auth-modal__label" for="reg-password">Senha</label>
+            <div class="auth-modal__input-wrap">
+              <i class="fa-solid fa-lock auth-modal__input-icon"></i>
+              <input 
+                type="password" 
+                id="reg-password" 
+                name="password" 
+                class="auth-modal__input" 
+                placeholder="••••••••" 
+                required 
+              />
+            </div>
+          </div>
+
+          <div class="auth-modal__form-group">
+            <label class="auth-modal__label" for="reg-password-confirm">Confirmar Senha</label>
+            <div class="auth-modal__input-wrap">
+              <i class="fa-solid fa-shield-halved auth-modal__input-icon"></i>
+              <input 
+                type="password" 
+                id="reg-password-confirm" 
+                name="password_confirm" 
+                class="auth-modal__input" 
+                placeholder="••••••••" 
+                required 
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Botão Pronto -->
+        <button type="submit" class="auth-modal__submit-btn auth-modal__submit-btn--ready">
+          <span>PRONTO</span>
+        </button>
+
+        <!-- 7. Termos de Uso -->
+        <p class="auth-modal__terms-text">
+          Ao finalizar o cadastro você aceita os <a href="termos.html" target="_blank" id="open-terms-from-reg">termos de uso da Comu!</a>
+        </p>
+
+        <div class="auth-modal__signup-link" style="margin-top: 0.25rem;">
+          <span>Já tem uma conta?</span>
+          <a href="#" class="auth-modal__link-create" id="switch-to-login">Entrar</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- Scripts (order matters: data first, then logic) -->
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -935,6 +1492,7 @@
   <script src="js/animations.js"></script>
   <script src="js/obfuscate.js"></script>
   <script src="js/forms.js"></script>
+  <script src="js/auth-modal.js"></script>
 
 </body>
 </html>
