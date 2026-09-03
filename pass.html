@@ -72,14 +72,17 @@
   </section>
 
   <!-- ================================================
-       CINEMATIC VIDEO LOOP SECTION (P&B + GRANULADO)
+       CINEMATIC VIDEO LOOP SECTION (P&B + GRANULADO + LOGO NO CENTRO)
        ================================================ -->
   <section class="pass-video-section">
-    <video class="pass-video-element" autoplay loop muted playsinline>
-      <source src="public/7722221-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+    <video id="pass-video" class="pass-video-element" autoplay loop muted playsinline>
+      <source src="public/pass-banner-video.mp4" type="video/mp4" />
     </video>
     <div class="pass-video-overlay"></div>
     <div class="pass-video-grain"></div>
+    <div class="pass-video-center-logo">
+      <img src="public/Ativo 21.svg" alt="Comu Pass" class="pass-video-center-logo__img" />
+    </div>
   </section>
   <section class="pass-benefits-grid-svg">
     <div class="container">
@@ -150,6 +153,12 @@
   <script src="js/animations.js"></script>
   <script src="js/obfuscate.js"></script>
   <script src="js/forms.js"></script>
+  <script>
+    const passVideo = document.getElementById('pass-video');
+    if (passVideo) {
+      passVideo.playbackRate = 0.75;
+    }
+  </script>
 
 </body>
 </html>
