@@ -82,20 +82,23 @@ body.pass-page-body {
   }
 }
 
-/* ---- CINEMATIC P&B VIDEO BANNER (ALTURA ORIGINAL + GRANULADO SUAVE) ---- */
+/* ---- CINEMATIC P&B VIDEO BANNER ---- */
 .pass-video-section {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: clamp(340px, 44vw, 520px);
   overflow: hidden;
   background: #080310;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .pass-video-element {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -124,7 +127,7 @@ body.pass-page-body {
 
 .pass-video-center-logo {
   position: absolute;
-  top: 35%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 4;
@@ -140,7 +143,7 @@ body.pass-page-body {
 .pass-video-center-logo__img {
   width: 100%;
   height: auto;
-  max-height: 200px;
+  max-height: 180px;
   object-fit: contain;
   filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.85));
 }
