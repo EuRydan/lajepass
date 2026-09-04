@@ -95,14 +95,14 @@ body.pass-page-body {
   border-radius: 0;
   text-decoration: none;
   background: var(--brand-primary);
-  box-shadow: 0 4px 20px rgba(255, 1, 73, 0.35);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  box-shadow: none !important;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .pass-hero__cta-btn:hover {
   transform: translateY(-2px);
-  filter: brightness(1.1);
-  box-shadow: 0 6px 24px rgba(255, 1, 73, 0.5);
+  filter: brightness(1.08);
+  box-shadow: none !important;
 }
 
 @media (max-width: 768px) {
