@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzA6ECx8oQd_tGeR_68wgh_U_x2B87-x6E4izJLg_WyjLpFQe9F2ux97Jcy3TyYBe80/exec';
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwY73CDH7_idAdy9Yg-GhaBAt7x062_Cbg4GeEcgYTc63GWDA6eKJQkfUs7OXGqEET6/exec';
 
     const body = JSON.stringify(req.body);
 
