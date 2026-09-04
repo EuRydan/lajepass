@@ -409,35 +409,35 @@ body.pass-page-body {
   letter-spacing: 0.02em;
   border-radius: 999px;
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: none;
+  transition: all 0.2s ease;
   user-select: none;
 }
 
 .pass-benefits__filter-num {
-  color: #a78bfa;
+  color: var(--brand-primary);
   font-weight: 900;
-  transition: color 0.25s ease;
+  transition: color 0.2s ease;
 }
 
 .pass-benefits__filter-btn:hover {
-  background: #1f1f26;
-  border-color: var(--brand-secondary);
+  background: #1c1c22;
+  border-color: var(--brand-primary);
   color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(87, 0, 255, 0.2);
+  box-shadow: none;
 }
 
 .pass-benefits__filter-btn.is-active {
-  background: var(--brand-secondary);
-  border-color: var(--brand-secondary);
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
   color: #ffffff;
-  box-shadow: 0 6px 20px rgba(87, 0, 255, 0.4);
-  transform: translateY(-2px);
+  box-shadow: none;
+  transform: none;
 }
 
 .pass-benefits__filter-btn.is-active .pass-benefits__filter-num {
   color: #ffffff;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .pass-carousel-wrapper {
