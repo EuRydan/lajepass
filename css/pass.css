@@ -372,6 +372,18 @@ body.pass-page-body {
   vertical-align: middle;
 }
 
+.pass-benefits__subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.35vw, 1.12rem);
+  font-weight: 500;
+  color: var(--color-text-subtle);
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  max-width: 680px;
+  margin-inline: auto;
+  line-height: 1.5;
+}
+
 .pass-carousel-wrapper {
   position: relative;
   max-width: 1400px;
