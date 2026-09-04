@@ -340,21 +340,21 @@ body.pass-page-body {
 /* ---- PASS BENEFITS CAROUSEL SECTION ---- */
 .pass-benefits-carousel-section {
   padding-block: var(--space-20) var(--space-12);
-  background-color: #ffffff;
+  background-color: #08080a;
   position: relative;
   overflow: hidden;
 }
 
 .pass-benefits__header {
   text-align: center;
-  margin-bottom: var(--space-10);
+  margin-bottom: var(--space-8);
 }
 
 .pass-benefits__title {
   font-family: var(--font-display);
   font-size: clamp(1.6rem, 2.8vw, 2.25rem);
   font-weight: 900;
-  color: var(--brand-support);
+  color: #ffffff;
   letter-spacing: -0.01em;
   margin: 0;
   text-transform: uppercase;
@@ -376,7 +376,7 @@ body.pass-page-body {
   font-family: var(--font-body);
   font-size: clamp(0.95rem, 1.35vw, 1.12rem);
   font-weight: 500;
-  color: var(--color-text-subtle);
+  color: rgba(255, 255, 255, 0.7);
   margin-top: 0.75rem;
   margin-bottom: 0;
   max-width: 680px;
@@ -399,9 +399,9 @@ body.pass-page-body {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  background: #ffffff;
-  border: 1.5px solid rgba(29, 7, 70, 0.12);
-  color: var(--brand-support);
+  background: #141418;
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  color: #ffffff;
   padding: 0.65rem 1.4rem;
   font-family: var(--font-display);
   font-size: 0.92rem;
@@ -414,23 +414,24 @@ body.pass-page-body {
 }
 
 .pass-benefits__filter-num {
-  color: var(--brand-secondary);
+  color: #a78bfa;
   font-weight: 900;
   transition: color 0.25s ease;
 }
 
 .pass-benefits__filter-btn:hover {
+  background: #1f1f26;
   border-color: var(--brand-secondary);
-  color: var(--brand-secondary);
+  color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(87, 0, 255, 0.12);
+  box-shadow: 0 4px 14px rgba(87, 0, 255, 0.2);
 }
 
 .pass-benefits__filter-btn.is-active {
   background: var(--brand-secondary);
   border-color: var(--brand-secondary);
   color: #ffffff;
-  box-shadow: 0 6px 20px rgba(87, 0, 255, 0.32);
+  box-shadow: 0 6px 20px rgba(87, 0, 255, 0.4);
   transform: translateY(-2px);
 }
 
