@@ -829,11 +829,11 @@ body.pass-page-body {
   text-align: center;
 }
 
-/* Mobile: 2x2 Colored Square Cards Layout */
+/* Mobile: 1 Column Stacked Colored Cards Layout */
 @media (max-width: 768px) {
   .pass-how-it-works__steps {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--space-3);
     max-width: 100%;
     margin-bottom: var(--space-8);
