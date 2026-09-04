@@ -878,7 +878,14 @@ body.pass-page-body {
 
   .pass-step-item__number {
     font-size: 0.95rem;
-    color: #ffffff !important;
+  }
+
+  .pass-step-item__number--pink {
+    color: #ff0149 !important;
+  }
+
+  .pass-step-item__number--purple {
+    color: #5700ff !important;
   }
 
   .pass-step-item__text {
