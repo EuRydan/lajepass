@@ -239,9 +239,13 @@
 
       // Show success
       showFormSuccess(form, {
-        icon: '📡',
+        theme: 'dark',
+        badge: 'Indicação Registrada',
+        icon: '<i class="ph-fill ph-broadcast" style="color: var(--brand-primary)"></i>',
         title: 'Indicação enviada!',
         text: 'Vamos analisar sua indicação e, se for aprovada, ela entra no radar da Comu.',
+        buttonText: 'Indicar outro lugar',
+        onReset: () => initRadarForm()
       });
     });
   }
@@ -328,9 +332,13 @@
 
       // Show success
       showFormSuccess(form, {
-        icon: '🤝',
+        theme: 'light',
+        badge: 'Solicitação Recebida',
+        icon: '<i class="ph-fill ph-handshake" style="color: var(--brand-primary)"></i>',
         title: 'Solicitação enviada!',
         text: 'Nossa equipe vai entrar em contato em até 48h. Estamos ansiosos para conhecer seu projeto.',
+        buttonText: 'Enviar nova mensagem',
+        onReset: () => initProducersForm()
       });
     });
   }
@@ -384,9 +392,12 @@
       await sendToGoogleScript(data);
 
       showFormSuccess(form, {
-        icon: '<i class="ph-fill ph-confetti" style="font-size: 24px; color: var(--brand-primary)"></i>',
+        theme: 'dark',
+        badge: 'Lista de Espera',
+        icon: '<i class="ph-fill ph-sparkle" style="color: var(--brand-primary)"></i>',
         title: 'Você está na lista!',
         text: 'Em breve você vai receber seu convite para fazer parte da Comu.',
+        buttonText: null
       });
     });
   }
@@ -416,16 +427,57 @@
   }
 
   function showFormSuccess(form, content) {
+    if (!form.dataset.originalHtml) {
+      form.dataset.originalHtml = form.innerHTML;
+    }
+
     const formHeight = form.offsetHeight;
-    form.style.minHeight = `${formHeight}px`;
+    if (formHeight > 0) {
+      form.style.minHeight = `${formHeight}px`;
+    }
+
+    const isLight = content.theme === 'light' || form.classList.contains('producers__form');
+    const themeClass = isLight ? 'form-success--light' : 'form-success--dark';
 
     form.innerHTML = `
-      <div class="form-success">
-        <span class="form-success__icon">${content.icon}</span>
+      <div class="form-success ${themeClass}">
+        <div class="form-success__icon-wrapper">
+          <div class="form-success__pulse"></div>
+          <div class="form-success__icon-circle">
+            <span class="form-success__icon">${content.icon}</span>
+          </div>
+        </div>
+
+        ${content.badge ? `
+          <div class="form-success__badge">
+            <i class="ph-fill ph-check-circle"></i>
+            <span>${content.badge}</span>
+          </div>
+        ` : ''}
+
         <h3 class="form-success__title">${content.title}</h3>
         <p class="form-success__text">${content.text}</p>
+
+        ${content.buttonText ? `
+          <button type="button" class="form-success__btn js-form-reset-btn">
+            <i class="ph ph-arrow-counter-clockwise"></i>
+            <span>${content.buttonText}</span>
+          </button>
+        ` : ''}
       </div>
     `;
+
+    // Handle Reset Button if present
+    const resetBtn = form.querySelector('.js-form-reset-btn');
+    if (resetBtn && form.dataset.originalHtml) {
+      resetBtn.addEventListener('click', () => {
+        form.innerHTML = form.dataset.originalHtml;
+        form.style.minHeight = '';
+        if (typeof content.onReset === 'function') {
+          content.onReset();
+        }
+      });
+    }
   }
 
   // Add shake animation
