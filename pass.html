@@ -138,6 +138,85 @@
   </section>
 
   <!-- ================================================
+       BENEFÍCIOS DE COMU PASS (CAROUSEL COM 6 VISÍVEIS)
+       ================================================ -->
+  <section class="pass-benefits-carousel-section" id="beneficios">
+    <div class="container container--wide">
+      
+      <div class="pass-benefits__header animate-on-scroll">
+        <h2 class="pass-benefits__title">
+          <span>BENEFÍCIOS DO COMU PASS</span>
+          <img src="public/star.svg" alt="" class="pass-benefits__title-icon" />
+        </h2>
+      </div>
+
+      <div class="pass-carousel-wrapper animate-on-scroll">
+        <div class="pass-benefits__carousel" id="benefits-carousel">
+          <div class="pass-benefit-card pass-benefit-card--has-bg pass-benefit-card--blue-tint">
+            <img src="public/Descontos exclusivos em parceiros da Comu.jpeg" alt="" class="pass-benefit-card__bg-img" />
+            <div class="pass-benefit-card__overlay"></div>
+            <p class="pass-benefit-card__text">Descontos exclusivos em parceiros da Comu</p>
+          </div>
+          <div class="pass-benefit-card pass-benefit-card--has-bg pass-benefit-card--pink-tint">
+            <img src="public/Ofertas 1+1 e condições especiais.jpeg" alt="" class="pass-benefit-card__bg-img" />
+            <div class="pass-benefit-card__overlay"></div>
+            <p class="pass-benefit-card__text">Ofertas 1+1 e condições especiais</p>
+          </div>
+          <div class="pass-benefit-card pass-benefit-card--has-bg pass-benefit-card--blue-tint">
+            <img src="public/Brindes e cortesias.jpeg" alt="" class="pass-benefit-card__bg-img" />
+            <div class="pass-benefit-card__overlay"></div>
+            <p class="pass-benefit-card__text">Brindes e cortesias</p>
+          </div>
+          <div class="pass-benefit-card pass-benefit-card--has-bg pass-benefit-card--pink-tint">
+            <img src="public/Ingressos e condições exclusivas.jpeg" alt="" class="pass-benefit-card__bg-img" />
+            <div class="pass-benefit-card__overlay"></div>
+            <p class="pass-benefit-card__text">Ingressos e condições exclusivas</p>
+          </div>
+          <div class="pass-benefit-card">
+            <p class="pass-benefit-card__text">Upgrades e benefícios especiais</p>
+          </div>
+          <div class="pass-benefit-card pass-benefit-card--has-bg pass-benefit-card--pink-tint">
+            <img src="public/Acesso antecipado a eventos.jpeg" alt="" class="pass-benefit-card__bg-img" />
+            <div class="pass-benefit-card__overlay"></div>
+            <p class="pass-benefit-card__text">Acesso antecipado a eventos</p>
+          </div>
+          <div class="pass-benefit-card pass-benefit-card--has-bg pass-benefit-card--blue-tint">
+            <img src="public/Oportunidades com artistas e eventos através do Comu EXP.jpg" alt="" class="pass-benefit-card__bg-img" />
+            <div class="pass-benefit-card__overlay"></div>
+            <p class="pass-benefit-card__text">Oportunidades com artistas e eventos através do Comu EXP</p>
+          </div>
+          <div class="pass-benefit-card pass-benefit-card--has-bg pass-benefit-card--pink-tint">
+            <img src="public/Experiências e ativações de marcas.jpg" alt="" class="pass-benefit-card__bg-img" />
+            <div class="pass-benefit-card__overlay"></div>
+            <p class="pass-benefit-card__text">Experiências e ativações de marcas</p>
+          </div>
+          <div class="pass-benefit-card pass-benefit-card--has-bg pass-benefit-card--blue-tint">
+            <img src="public/Benefícios em restaurantes, bares, festas, shows e +.jpeg" alt="" class="pass-benefit-card__bg-img" />
+            <div class="pass-benefit-card__overlay"></div>
+            <p class="pass-benefit-card__text">Benefícios em restaurantes, bares, festas, shows e +</p>
+          </div>
+          <div class="pass-benefit-card pass-benefit-card--has-bg pass-benefit-card--pink-tint">
+            <img src="public/Curadoria de eventos e experiências.jpg" alt="" class="pass-benefit-card__bg-img" />
+            <div class="pass-benefit-card__overlay"></div>
+            <p class="pass-benefit-card__text">Curadoria de eventos e experiências</p>
+          </div>
+          <div class="pass-benefit-card pass-benefit-card--has-bg pass-benefit-card--blue-tint">
+            <img src="public/Convite para ações especiais.jpg" alt="" class="pass-benefit-card__bg-img" />
+            <div class="pass-benefit-card__overlay"></div>
+            <p class="pass-benefit-card__text">Convites para ações especiais</p>
+          </div>
+          <div class="pass-benefit-card pass-benefit-card--has-bg pass-benefit-card--pink-tint">
+            <img src="public/Experiências exclusivas.jpg" alt="" class="pass-benefit-card__bg-img" />
+            <div class="pass-benefit-card__overlay"></div>
+            <p class="pass-benefit-card__text">Experiências exclusivas</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================
        PLANS PRICING & HOW IT WORKS SECTION
        ================================================ -->
   <section class="pass-plans-section" id="planos">
@@ -542,6 +621,58 @@
             }, 800);
           });
         }
+      });
+    })();
+
+    // Benefits Carousel Scroll & Drag
+    (function initBenefitsCarousel() {
+      const carousel = document.getElementById('benefits-carousel');
+      const prevBtn = document.getElementById('benefits-prev');
+      const nextBtn = document.getElementById('benefits-next');
+      if (!carousel) return;
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          const cardWidth = carousel.firstElementChild ? carousel.firstElementChild.offsetWidth + 16 : 250;
+          carousel.scrollBy({ left: -(cardWidth * 2), behavior: 'smooth' });
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          const cardWidth = carousel.firstElementChild ? carousel.firstElementChild.offsetWidth + 16 : 250;
+          carousel.scrollBy({ left: cardWidth * 2, behavior: 'smooth' });
+        });
+      }
+
+      // Mouse Drag to Scroll
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      carousel.addEventListener('mousedown', (e) => {
+        isDown = true;
+        carousel.classList.add('is-dragging');
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+      });
+
+      carousel.addEventListener('mouseleave', () => {
+        isDown = false;
+        carousel.classList.remove('is-dragging');
+      });
+
+      carousel.addEventListener('mouseup', () => {
+        isDown = false;
+        carousel.classList.remove('is-dragging');
+      });
+
+      carousel.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        carousel.scrollLeft = scrollLeft - walk;
       });
     })();
   </script>
