@@ -11,7 +11,7 @@
 
   // ---- Configuration ----
   // Insira sua chave pública do reCAPTCHA v3 (Site Key) abaixo:
-  const RECAPTCHA_SITE_KEY = '6LclA6QtAAAAAAc98Y4QdzQf3oomZrt-PydXgikN';
+  const RECAPTCHA_SITE_KEY = '6Ldz2aMtAAAAL_EQdVtngqlkalT_tujO4MQ-0NL';
   const RATE_LIMIT_SECONDS = 60;
   const GOOGLE_SCRIPT_URL = '/api/submit';
 
