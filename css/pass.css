@@ -442,8 +442,8 @@ body.pass-page-body {
 
 .pass-carousel-wrapper {
   position: relative;
-  margin-left: calc(50% - 20px);
-  width: calc(50% + 20px);
+  margin-left: max(var(--space-6), calc((100% - 1400px) / 2 + var(--space-6)));
+  width: calc(100% - max(var(--space-6), calc((100% - 1400px) / 2 + var(--space-6))));
   max-width: none;
   overflow: hidden;
 }
@@ -457,7 +457,7 @@ body.pass-page-body {
   -ms-overflow-style: none;
   scroll-behavior: smooth;
   cursor: grab;
-  padding-left: 0;
+  padding-left: max(0px, calc(50vw - 20px - max(var(--space-6), (100vw - 1400px) / 2 + var(--space-6))));
   padding-right: 0;
   padding-top: 0.5rem;
   padding-bottom: 1.5rem;
