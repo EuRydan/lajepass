@@ -240,12 +240,9 @@
       // Show success
       showFormSuccess(form, {
         theme: 'dark',
-        badge: 'Indicação Registrada',
-        icon: '<i class="ph-fill ph-broadcast" style="color: var(--brand-primary)"></i>',
+        icon: '📡',
         title: 'Indicação enviada!',
-        text: 'Vamos analisar sua indicação e, se for aprovada, ela entra no radar da Comu.',
-        buttonText: 'Indicar outro lugar',
-        onReset: () => initRadarForm()
+        text: 'Vamos analisar sua indicação e, se for aprovada, ela entra no radar da Comu.'
       });
     });
   }
@@ -333,12 +330,9 @@
       // Show success
       showFormSuccess(form, {
         theme: 'light',
-        badge: 'Solicitação Recebida',
-        icon: '<i class="ph-fill ph-handshake" style="color: var(--brand-primary)"></i>',
+        icon: '🤝',
         title: 'Solicitação enviada!',
-        text: 'Nossa equipe vai entrar em contato em até 48h. Estamos ansiosos para conhecer seu projeto.',
-        buttonText: 'Enviar nova mensagem',
-        onReset: () => initProducersForm()
+        text: 'Nossa equipe vai entrar em contato em até 48h. Estamos ansiosos para conhecer seu projeto.'
       });
     });
   }
@@ -393,11 +387,9 @@
 
       showFormSuccess(form, {
         theme: 'dark',
-        badge: 'Lista de Espera',
-        icon: '<i class="ph-fill ph-sparkle" style="color: var(--brand-primary)"></i>',
+        icon: '✨',
         title: 'Você está na lista!',
-        text: 'Em breve você vai receber seu convite para fazer parte da Comu.',
-        buttonText: null
+        text: 'Em breve você vai receber seu convite para fazer parte da Comu.'
       });
     });
   }
@@ -427,9 +419,10 @@
   }
 
   function showFormSuccess(form, content) {
-    if (!form.dataset.originalHtml) {
-      form.dataset.originalHtml = form.innerHTML;
-    }
+    form.classList.add('form--success-active');
+    form.style.background = 'transparent';
+    form.style.border = 'none';
+    form.style.boxShadow = 'none';
 
     const formHeight = form.offsetHeight;
     if (formHeight > 0) {
@@ -441,43 +434,11 @@
 
     form.innerHTML = `
       <div class="form-success ${themeClass}">
-        <div class="form-success__icon-wrapper">
-          <div class="form-success__pulse"></div>
-          <div class="form-success__icon-circle">
-            <span class="form-success__icon">${content.icon}</span>
-          </div>
-        </div>
-
-        ${content.badge ? `
-          <div class="form-success__badge">
-            <i class="ph-fill ph-check-circle"></i>
-            <span>${content.badge}</span>
-          </div>
-        ` : ''}
-
+        <span class="form-success__icon">${content.icon}</span>
         <h3 class="form-success__title">${content.title}</h3>
         <p class="form-success__text">${content.text}</p>
-
-        ${content.buttonText ? `
-          <button type="button" class="form-success__btn js-form-reset-btn">
-            <i class="ph ph-arrow-counter-clockwise"></i>
-            <span>${content.buttonText}</span>
-          </button>
-        ` : ''}
       </div>
     `;
-
-    // Handle Reset Button if present
-    const resetBtn = form.querySelector('.js-form-reset-btn');
-    if (resetBtn && form.dataset.originalHtml) {
-      resetBtn.addEventListener('click', () => {
-        form.innerHTML = form.dataset.originalHtml;
-        form.style.minHeight = '';
-        if (typeof content.onReset === 'function') {
-          content.onReset();
-        }
-      });
-    }
   }
 
   // Add shake animation
