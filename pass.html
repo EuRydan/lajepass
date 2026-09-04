@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/components.css?v=2" />
   <link rel="stylesheet" href="css/sections.css" />
-  <link rel="stylesheet" href="css/pass.css?v=9" />
+  <link rel="stylesheet" href="css/pass.css?v=22" />
 </head>
 <body class="pass-page-body">
 
@@ -57,7 +57,7 @@
     </div>
     <div class="container">
       <div class="pass-hero__grid">
-        <div class="pass-hero__content animate-left">
+        <div class="pass-hero__content animate-on-scroll">
           <span class="section-label" style="margin-bottom: var(--space-4);"><i class="ph ph-sparkle"></i> Exclusivo</span>
           <h1 class="pass-hero__title">Comu Pass</h1>
           <p class="pass-hero__subtitle">
@@ -71,14 +71,14 @@
   <!-- ================================================
        CINEMATIC VIDEO LOOP SECTION (P&B + GRANULADO + LOGO NO CENTRO)
        ================================================ -->
-  <section class="pass-video-section">
+  <section class="pass-video-section" id="pass-video-banner">
     <video id="pass-video" class="pass-video-element" autoplay loop muted playsinline>
       <source src="public/pass-banner-video.mp4" type="video/mp4" />
     </video>
     <div class="pass-video-overlay"></div>
     <div class="pass-video-grain"></div>
-    <div class="pass-video-center-logo">
-      <img src="public/copiar.png" alt="Comu Pass" class="pass-video-center-logo__img" />
+    <div class="pass-video-center-logo" id="pass-logo-switcher" role="button" tabindex="0" aria-label="Trocar Logo Comu">
+      <img id="pass-logo-img" src="public/copiar.png" alt="Comu Pass" class="pass-video-center-logo__img" />
     </div>
   </section>
 
@@ -138,35 +138,226 @@
   </section>
 
   <!-- ================================================
-       SIGNUP FORM SECTION
+       PLANS PRICING & HOW IT WORKS SECTION
        ================================================ -->
-  <!-- ================================================
-       SIGNUP FORM / MANIFESTO CTA SECTION
-       ================================================ -->
-  <section class="pass-signup-section">
-    <div class="container">
-      <div class="pass-signup-section__content animate-on-scroll">
-        <p class="pass-signup-section__manifesto">
-          Você não assina para ter mais um aplicativo.<br />
-          <strong>Você entra para fazer parte.</strong>
-        </p>
+  <section class="pass-plans-section" id="planos">
+    <div class="container container--wide">
+      
+      <!-- Cabeçalho da Seção de Planos -->
+      <div class="pass-plans-header animate-on-scroll">
+        <h2 class="pass-plans-title">Escolha seu Comu Pass</h2>
+      </div>
 
-        <div class="pass-signup-section__brand-call">
-          <span class="pass-signup-section__tag">COMU PASS</span>
-          <h2 class="pass-signup-section__title">Seu acesso para uma cidade que nunca para.</h2>
+      <!-- 1. Grid dos 3 Planos (Layout dinâmico 2 colunas para o ativo) -->
+      <div class="pass-plans-grid animate-on-scroll">
+        
+        <!-- 1. Coluna Plano Anual -->
+        <div class="pass-plan-column" data-plan="anual">
+          <div class="pass-plan-card pass-plan-card--anual">
+            <div class="pass-plan-card__badge">MELHOR ESCOLHA</div>
+            <div class="pass-plan-card__header">
+              <img src="public/Ativo 21.svg" alt="Comu Pass" class="pass-plan-card__logo" />
+              <h3 class="pass-plan-card__period">ANUAL</h3>
+            </div>
+            <div class="pass-plan-card__desc">
+              <p class="pass-plan-card__tagline">Um ano vivendo mais o Rio.</p>
+              <p class="pass-plan-card__info">Acesso aos benefícios, experiências e oportunidades da Comu durante todo o ano.</p>
+            </div>
+            <div class="pass-plan-card__body">
+              <div class="pass-plan-card__price">R$90/ano</div>
+              <div class="pass-plan-card__calc">
+                <span>equivale a R$ 7,50/mês</span>
+                <span class="pass-plan-badge">ECONOMIZE 60%</span>
+              </div>
+              <p class="pass-plan-card__terms">Pague no PIX, Débito ou Crédito em até 12x</p>
+            </div>
+          </div>
+
+          <!-- Info Drawer Anual -->
+          <div class="pass-plan-checkout">
+            <div class="pass-plan-checkout__inner">
+              <div class="pass-checkout__summary">
+                <h4 class="pass-checkout__section-title">Resumo do pedido</h4>
+                <div class="pass-checkout__plan-info">
+                  <img src="public/Ativo 21.svg" alt="Comu Pass" class="pass-checkout__logo" />
+                  <h5 class="pass-checkout__plan-title">Plano ANUAL</h5>
+                  <p class="pass-checkout__plan-duration">Seu acesso à Comu por 12 meses</p>
+                </div>
+                <ul class="pass-checkout__features">
+                  <li><img src="public/star.svg" alt="" class="pass-checkout__star" /> Benefícios exclusivos com parceiros</li>
+                  <li><img src="public/star.svg" alt="" class="pass-checkout__star" /> Acesso a experiências e oportunidades da Comu</li>
+                  <li><img src="public/star.svg" alt="" class="pass-checkout__star" /> Descobertas e vantagens para viver mais o Rio</li>
+                  <li><img src="public/star.svg" alt="" class="pass-checkout__star" /> Cancelamento conforme as condições do plano</li>
+                </ul>
+                <div class="pass-checkout__validity-badge">
+                  Melhor escolha para quem quer viver a Comu durante o ano.
+                </div>
+                <div class="pass-checkout__total-wrap">
+                  <div class="pass-checkout__total-price">R$90/ano</div>
+                  <div class="pass-checkout__total-sub">Equivale a R$ 7,50/mês</div>
+                </div>
+                <div class="pass-checkout__action-wrap">
+                  <button type="button" class="btn pass-checkout__cta-btn">
+                    <span>Quero esse</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Signup form -->
-        <form id="pass-form" class="pass__signup">
-          <input type="text" name="pass-name" class="form-input" placeholder="Seu nome" maxlength="100" required />
-          <input type="email" name="pass-email" class="form-input" placeholder="Seu melhor email" maxlength="100" required />
-          <input type="tel" name="pass-whatsapp" class="form-input" placeholder="WhatsApp (opcional)" maxlength="100" />
-          <button type="submit" class="btn btn--primary btn--lg btn--full">
+        <!-- 2. Coluna Plano Semestral -->
+        <div class="pass-plan-column" data-plan="semestral">
+          <div class="pass-plan-card pass-plan-card--semestral">
+            <div class="pass-plan-card__header">
+              <img src="public/Ativo 21.svg" alt="Comu Pass" class="pass-plan-card__logo" />
+              <h3 class="pass-plan-card__period">SEMESTRAL</h3>
+            </div>
+            <div class="pass-plan-card__desc">
+              <p class="pass-plan-card__tagline">6 meses para entrar no ritmo.</p>
+              <p class="pass-plan-card__info">Descubra lugares, aproveite benefícios e acompanhe o que está acontecendo no Rio.</p>
+            </div>
+            <div class="pass-plan-card__body">
+              <div class="pass-plan-card__price">R$93/semestre</div>
+              <div class="pass-plan-card__calc">
+                <span>equivale a R$15,50/mês</span>
+                <span class="pass-plan-badge">ECONOMIZE 38%</span>
+              </div>
+              <p class="pass-plan-card__terms">Pague no PIX, Débito ou Crédito em até 12x</p>
+            </div>
+          </div>
+
+          <!-- Info Drawer Semestral -->
+          <div class="pass-plan-checkout">
+            <div class="pass-plan-checkout__inner">
+              <div class="pass-checkout__summary">
+                <h4 class="pass-checkout__section-title">Resumo do pedido</h4>
+                <div class="pass-checkout__plan-info">
+                  <img src="public/Ativo 21.svg" alt="Comu Pass" class="pass-checkout__logo" />
+                  <h5 class="pass-checkout__plan-title">Plano SEMESTRAL</h5>
+                  <p class="pass-checkout__plan-duration">6 meses para viver a Comu</p>
+                </div>
+                <ul class="pass-checkout__features">
+                  <li><img src="public/star.svg" alt="" class="pass-checkout__star" /> Acesso aos benefícios disponíveis para membros</li>
+                  <li><img src="public/star.svg" alt="" class="pass-checkout__star" /> Participação nas experiências e ações da Comu</li>
+                  <li><img src="public/star.svg" alt="" class="pass-checkout__star" /> Condições especiais com parceiros</li>
+                  <li><img src="public/star.svg" alt="" class="pass-checkout__star" /> Novidades e oportunidades da Comu</li>
+                </ul>
+                <div class="pass-checkout__validity-badge">
+                  Para quem quer começar sem assumir um ano inteiro.
+                </div>
+                <div class="pass-checkout__total-wrap">
+                  <div class="pass-checkout__total-price">R$93/semestre</div>
+                  <div class="pass-checkout__total-sub">Equivale a R$ 15,50/mês</div>
+                </div>
+                <div class="pass-checkout__action-wrap">
+                  <button type="button" class="btn pass-checkout__cta-btn">
+                    <span>Quero esse</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Coluna Plano Mensal -->
+        <div class="pass-plan-column" data-plan="mensal">
+          <div class="pass-plan-card pass-plan-card--mensal">
+            <div class="pass-plan-card__header">
+              <img src="public/Ativo 21.svg" alt="Comu Pass" class="pass-plan-card__logo" />
+              <h3 class="pass-plan-card__period">MENSAL</h3>
+            </div>
+            <div class="pass-plan-card__desc">
+              <p class="pass-plan-card__tagline">Comece agora. Veja se é a sua praia.</p>
+              <p class="pass-plan-card__info">Entre, explore os benefícios da Comu e decida quanto tempo quer ficar.</p>
+            </div>
+            <div class="pass-plan-card__body">
+              <div class="pass-plan-card__price">R$24,90/mês</div>
+              <div class="pass-plan-card__calc">
+                <span>Cancele quando quiser</span>
+              </div>
+              <p class="pass-plan-card__terms">Pagamento recorrente no cartão</p>
+            </div>
+          </div>
+
+          <!-- Info Drawer Mensal -->
+          <div class="pass-plan-checkout">
+            <div class="pass-plan-checkout__inner">
+              <div class="pass-checkout__summary">
+                <h4 class="pass-checkout__section-title">Resumo do pedido</h4>
+                <div class="pass-checkout__plan-info">
+                  <img src="public/Ativo 21.svg" alt="Comu Pass" class="pass-checkout__logo" />
+                  <h5 class="pass-checkout__plan-title">Plano MENSAL</h5>
+                  <p class="pass-checkout__plan-duration">Seu acesso, mês a mês.</p>
+                </div>
+                <ul class="pass-checkout__features">
+                  <li><img src="public/star.svg" alt="" class="pass-checkout__star" /> Acesso aos benefícios disponíveis para membros</li>
+                  <li><img src="public/star.svg" alt="" class="pass-checkout__star" /> Participação nas experiências e ações da Comu</li>
+                  <li><img src="public/star.svg" alt="" class="pass-checkout__star" /> Condições especiais com parceiros</li>
+                  <li><img src="public/star.svg" alt="" class="pass-checkout__star" /> Novidades e oportunidades da Comu</li>
+                </ul>
+                <div class="pass-checkout__validity-badge">
+                  Cancele quando quiser
+                </div>
+                <div class="pass-checkout__total-wrap">
+                  <div class="pass-checkout__total-price">R$24,90/mês</div>
+                </div>
+                <div class="pass-checkout__action-wrap">
+                  <button type="button" class="btn pass-checkout__cta-btn">
+                    <span>Quero esse</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 2. Como Funciona: Steps Banner -->
+      <div class="pass-how-it-works animate-on-scroll">
+        <h3 class="pass-how-it-works__title">SEU ACESSO À COMU</h3>
+
+        <div class="pass-how-it-works__steps">
+          <div class="pass-step-item">
+            <div class="pass-step-item__header">
+              <img src="public/ASSET.svg" alt="" class="pass-step-item__icon" />
+              <h4 class="pass-step-item__number pass-step-item__number--pink">1. ENCONTRE</h4>
+            </div>
+            <p class="pass-step-item__text">Descubra benefícios, lugares<br>e experiências disponíveis<br>para membros.</p>
+          </div>
+          <div class="pass-step-item">
+            <div class="pass-step-item__header">
+              <img src="public/ASSET.svg" alt="" class="pass-step-item__icon" />
+              <h4 class="pass-step-item__number pass-step-item__number--purple">2. ESCOLHA</h4>
+            </div>
+            <p class="pass-step-item__text">Selecione o que faz<br>sentido para o seu rolê.</p>
+          </div>
+          <div class="pass-step-item">
+            <div class="pass-step-item__header">
+              <img src="public/ASSET.svg" alt="" class="pass-step-item__icon" />
+              <h4 class="pass-step-item__number pass-step-item__number--pink">3. ATIVE</h4>
+            </div>
+            <p class="pass-step-item__text">Apresente seu acesso<br>no estabelecimento e<br>aproveite o benefício.</p>
+          </div>
+          <div class="pass-step-item">
+            <div class="pass-step-item__header">
+              <img src="public/ASSET.svg" alt="" class="pass-step-item__icon" />
+              <h4 class="pass-step-item__number pass-step-item__number--purple">4. VIVA</h4>
+            </div>
+            <p class="pass-step-item__text">Procure menos.<br>Experimente mais</p>
+          </div>
+        </div>
+
+        <div class="pass-how-it-works__cta-wrap">
+          <a href="#planos" class="btn btn--primary btn--lg pass-how-it-works__cta-btn">
             <span>QUERO FAZER PARTE</span>
             <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </form>
+          </a>
+          <p class="pass-how-it-works__disclaimer">Benefícios sujeitos à disponibilidade e às condições de cada parceiro.</p>
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -175,21 +366,72 @@
        ================================================ -->
   <footer class="footer">
     <div class="container">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <img src="public/Comu logo.svg" alt="Comu" class="footer__logo-img" style="height: 44px; width: auto; margin-bottom: var(--space-4);" />
-          <p class="footer__tagline">Descubra o Rio. Viva a comunidade.</p>
+      <div class="footer__grid">
+        <!-- Coluna 1: Marca & Redes -->
+        <div>
+          <a href="pass.html" class="footer__logo" style="display: inline-block; margin-bottom: var(--space-2);">
+            <img src="public/copiar.png" alt="Comu Pass" class="footer__logo-img" style="height: 48px; width: auto; object-fit: contain;" />
+          </a>
+          <p class="footer__brand-text">
+            A sua chave para viver as melhores experiências do Rio de Janeiro pagando muito menos.
+          </p>
+          <div class="footer__socials">
+            <a href="https://www.instagram.com/comupass/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="TikTok">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="footer__social-link js-obfuscated-wa" data-country="55" data-ddd="21" data-num="976229522" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
         </div>
-        <div class="footer__nav-group">
-          <h4 class="footer__nav-title">Contato</h4>
+        
+        <!-- Coluna 2: Explorar -->
+        <div>
+          <h4 class="footer__heading">Explorar</h4>
+          <nav class="footer__links">
+            <a href="index.html" class="footer__link">Início</a>
+            <a href="index.html#picks" class="footer__link">Comu Radar</a>
+            <a href="index.html#experiencias" class="footer__link">Experiências</a>
+            <a href="pesquisa-comu.html" class="footer__link">Pesquisa Comu</a>
+          </nav>
+        </div>
+        
+        <!-- Coluna 3: Comu Pass -->
+        <div>
+          <h4 class="footer__heading">Comu Pass</h4>
+          <nav class="footer__links">
+            <a href="pass.html" class="footer__link">Benefícios</a>
+            <a href="pass.html#planos" class="footer__link">Planos e Preços</a>
+            <a href="index.html#produtores" class="footer__link">Para Produtores</a>
+            <a href="login.html" class="footer__link">Entrar</a>
+          </nav>
+        </div>
+
+        <!-- Coluna 4: Ajuda & Termos -->
+        <div>
+          <h4 class="footer__heading">Ajuda</h4>
+          <nav class="footer__links">
+            <a href="faq.html" class="footer__link">FAQ</a>
+            <a href="termos.html" class="footer__link">Termos de Uso</a>
+            <a href="termos-de-uso.html" class="footer__link">Privacidade</a>
+          </nav>
+        </div>
+        
+        <!-- Coluna 5: Contato -->
+        <div>
+          <h4 class="footer__heading">Contato</h4>
           <nav class="footer__links">
             <a href="#" class="footer__link js-obfuscated-email" data-user="relacionamento" data-domain="comupass.com.br"></a>
-            <a href="faq.html" class="footer__link">FAQ</a>
+            <a href="#" class="footer__link js-obfuscated-wa" data-country="55" data-ddd="21" data-num="976229522">WhatsApp Oficial</a>
           </nav>
         </div>
       </div>
+
       <div class="footer__bottom">
-        <span>© 2026 Comu. Todos os direitos reservados.</span>
+        <span>© 2026 Comu Pass. Todos os direitos reservados.</span>
       </div>
     </div>
   </footer>
@@ -203,6 +445,105 @@
     if (passVideo) {
       passVideo.playbackRate = 0.75;
     }
+
+    // Logo Switcher on Click / Touch Loop
+    (function initLogoSwitcher() {
+      const switcher = document.getElementById('pass-logo-switcher');
+      const logoImg = document.getElementById('pass-logo-img');
+      const videoBanner = document.getElementById('pass-video-banner');
+      if (!switcher || !logoImg) return;
+
+      const logos = [
+        { src: 'public/copiar.png', alt: 'Comu Pass' },
+        { src: 'public/radar.svg', alt: 'Comu Radar' },
+        { src: 'public/Accsess.svg', alt: 'Comu Access' },
+        { src: 'public/Exp.svg', alt: 'Comu Exp' },
+        { src: 'public/Brand.svg', alt: 'Comu Brand' }
+      ];
+
+      // Preload all logos for seamless instant switching
+      logos.forEach(item => {
+        const img = new Image();
+        img.src = item.src;
+      });
+
+      let currentIndex = 0;
+      let isTransitioning = false;
+
+      function nextLogo(e) {
+        if (e) e.stopPropagation();
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        currentIndex = (currentIndex + 1) % logos.length;
+        switcher.classList.add('is-animating');
+
+        setTimeout(() => {
+          logoImg.src = logos[currentIndex].src;
+          logoImg.alt = logos[currentIndex].alt;
+          switcher.classList.remove('is-animating');
+          isTransitioning = false;
+        }, 150);
+      }
+
+      switcher.addEventListener('click', nextLogo);
+      if (videoBanner) {
+        videoBanner.addEventListener('click', nextLogo);
+      }
+      switcher.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          nextLogo();
+        }
+      });
+    })();
+
+    // Interactive Plan Selector (Accordion Dropdown per Card)
+    (function initPlanCheckoutSelector() {
+      const columns = document.querySelectorAll('.pass-plan-column');
+      if (!columns.length) return;
+
+      columns.forEach(col => {
+        const card = col.querySelector('.pass-plan-card');
+        if (!card) return;
+
+        card.addEventListener('click', () => {
+          // If already selected, close it
+          if (col.classList.contains('is-selected')) {
+            col.classList.remove('is-selected');
+            return;
+          }
+
+          // Remove selected from all and add to clicked
+          columns.forEach(c => c.classList.remove('is-selected'));
+          col.classList.add('is-selected');
+
+          // Smooth scroll slightly if on mobile
+          if (window.innerWidth < 768) {
+            col.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        });
+
+        const ctaBtn = col.querySelector('.pass-checkout__cta-btn');
+        if (ctaBtn) {
+          ctaBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const planType = col.getAttribute('data-plan');
+            const originalText = ctaBtn.innerHTML;
+            ctaBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processando...';
+            ctaBtn.disabled = true;
+
+            setTimeout(() => {
+              ctaBtn.innerHTML = '<i class="fa-solid fa-check"></i> Redirecionando...';
+              setTimeout(() => {
+                ctaBtn.innerHTML = originalText;
+                ctaBtn.disabled = false;
+              }, 1500);
+            }, 800);
+          });
+        }
+      });
+    })();
   </script>
 
 </body>
