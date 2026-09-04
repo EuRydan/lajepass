@@ -457,7 +457,7 @@ body.pass-page-body {
   scroll-behavior: smooth;
   cursor: grab;
   padding-left: max(var(--space-6), calc((100vw - 1400px) / 2 + var(--space-6)));
-  padding-right: var(--space-8);
+  padding-right: 0;
   padding-top: 0.5rem;
   padding-bottom: 1.5rem;
   user-select: none;
@@ -476,14 +476,14 @@ body.pass-page-body {
 .pass-benefit-card {
   position: relative;
   overflow: hidden;
-  flex: 0 0 clamp(235px, 15vw, 275px);
-  min-width: 235px;
-  min-height: 330px;
+  flex: 0 0 clamp(260px, 17vw, 290px);
+  min-width: 260px;
+  min-height: 350px;
   aspect-ratio: 3 / 4.1;
   background-color: #121214;
   border-bottom: 4px solid var(--brand-secondary);
   border-radius: 0;
-  padding: 2rem 1.4rem 1.6rem;
+  padding: 2.2rem 1.4rem 1.6rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -533,11 +533,11 @@ body.pass-page-body {
 }
 
 .pass-benefit-card--blue-tint .pass-benefit-card__overlay {
-  background: linear-gradient(180deg, rgba(87, 0, 255, 0.42) 0%, rgba(10, 10, 12, 0.92) 100%);
+  background: linear-gradient(180deg, rgba(87, 0, 255, 0.48) 0%, rgba(10, 10, 14, 0.94) 100%);
 }
 
 .pass-benefit-card--pink-tint .pass-benefit-card__overlay {
-  background: linear-gradient(180deg, rgba(255, 1, 73, 0.42) 0%, rgba(10, 10, 12, 0.92) 100%);
+  background: linear-gradient(180deg, rgba(255, 1, 73, 0.48) 0%, rgba(10, 10, 14, 0.94) 100%);
 }
 
 .pass-benefit-card__text {
