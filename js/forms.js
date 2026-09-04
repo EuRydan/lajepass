@@ -434,7 +434,12 @@
 
     form.innerHTML = `
       <div class="form-success ${themeClass}">
-        <span class="form-success__icon">${content.icon}</span>
+        <div class="form-success__check-anim">
+          <svg class="checkmark-svg" viewBox="0 0 52 52" aria-hidden="true">
+            <circle class="checkmark-circle" cx="26" cy="26" r="23" fill="none" />
+            <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+          </svg>
+        </div>
         <h3 class="form-success__title">${content.title}</h3>
         <p class="form-success__text">${content.text}</p>
       </div>

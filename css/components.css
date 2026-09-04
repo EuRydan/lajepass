@@ -704,21 +704,51 @@
   }
 }
 
-.form-success__icon {
-  font-size: 3.5rem;
+.form-success__check-anim {
+  width: 44px;
+  height: 44px;
   margin-bottom: var(--space-4);
-  display: inline-block;
-  line-height: 1;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.08));
-  animation: floatEmoji 3s ease-in-out infinite;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes floatEmoji {
-  0%, 100% {
-    transform: translateY(0);
+.checkmark-svg {
+  width: 44px;
+  height: 44px;
+  display: block;
+}
+
+.checkmark-circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+  stroke: #10b981;
+  fill: none;
+  animation: strokeCircle 0.5s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark-check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #10b981;
+  animation: strokeCheck 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.4s forwards;
+}
+
+@keyframes strokeCircle {
+  100% {
+    stroke-dashoffset: 0;
   }
-  50% {
-    transform: translateY(-5px);
+}
+
+@keyframes strokeCheck {
+  100% {
+    stroke-dashoffset: 0;
   }
 }
 
