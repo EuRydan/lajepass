@@ -1371,13 +1371,14 @@
 
 .faq__item {
   background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border);
+  border: none;
+  box-shadow: none;
   transition: all var(--duration-base) var(--ease-out);
 }
 
 .faq__item:hover {
-  border-color: rgba(255, 1, 73, 0.2);
-  box-shadow: var(--shadow-glow-purple);
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .faq__question {
