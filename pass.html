@@ -249,7 +249,7 @@
       <div class="pass-plans-grid animate-on-scroll">
         
         <!-- 1. Coluna Plano Anual -->
-        <div class="pass-plan-column" data-plan="anual">
+        <div class="pass-plan-column is-selected" data-plan="anual">
           <div class="pass-plan-card pass-plan-card--anual">
             <div class="pass-plan-card__badge">MELHOR ESCOLHA</div>
             <div class="pass-plan-card__header">
@@ -605,9 +605,8 @@
         if (!card) return;
 
         card.addEventListener('click', () => {
-          // If already selected, close it
+          // If already selected, keep it open (close only when another is selected)
           if (col.classList.contains('is-selected')) {
-            col.classList.remove('is-selected');
             return;
           }
 
