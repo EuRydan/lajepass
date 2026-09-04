@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw47e7NkL9E24tEMhVrn8yD6c2cHkVy-kM6LJsJ1Oue4Gfo9Won06QVTgwrJSuD7Hll/exec';
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzA6ECx8oQd_tGeR_68wgh_U_x2B87-x6E4izJLg_WyjLpFQe9F2ux97Jcy3TyYBe80/exec';
 
     const response = await fetch(GOOGLE_SCRIPT_URL, {
       method: 'POST',
