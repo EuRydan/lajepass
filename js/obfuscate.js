@@ -29,11 +29,12 @@
     waElements.forEach((el) => {
       const country = el.getAttribute('data-country') || '55';
       const ddd = el.getAttribute('data-ddd') || '21';
-      const number = el.getAttribute('data-num') || '978949944';
+      const number = el.getAttribute('data-num') || '976229522';
+      const defaultMsg = el.getAttribute('data-msg') || 'Olá! Gostaria de saber mais sobre a Comu.';
       const fullPhone = country + ddd + number;
 
       if (el.tagName.toLowerCase() === 'a') {
-        el.href = 'https://wa.me/' + fullPhone;
+        el.href = 'https://wa.me/' + fullPhone + '?text=' + encodeURIComponent(defaultMsg);
       }
     });
   }
