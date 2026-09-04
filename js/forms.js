@@ -423,11 +423,9 @@
     form.style.background = 'transparent';
     form.style.border = 'none';
     form.style.boxShadow = 'none';
-
-    const formHeight = form.offsetHeight;
-    if (formHeight > 0) {
-      form.style.minHeight = `${formHeight}px`;
-    }
+    form.style.padding = '0';
+    form.style.minHeight = '0';
+    form.style.height = 'auto';
 
     const isLight = content.theme === 'light' || form.classList.contains('producers__form');
     const themeClass = isLight ? 'form-success--light' : 'form-success--dark';
