@@ -1010,10 +1010,8 @@ input[type="submit"],
   width: 100vw;
   height: 100vh;
   height: 100dvh;
-  background-color: var(--brand-support);
-  background-image: url('../public/background hero.svg');
-  background-repeat: repeat-y;
-  background-size: 100% auto;
+  background-color: var(--brand-secondary, #5700ff);
+  background-image: none !important;
   z-index: calc(var(--z-overlay) + 1);
   display: flex;
   flex-direction: column;
