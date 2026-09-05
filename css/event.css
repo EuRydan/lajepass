@@ -18,10 +18,14 @@
   --color-gold: #d97706;
 }
 
-.event-page-body .header__link:hover,
+.event-page-body .header__link:hover {
+  color: var(--brand-primary, #ff0149) !important;
+  background: transparent !important;
+}
+
 .event-page-body .header__link.active {
-  color: var(--brand-primary);
-  background: rgba(29, 7, 70, 0.05);
+  color: var(--brand-support) !important;
+  background: transparent !important;
 }
 
 .event-main {
