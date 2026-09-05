@@ -134,279 +134,50 @@ body.pass-page-body {
   }
 }
 
-/* ---- INTERACTIVE MONOCHROME GLASSMORPHISM BANNER ---- */
-.pass-glass-section {
+/* ---- MINIMAL BLACK BANNER (LOGOS ONLY) ---- */
+.pass-black-banner {
   position: relative;
   width: 100%;
-  height: clamp(340px, 40vw, 460px);
-  overflow: hidden;
-  background-color: #040406;
+  height: clamp(240px, 30vw, 380px);
+  background-color: #000000;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: default;
-  user-select: none;
-  perspective: 1200px;
-}
-
-/* Dynamic Interactive Mouse Light (Subtle Ambient White Glow) */
-.pass-glass-spotlight {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(
-    circle 360px at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(255, 255, 255, 0.05) 0%,
-    rgba(255, 255, 255, 0.012) 45%,
-    transparent 75%
-  );
-  transition: opacity 0.25s ease;
-  z-index: 1;
-}
-
-/* Subtle Monochrome Grid Background */
-.pass-glass-bg-grid {
-  position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 44px 44px;
-  background-position: center center;
-  pointer-events: none;
-  opacity: 0.65;
-  z-index: 1;
-  mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
-  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
-}
-
-/* Floating Glass Layer */
-.pass-glass-elements-layer {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-  overflow: hidden;
-}
-
-/* Decorative Frosted Glass Panels */
-.pass-glass-card {
-  position: absolute;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.065) 0%, rgba(255, 255, 255, 0.015) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  padding: 0.75rem 1.25rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  border-radius: 6px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  transition: transform 0.1s cubic-bezier(0.2, 0, 0.2, 1);
-  will-change: transform;
-}
-
-.pass-glass-card--tl {
-  top: 18%;
-  left: 8%;
-}
-
-.pass-glass-card--br {
-  bottom: 20%;
-  right: 10%;
-}
-
-.pass-glass-card__dot {
-  width: 6px;
-  height: 6px;
-  background-color: rgba(255, 255, 255, 0.75);
-  border-radius: 50%;
-}
-
-.pass-glass-card__plus {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.pass-glass-card__label {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.65);
-  text-transform: uppercase;
-}
-
-.pass-glass-card__line {
-  width: 24px;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.pass-glass-card__bar {
-  width: 30px;
-  height: 2px;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.4), transparent);
-}
-
-/* Floating Glass Geometric Shapes */
-.pass-glass-shape {
-  position: absolute;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
-  pointer-events: none;
-  transition: transform 0.1s cubic-bezier(0.2, 0, 0.2, 1);
-  will-change: transform;
-}
-
-.pass-glass-shape--circle {
-  top: 55%;
-  left: 18%;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-}
-
-.pass-glass-shape--cube {
-  top: 15%;
-  right: 22%;
-  width: 70px;
-  height: 70px;
-  border-radius: 8px;
-  transform: rotate(25deg);
-}
-
-/* Center Stage & Logo Showcase Card */
-.pass-glass-center-stage {
-  position: relative;
-  z-index: 4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 540px;
-  padding-inline: var(--space-6);
-  perspective: 1000px;
-}
-
-.pass-glass-center-card {
-  position: relative;
-  width: 100%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.075) 0%, rgba(255, 255, 255, 0.02) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  backdrop-filter: blur(28px) saturate(170%);
-  -webkit-backdrop-filter: blur(28px) saturate(170%);
-  border-radius: 16px;
-  padding: 2.2rem 2.5rem;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 
-    0 24px 60px rgba(0, 0, 0, 0.7),
-    inset 0 1px 1px rgba(255, 255, 255, 0.25),
-    inset 0 -1px 1px rgba(255, 255, 255, 0.05);
-  transform-style: preserve-3d;
-  transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+  user-select: none;
   overflow: hidden;
 }
 
-.pass-glass-center-card:hover {
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 
-    0 30px 70px rgba(0, 0, 0, 0.8),
-    inset 0 1px 2px rgba(255, 255, 255, 0.35);
-}
-
-.pass-glass-center-card:active {
-  transform: scale(0.97) !important;
-}
-
-/* Specular Sheen Reflection */
-.pass-glass-center-card__sheen {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, transparent 100%);
-  pointer-events: none;
-  border-radius: 15px 15px 0 0;
-}
-
-.pass-glass-center-card__inner {
-  position: relative;
-  z-index: 2;
+.pass-black-banner__container {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 90px;
+  padding: var(--space-6);
 }
 
-.pass-video-center-logo__img {
-  max-width: 320px;
-  max-height: 80px;
+.pass-black-banner__logo {
+  max-width: 420px;
+  max-height: 120px;
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.9));
-  transition: transform 0.22s var(--ease-spring), opacity 0.18s ease;
+  transition: transform 0.2s ease, opacity 0.15s ease;
 }
 
-.pass-glass-center-card.is-animating .pass-video-center-logo__img {
-  transform: scale(0.88);
+.pass-black-banner__container.is-animating .pass-black-banner__logo {
+  transform: scale(0.92);
   opacity: 0;
 }
 
-.pass-glass-center-card__hint {
-  margin-top: 0.9rem;
-  font-family: var(--font-mono, monospace);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.45);
-  text-transform: uppercase;
-  transition: color 0.2s ease;
-}
-
-.pass-glass-center-card:hover .pass-glass-center-card__hint {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-/* Subtle Film Grain Texture Overlay */
-.pass-glass-grain {
-  position: absolute;
-  inset: 0;
-  opacity: 0.14;
-  mix-blend-mode: overlay;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.7'/%3E%3C/svg%3E");
-  z-index: 5;
-}
-
 @media (max-width: 768px) {
-  .pass-glass-section {
-    height: 320px;
+  .pass-black-banner {
+    height: 220px;
   }
-  .pass-glass-card {
-    display: none;
-  }
-  .pass-glass-shape {
-    display: none;
-  }
-  .pass-glass-center-card {
-    padding: 1.8rem 1.6rem;
-  }
-  .pass-video-center-logo__img {
-    max-width: 240px;
-    max-height: 65px;
+
+  .pass-black-banner__logo {
+    max-width: 260px;
+    max-height: 80px;
   }
 }
 
