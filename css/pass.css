@@ -134,12 +134,13 @@ body.pass-page-body {
   }
 }
 
-/* ---- MINIMAL BLACK BANNER (LOGOS ONLY) ---- */
-.pass-black-banner {
+/* ---- MINIMAL PINK BANNER (LOGOS ONLY) ---- */
+.pass-black-banner,
+.pass-pink-banner {
   position: relative;
   width: 100%;
   height: clamp(240px, 30vw, 380px);
-  background-color: #000000;
+  background-color: var(--brand-primary, #ff0149);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -148,7 +149,8 @@ body.pass-page-body {
   overflow: hidden;
 }
 
-.pass-black-banner__container {
+.pass-black-banner__container,
+.pass-pink-banner__container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,7 +158,8 @@ body.pass-page-body {
   padding: var(--space-6);
 }
 
-.pass-black-banner__logo {
+.pass-black-banner__logo,
+.pass-pink-banner__logo {
   max-width: 420px;
   max-height: 120px;
   width: auto;
@@ -165,17 +168,20 @@ body.pass-page-body {
   transition: transform 0.2s ease, opacity 0.15s ease;
 }
 
-.pass-black-banner__container.is-animating .pass-black-banner__logo {
+.pass-black-banner__container.is-animating .pass-black-banner__logo,
+.pass-pink-banner__container.is-animating .pass-pink-banner__logo {
   transform: scale(0.92);
   opacity: 0;
 }
 
 @media (max-width: 768px) {
-  .pass-black-banner {
+  .pass-black-banner,
+  .pass-pink-banner {
     height: 220px;
   }
 
-  .pass-black-banner__logo {
+  .pass-black-banner__logo,
+  .pass-pink-banner__logo {
     max-width: 260px;
     max-height: 80px;
   }
