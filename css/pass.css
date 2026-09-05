@@ -96,12 +96,13 @@ body.pass-page-body {
   text-decoration: none;
   background: var(--brand-primary);
   box-shadow: none !important;
-  transition: transform 0.2s ease, filter 0.2s ease;
+  text-shadow: none !important;
+  transition: transform 0.2s ease;
 }
 
 .pass-hero__cta-btn:hover {
   transform: translateY(-2px);
-  filter: brightness(1.08);
+  filter: none !important;
   box-shadow: none !important;
 }
 
@@ -1005,6 +1006,14 @@ body.pass-page-body {
   border-radius: 0;
   letter-spacing: 0.04em;
   text-decoration: none;
+  background: var(--brand-primary);
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+.pass-how-it-works__cta-btn:hover {
+  filter: none !important;
+  box-shadow: none !important;
 }
 
 .pass-how-it-works__disclaimer {

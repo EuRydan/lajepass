@@ -3,7 +3,33 @@
    Reusable UI components
    ========================================== */
 
-/* ---- Buttons ---- */
+/* ---- Buttons (Strict Flat / Dry Color — No Shadows, No Glow) ---- */
+
+button,
+.btn,
+.btn:hover,
+.btn:focus,
+.btn:active,
+input[type="button"],
+input[type="submit"],
+.btn--primary,
+.btn--secondary,
+.btn--ghost,
+.btn--gold,
+.pass-hero__cta-btn,
+.pass-checkout__cta-btn,
+.pass-how-it-works__cta-btn,
+.btn-notify,
+.btn-whatsapp-comu,
+.btn--buy-ticket,
+.btn--pix,
+.btn--vip,
+.btn--comu-pass,
+.btn--radar-wa {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
 
 .btn {
   display: inline-flex;
@@ -21,20 +47,24 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: all var(--duration-base) var(--ease-out);
+  transition: background-color var(--duration-base) var(--ease-out), color var(--duration-base) var(--ease-out), transform var(--duration-base) var(--ease-out);
   white-space: nowrap;
+  box-shadow: none !important;
+  text-shadow: none !important;
 }
 
 .btn--primary {
-  background: linear-gradient(135deg, var(--color-accent), #ff3370);
+  background: var(--brand-primary);
   color: white;
   border-color: transparent;
+  box-shadow: none !important;
+  text-shadow: none !important;
 }
 
 .btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-glow-accent);
-  filter: brightness(1.1);
+  box-shadow: none !important;
+  filter: none !important;
 }
 
 .btn--primary:active {
@@ -45,12 +75,15 @@
   background: transparent;
   color: var(--color-text-primary);
   border: none;
+  box-shadow: none !important;
+  text-shadow: none !important;
 }
 
 .btn--secondary:hover {
   border: none;
   color: var(--color-accent);
   background: var(--color-accent-subtle);
+  box-shadow: none !important;
 }
 
 .btn--ghost {
@@ -58,22 +91,26 @@
   color: var(--color-text-secondary);
   border-color: transparent;
   padding: var(--space-2) var(--space-4);
+  box-shadow: none !important;
 }
 
 .btn--ghost:hover {
   color: var(--color-text-primary);
   background: rgba(255, 255, 255, 0.05);
+  box-shadow: none !important;
 }
 
 .btn--gold {
-  background: linear-gradient(135deg, var(--color-gold), #ffd280);
+  background: var(--color-gold);
   color: var(--color-text-inverse);
+  box-shadow: none !important;
+  text-shadow: none !important;
 }
 
 .btn--gold:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-glow-gold);
-  filter: brightness(1.1);
+  box-shadow: none !important;
+  filter: none !important;
 }
 
 .btn--lg {
@@ -90,23 +127,6 @@
 
 .btn--full {
   width: 100%;
-}
-
-/* Button ripple effect */
-.btn::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
-  opacity: 0;
-  transform: scale(0);
-  transition: opacity 0.3s, transform 0.5s;
-}
-
-.btn:active::after {
-  opacity: 1;
-  transform: scale(2.5);
-  transition: opacity 0s, transform 0s;
 }
 
 /* ---- Cards: Experience ---- */
