@@ -108,14 +108,14 @@ body.pass-page-body {
 
 @media (max-width: 768px) {
   .pass-hero {
-    padding-top: calc(var(--header-height) + var(--space-10));
-    padding-bottom: var(--space-14);
-    min-height: 360px;
+    padding-top: calc(var(--header-height) + clamp(1.5rem, 4vw, 2.5rem));
+    padding-bottom: clamp(2rem, 5vw, 3rem);
+    min-height: auto;
   }
 
   .pass-hero__grid {
     align-items: flex-start;
-    gap: var(--space-6);
+    gap: var(--space-5);
     text-align: left;
   }
   
@@ -125,13 +125,31 @@ body.pass-page-body {
   }
   
   .pass-hero__title {
-    font-size: var(--text-4xl);
+    font-size: clamp(2rem, 7.5vw, 2.6rem);
     text-align: left;
+    margin-bottom: 0.75rem;
   }
 
   .pass-hero__subtitle {
-    font-size: var(--text-lg);
+    font-size: clamp(0.95rem, 3.6vw, 1.12rem);
     text-align: left;
+    line-height: 1.45;
+  }
+
+  .pass-hero__action {
+    margin-top: var(--space-6);
+    width: 100%;
+  }
+
+  .pass-hero__cta-btn {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    padding: 0.85rem 1.75rem;
+    font-size: 0.88rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -140,7 +158,7 @@ body.pass-page-body {
 .pass-pink-banner {
   position: relative;
   width: 100%;
-  height: clamp(240px, 30vw, 380px);
+  height: clamp(150px, 22vw, 360px);
   background-color: var(--brand-primary, #ff0149);
   display: flex;
   align-items: center;
@@ -156,13 +174,13 @@ body.pass-page-body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: var(--space-6);
+  padding: var(--space-4);
 }
 
 .pass-black-banner__logo,
 .pass-pink-banner__logo {
-  max-width: 420px;
-  max-height: 120px;
+  max-width: clamp(200px, 48vw, 420px);
+  max-height: clamp(55px, 14vw, 120px);
   width: auto;
   height: auto;
   object-fit: contain;
@@ -178,13 +196,13 @@ body.pass-page-body {
 @media (max-width: 768px) {
   .pass-black-banner,
   .pass-pink-banner {
-    height: 220px;
+    height: clamp(140px, 26vw, 190px);
   }
 
   .pass-black-banner__logo,
   .pass-pink-banner__logo {
-    max-width: 260px;
-    max-height: 80px;
+    max-width: clamp(180px, 52vw, 240px);
+    max-height: clamp(50px, 13vw, 75px);
   }
 }
 
@@ -211,7 +229,7 @@ body.pass-page-body {
 
 /* ---- PASS VALUE PROPOSITION SECTION ---- */
 .pass-value-section {
-  padding-block: clamp(3.5rem, 6vw, 5.5rem);
+  padding-block: clamp(2.5rem, 5.5vw, 4.5rem);
   background-color: #faf8fd;
 }
 
@@ -227,7 +245,7 @@ body.pass-page-body {
 
 .pass-value__title {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3.2vw, 2.75rem);
+  font-size: clamp(1.4rem, 4.8vw, 2.5rem);
   font-weight: 900;
   line-height: 1.25;
   color: var(--brand-primary);
@@ -242,7 +260,7 @@ body.pass-page-body {
 
 .pass-value__subtitle {
   font-family: var(--font-body);
-  font-size: clamp(1.05rem, 1.75vw, 1.35rem);
+  font-size: clamp(0.92rem, 2.8vw, 1.25rem);
   font-weight: 400;
   color: var(--brand-support);
   line-height: 1.5;
@@ -254,7 +272,7 @@ body.pass-page-body {
 
 /* ---- PASS BENEFITS CAROUSEL SECTION ---- */
 .pass-benefits-carousel-section {
-  padding-block: var(--space-20) var(--space-12);
+  padding-block: clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 3.5vw, 2.5rem);
   background-color: #08080a;
   position: relative;
   overflow: hidden;
@@ -262,12 +280,12 @@ body.pass-page-body {
 
 .pass-benefits__header {
   text-align: center;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
 }
 
 .pass-benefits__title {
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 2.8vw, 2.25rem);
+  font-size: clamp(1.35rem, 4.2vw, 2.2rem);
   font-weight: 900;
   color: #ffffff;
   letter-spacing: -0.01em;
@@ -276,11 +294,11 @@ body.pass-page-body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.65rem;
+  gap: 0.55rem;
 }
 
 .pass-benefits__title-icon {
-  height: clamp(1.3rem, 2.2vw, 1.85rem);
+  height: clamp(1.15rem, 3.2vw, 1.85rem);
   width: auto;
   object-fit: contain;
   display: inline-block;
@@ -289,14 +307,14 @@ body.pass-page-body {
 
 .pass-benefits__subtitle {
   font-family: var(--font-body);
-  font-size: clamp(0.95rem, 1.35vw, 1.12rem);
+  font-size: clamp(0.88rem, 2.5vw, 1.1rem);
   font-weight: 500;
   color: rgba(255, 255, 255, 0.7);
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
   margin-bottom: 0;
   max-width: 680px;
   margin-inline: auto;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 /* 4 Category Filter Buttons */
@@ -305,21 +323,21 @@ body.pass-page-body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: var(--space-8);
-  margin-bottom: var(--space-8);
+  gap: 0.65rem;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-6);
 }
 
 .pass-benefits__filter-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.4rem;
   background: #141418;
   border: 1.5px solid rgba(255, 255, 255, 0.14);
   color: #ffffff;
-  padding: 0.65rem 1.4rem;
+  padding: 0.55rem 1.25rem;
   font-family: var(--font-display);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 800;
   letter-spacing: 0.02em;
   border-radius: 999px;
@@ -392,14 +410,14 @@ body.pass-page-body {
 .pass-benefit-card {
   position: relative;
   overflow: hidden;
-  flex: 0 0 clamp(260px, 17vw, 290px);
-  min-width: 260px;
-  min-height: 350px;
+  flex: 0 0 clamp(250px, 17vw, 290px);
+  min-width: 250px;
+  min-height: 340px;
   aspect-ratio: 3 / 4.1;
   background-color: #121214;
   border-bottom: 4px solid var(--brand-secondary);
   border-radius: 0;
-  padding: 2.2rem 1.4rem 1.6rem;
+  padding: 2rem 1.3rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -418,7 +436,7 @@ body.pass-page-body {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.6'/%3E%3C/svg%3E");
   background-repeat: repeat;
   opacity: 0.8;
   mix-blend-mode: overlay;
@@ -461,7 +479,7 @@ body.pass-page-body {
   z-index: 3;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 0.96rem;
+  font-size: 0.94rem;
   line-height: 1.35;
   color: #ffffff;
   margin: 0;
@@ -516,16 +534,16 @@ body.pass-page-body {
     padding-bottom: 1rem;
   }
   .pass-benefit-card {
-    flex: 0 0 150px;
-    min-width: 150px;
+    flex: 0 0 152px;
+    min-width: 152px;
     max-width: 165px;
     min-height: 210px;
-    padding: 1.2rem 0.9rem 1rem;
+    padding: 1.15rem 0.85rem 0.95rem;
     aspect-ratio: 3 / 4.1;
     border-bottom-width: 3px;
   }
   .pass-benefit-card__text {
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     line-height: 1.3;
   }
 }
@@ -546,11 +564,11 @@ body.pass-page-body {
     min-width: 142px;
     max-width: 152px;
     min-height: 195px;
-    padding: 1.1rem 0.8rem 0.9rem;
+    padding: 1rem 0.75rem 0.85rem;
     aspect-ratio: 3 / 4.1;
   }
   .pass-benefit-card__text {
-    font-size: 0.74rem;
+    font-size: 0.73rem;
     line-height: 1.28;
   }
 }
@@ -931,20 +949,57 @@ body.pass-page-body {
   }
 }
 
+@media (max-width: 768px) {
+  .pass-plans-section {
+    padding-block: var(--space-12) clamp(3.5rem, 6vw, 5rem);
+  }
+
+  .pass-plans-header {
+    margin-bottom: var(--space-6);
+  }
+
+  .pass-plans-title {
+    font-size: clamp(1.35rem, 4.8vw, 1.85rem);
+  }
+
+  .pass-plan-card {
+    padding: 1.4rem 1.25rem 1.6rem;
+  }
+
+  .pass-plan-card__desc {
+    margin-bottom: var(--space-4);
+    min-height: auto;
+  }
+
+  .pass-plan-card__price {
+    font-size: 1.65rem;
+  }
+
+  .pass-plan-checkout__inner {
+    padding: 1.35rem 1.2rem 1.6rem;
+  }
+
+  .pass-checkout__cta-btn {
+    width: 100%;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.88rem;
+  }
+}
+
 /* ---- HOW IT WORKS: STEPS (WHITE THEME INLINE HEADER) ---- */
 .pass-how-it-works {
-  margin-top: clamp(4.5rem, 7vw, 7rem);
+  margin-top: clamp(3.5rem, 6vw, 6rem);
   padding-top: 0;
   text-align: center;
 }
 
 .pass-how-it-works__title {
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 2.8vw, 2.25rem);
+  font-size: clamp(1.4rem, 4.2vw, 2.25rem);
   font-weight: 900;
   color: var(--brand-support);
   letter-spacing: -0.01em;
-  margin: 0 0 clamp(2.5rem, 4vw, 4rem);
+  margin: 0 0 clamp(2rem, 3.5vw, 3.5rem);
   text-transform: uppercase;
 }
 
@@ -956,7 +1011,7 @@ body.pass-page-body {
   max-width: 1120px;
   width: 100%;
   margin-inline: auto;
-  margin-bottom: clamp(2.8rem, 4.5vw, 4.5rem);
+  margin-bottom: clamp(2.5rem, 4vw, 4rem);
   background: transparent;
   padding: 0;
   border: none;
@@ -1034,8 +1089,8 @@ body.pass-page-body {
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  padding: 1.15rem 3.2rem;
-  font-size: 1.05rem;
+  padding: 1rem 2.8rem;
+  font-size: 0.95rem;
   font-weight: 900;
   border-radius: 0;
   letter-spacing: 0.04em;
@@ -1043,11 +1098,13 @@ body.pass-page-body {
   background: var(--brand-primary);
   box-shadow: none !important;
   text-shadow: none !important;
+  transition: transform 0.2s ease;
 }
 
 .pass-how-it-works__cta-btn:hover {
   filter: none !important;
   box-shadow: none !important;
+  transform: translateY(-2px);
 }
 
 .pass-how-it-works__disclaimer {
@@ -1059,20 +1116,30 @@ body.pass-page-body {
 
 /* Mobile: 1 Column Stacked Colored Cards Layout */
 @media (max-width: 768px) {
+  .pass-how-it-works {
+    margin-top: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .pass-how-it-works__title {
+    font-size: clamp(1.35rem, 4.8vw, 1.85rem);
+    margin-bottom: var(--space-6);
+  }
+
   .pass-how-it-works__steps {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-3);
+    gap: 0.65rem;
     max-width: 100%;
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-6);
   }
 
   .pass-step-item {
-    padding: 1.5rem 1.2rem;
-    gap: var(--space-2);
+    padding: 1.15rem 1.1rem;
+    gap: 0.35rem;
     border: none !important;
     border-radius: 0;
     box-shadow: none;
+    max-width: 100%;
   }
 
   /* 1: Azul (#5700ff) */
@@ -1096,16 +1163,16 @@ body.pass-page-body {
   }
 
   .pass-step-item__header {
-    gap: 0.5rem;
+    gap: 0.45rem;
   }
 
   .pass-step-item__icon {
-    height: 15px;
+    height: 14px;
     filter: brightness(0) invert(1) !important;
   }
 
   .pass-step-item__number {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .pass-step-item__number--pink {
@@ -1117,18 +1184,19 @@ body.pass-page-body {
   }
 
   .pass-step-item__text {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     font-weight: 500;
     line-height: 1.35;
     color: #ffffff !important;
     max-width: 100%;
   }
-}
 
-@media (max-width: 900px) {
-  .pass-plans-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-5);
+  .pass-how-it-works__cta-btn {
+    width: 100%;
+    max-width: 320px;
+    padding: 0.95rem 1.5rem;
+    font-size: 0.9rem;
+    text-align: center;
   }
 }
 

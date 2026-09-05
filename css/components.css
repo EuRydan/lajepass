@@ -1605,14 +1605,28 @@ img.pass-card {
     display: flex;
   }
 
+  .footer {
+    padding-block: var(--space-12) var(--space-8);
+  }
+
   .footer__grid {
     grid-template-columns: 1fr;
-    gap: var(--space-8);
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+  }
+
+  .footer__heading {
+    margin-bottom: var(--space-3);
+  }
+
+  .footer__socials {
+    margin-top: var(--space-4);
   }
 
   .footer__bottom {
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-3);
+    padding-top: var(--space-6);
     text-align: center;
   }
 
