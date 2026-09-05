@@ -74,17 +74,51 @@
   </section>
 
   <!-- ================================================
-       CINEMATIC VIDEO LOOP SECTION (P&B + GRANULADO + LOGO NO CENTRO)
+       INTERACTIVE MONOCHROME GLASSMORPHISM BANNER SECTION
        ================================================ -->
-  <section class="pass-video-section" id="pass-video-banner">
-    <video id="pass-video" class="pass-video-element" autoplay loop muted playsinline>
-      <source src="public/pass-banner-video.mp4" type="video/mp4" />
-    </video>
-    <div class="pass-video-overlay"></div>
-    <div class="pass-video-grain"></div>
-    <div class="pass-video-center-logo" id="pass-logo-switcher" role="button" tabindex="0" aria-label="Trocar Logo Comu">
-      <img id="pass-logo-img" src="public/copiar.png" alt="Comu Pass" class="pass-video-center-logo__img" />
+  <section class="pass-glass-section" id="pass-glass-banner">
+    <!-- Ambient Interactive Mouse Spotlight (Monochrome Pure Black/White) -->
+    <div class="pass-glass-spotlight" id="pass-glass-spotlight"></div>
+
+    <!-- Background Glass Grid & Geometric Accents -->
+    <div class="pass-glass-bg-grid"></div>
+    
+    <!-- Floating Glassmorphism Panels with Parallax Depth -->
+    <div class="pass-glass-elements-layer" id="pass-glass-layer">
+      <!-- Decorative Glass Card 1 (Top Left) -->
+      <div class="pass-glass-card pass-glass-card--tl" data-depth="14">
+        <div class="pass-glass-card__line"></div>
+        <span class="pass-glass-card__dot"></span>
+        <span class="pass-glass-card__label">COMU // ECOSYSTEM</span>
+      </div>
+
+      <!-- Decorative Glass Card 2 (Bottom Right) -->
+      <div class="pass-glass-card pass-glass-card--br" data-depth="20">
+        <span class="pass-glass-card__plus">+</span>
+        <span class="pass-glass-card__label">021 // RJ</span>
+        <div class="pass-glass-card__bar"></div>
+      </div>
+
+      <!-- Decorative Floating Glass Shapes -->
+      <div class="pass-glass-shape pass-glass-shape--circle" data-depth="26"></div>
+      <div class="pass-glass-shape pass-glass-shape--cube" data-depth="16"></div>
     </div>
+
+    <!-- Center Floating Glass Showcase Badge & Logo Switcher -->
+    <div class="pass-glass-center-stage" id="pass-glass-stage">
+      <div class="pass-glass-center-card" id="pass-logo-switcher" role="button" tabindex="0" aria-label="Trocar Logo Comu">
+        <div class="pass-glass-center-card__sheen"></div>
+        <div class="pass-glass-center-card__inner">
+          <img id="pass-logo-img" src="public/copiar.png" alt="Comu Pass" class="pass-video-center-logo__img" />
+        </div>
+        <div class="pass-glass-center-card__hint">
+          <span>Clique para alternar</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fine Grain Texture Overlay -->
+    <div class="pass-glass-grain"></div>
   </section>
 
   <!-- 4-Color Divider (White, Pink, Purple, Dark Indigo) -->
@@ -538,16 +572,58 @@
   <script src="js/obfuscate.js"></script>
   <script src="js/forms.js"></script>
   <script>
-    const passVideo = document.getElementById('pass-video');
-    if (passVideo) {
-      passVideo.playbackRate = 0.75;
-    }
+    // Interactive Monochrome Glassmorphism Parallax & Mouse Tracking
+    (function initGlassmorphismBanner() {
+      const banner = document.getElementById('pass-glass-banner');
+      const card = document.querySelector('.pass-glass-center-card');
+      const floatingItems = document.querySelectorAll('[data-depth]');
+      if (!banner) return;
+
+      banner.addEventListener('mousemove', (e) => {
+        const rect = banner.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        // Smooth spotlight gradient position
+        banner.style.setProperty('--mouse-x', `${x}px`);
+        banner.style.setProperty('--mouse-y', `${y}px`);
+
+        // Normalized relative center offset (-1 to 1)
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const deltaX = (x - centerX) / centerX;
+        const deltaY = (y - centerY) / centerY;
+
+        // 3D Tilt on the central showcase card
+        if (card) {
+          const tiltX = deltaY * -8;
+          const tiltY = deltaX * 8;
+          card.style.transform = `perspective(1000px) rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg) translateZ(8px)`;
+        }
+
+        // Parallax on floating glass cards and shapes
+        floatingItems.forEach((item) => {
+          const depth = parseFloat(item.getAttribute('data-depth')) || 16;
+          const moveX = deltaX * depth;
+          const moveY = deltaY * depth;
+          item.style.transform = `translate(${moveX.toFixed(1)}px, ${moveY.toFixed(1)}px)`;
+        });
+      });
+
+      banner.addEventListener('mouseleave', () => {
+        if (card) {
+          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+        }
+        floatingItems.forEach((item) => {
+          item.style.transform = 'translate(0px, 0px)';
+        });
+      });
+    })();
 
     // Logo Switcher on Click / Touch Loop
     (function initLogoSwitcher() {
       const switcher = document.getElementById('pass-logo-switcher');
       const logoImg = document.getElementById('pass-logo-img');
-      const videoBanner = document.getElementById('pass-video-banner');
       if (!switcher || !logoImg) return;
 
       const logos = [
@@ -584,9 +660,6 @@
       }
 
       switcher.addEventListener('click', nextLogo);
-      if (videoBanner) {
-        videoBanner.addEventListener('click', nextLogo);
-      }
       switcher.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
